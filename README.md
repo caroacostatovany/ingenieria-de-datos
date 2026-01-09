@@ -6,11 +6,10 @@
 ![Language](https://img.shields.io/badge/language-español-red.svg)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
 
-<!-- Actualiza USERNAME y REPO con tu información de GitHub -->
-[![GitHub stars](https://img.shields.io/github/stars/USERNAME/REPO.svg?style=social&label=Star)](https://github.com/USERNAME/REPO)
-[![GitHub forks](https://img.shields.io/github/forks/USERNAME/REPO.svg?style=social&label=Fork)](https://github.com/USERNAME/REPO/fork)
-[![GitHub issues](https://img.shields.io/github/issues/USERNAME/REPO.svg)](https://github.com/USERNAME/REPO/issues)
-[![GitHub contributors](https://img.shields.io/github/contributors/USERNAME/REPO.svg)](https://github.com/USERNAME/REPO/graphs/contributors)
+[![GitHub stars](https://img.shields.io/github/stars/caroacostatovany/ingenieria-de-datos.svg?style=social&label=Star)](https://github.com/caroacostatovany/ingenieria-de-datos)
+[![GitHub forks](https://img.shields.io/github/forks/caroacostatovany/ingenieria-de-datos.svg?style=social&label=Fork)](https://github.com/caroacostatovany/ingenieria-de-datos/fork)
+[![GitHub issues](https://img.shields.io/github/issues/caroacostatovany/ingenieria-de-datos.svg)](https://github.com/caroacostatovany/ingenieria-de-datos/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/caroacostatovany/ingenieria-de-datos.svg)](https://github.com/caroacostatovany/ingenieria-de-datos/graphs/contributors)
 
 Este repositorio está diseñado para aprender **Ingeniería de Datos desde cero hasta un nivel profesional**, con **bases sólidas**, ejemplos prácticos y un enfoque moderno donde la **AI se usa como copiloto**, no como reemplazo.
 
@@ -262,5 +261,6 @@ En este repositorio:
 ## 📬 Contacto
 
 * [LinkedIn](https://www.linkedin.com/in/carolina-acosta-tovany-1a6689275/)
+* [GitHub](https://github.com/caroacostatovany/ingenieria-de-datos)
 
 ---
