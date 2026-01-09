@@ -15,6 +15,102 @@ Todo el contenido está en **español** y pensado para personas de **todos los n
 
 ---
 
+## 📚 ¿Qué vas a aprender?
+
+A lo largo de esta ruta de aprendizaje, dominarás:
+
+### 🎯 Fundamentos Esenciales
+- **Conceptos clave**: Tipos de datos, pipelines, batch vs streaming
+- **Herramientas**: Git, Docker, archivos `.env`, entornos reproducibles
+- **Buenas prácticas**: Desde el día 1
+
+### 💾 SQL (La Base de Todo)
+- **Básico a Avanzado**: SELECT, JOINs, Window Functions, optimización
+- **Modelado relacional**: Diseño de bases de datos
+- **PostgreSQL**: Base de datos real para practicar
+
+### 🐍 Python para Datos
+- **Fundamentos**: Scripts, módulos, manejo de archivos
+- **Pandas**: Manipulación y exploración de datos
+- **Jupyter Notebooks**: Análisis interactivo y visualizaciones
+- **Storytelling**: Comunicar insights efectivamente
+
+### 🏗️ Modelado y Calidad
+- **Modelado analítico**: Star Schema, Snowflake, tablas de hechos
+- **Calidad de datos**: Métricas, validaciones, testing
+- **Herramientas**: Great Expectations, Pandera
+
+### ⚙️ Pipelines y Orquestación
+- **Pipelines con Python**: Desde cero hasta producción
+- **Orquestadores**: Prefect, Dagster, Airflow, Luigi
+- **Cloud**: Step Functions, Composer, Data Factory
+
+### 🤖 Inteligencia Artificial como Copiloto
+- **Cursor IDE**: AI integrada para desarrollo
+- **Buenas prácticas**: Cuándo y cómo usar AI
+- **Límites**: Entender qué puede y no puede hacer AI
+
+### ☁️ Data Engineering en la Nube
+- **Conceptos fundamentales**: Arquitecturas cloud
+- **AWS, GCP, Azure**: Servicios principales
+- **Multi-cloud**: Estrategias avanzadas
+
+### 🚀 Proyectos Prácticos
+- **Principiante**: Pipeline ETL simple con código funcional
+- **Intermedio**: Validaciones, Airflow local, AI como copiloto
+- **Avanzado**: Producción local, cloud gratis, pipelines completos
+
+---
+
+## 🗺️ Ruta de Aprendizaje Visual
+
+```mermaid
+graph TD
+    A[🎯 Introducción] --> B[🛠️ Fundamentos]
+    B --> C[💾 SQL]
+    C --> D[🐍 Python]
+    D --> E[🏗️ Modelado y Calidad]
+    E --> F[⚙️ Pipelines]
+    F --> G[☁️ Cloud]
+    
+    H[🤖 AI como Copiloto] -.Opcional.-> B
+    H -.Opcional.-> C
+    H -.Opcional.-> D
+    
+    I[🚀 Proyectos] --> J[Principiante]
+    I --> K[Intermedio]
+    I --> L[Avanzado]
+    
+    C --> I
+    D --> I
+    E --> I
+    F --> I
+    
+    style A fill:#e1f5e1
+    style B fill:#fff4e1
+    style C fill:#ffe1e1
+    style D fill:#e1e5ff
+    style E fill:#f0e1ff
+    style F fill:#ffe1f0
+    style G fill:#e1f5ff
+    style H fill:#fff0e1
+    style I fill:#ffe1e1
+```
+
+**Flujo recomendado:**
+1. **Introducción** → Entiende qué es Data Engineering
+2. **Fundamentos** → Configura tu entorno y aprende conceptos base
+3. **SQL** → La base de todo (empieza aquí si ya tienes fundamentos)
+4. **Python** → Programación para datos
+5. **Modelado y Calidad** → Diseño y confiabilidad de datos
+6. **Pipelines** → Automatización y orquestación
+7. **Cloud** → Escalabilidad y servicios gestionados
+8. **Proyectos** → Aplica todo lo aprendido (puedes empezar en cualquier momento)
+
+> 💡 **Tip**: Puedes saltar etapas si ya tienes experiencia, pero te recomendamos revisar los fundamentos primero.
+
+---
+
 ## 🎯 Objetivo del repositorio
 
 Ayudarte a:

@@ -16,18 +16,18 @@ jobs:
       - name: Checkout código
         uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          python-version: '3.11'
+          node-version: '20'
 
-      - name: Instalar dependencias
+      - name: Instalar markdown-link-check
         run: |
-          pip install markdown-link-check
+          npm install -g markdown-link-check
 
       - name: Verificar links en Markdown
         run: |
-          find . -name "*.md" -not -path "./.git/*" -not -path "./node_modules/*" | \
+          find . -name "*.md" -not -path "./.git/*" -not -path "./node_modules/*" -not -path "./.github/*" | \
           xargs -I {} markdown-link-check {} --config .github/link-check-config.json || true
 
       - name: Reportar resultados
