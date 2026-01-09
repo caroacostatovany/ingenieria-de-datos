@@ -8,34 +8,45 @@ Esta carpeta cubre Python desde la perspectiva de un Data Engineer: manejo de da
 
 ### 📘 Documentos disponibles
 
-* **[Fundamentos Python para DE](fundamentos-python.md)** *(próximo)*
+* ✅ **[Fundamentos Python para DE](fundamentos-python.md)**
   * Sintaxis esencial para Data Engineering
   * Estructuras de datos (listas, diccionarios, DataFrames)
   * Control de flujo y funciones
-  * Librerías clave (pandas, requests, etc.)
+  * Librerías clave (pandas, requests, sqlalchemy)
 
-* **[Python para Datos](python-para-datos/)** *(próximo)*
-  * Pandas para manipulación de datos
-  * Lectura y escritura de archivos
-  * Limpieza y transformación
-  * Operaciones eficientes
+* ✅ **[Python para Datos](python-para-datos/)**
+  * Introducción a Pandas
+  * Operaciones con DataFrames
+  * Limpieza de datos
+  * Agregaciones y agrupaciones
+  * Merge y Join
 
-* **[Manejo de archivos](manejo-de-archivos.md)** *(próximo)*
-  * Leer/escribir CSV, JSON, Parquet
+* ✅ **[Manejo de archivos](manejo-de-archivos.md)**
+  * Leer/escribir CSV, JSON, Parquet, Excel
   * Trabajar con APIs
-  * Manejo de errores y validación
+  * Conexión a bases de datos
+  * Procesar archivos grandes
   * Buenas prácticas de I/O
 
-* **[Scripts vs módulos](scripts-vs-modulos.md)** *(próximo)*
+* ✅ **[Scripts vs módulos](scripts-vs-modulos.md)**
   * Cuándo usar scripts simples
   * Cuándo modularizar código
   * Estructura de proyectos Python
   * Reutilización de código
 
-* **[Ejemplos](ejemplos/)** *(próximo)*
-  * Ejemplos prácticos de código
-  * Casos de uso comunes
-  * Patrones útiles
+* ✅ **[Jupyter Notebooks para Datos](jupyter-notebooks-para-datos.md)**
+  * ¿Qué es Jupyter?
+  * Instalación y configuración
+  * Flujo de trabajo para análisis
+  * Visualizaciones
+  * Integración con SQL
+  * Buenas prácticas
+
+* ✅ **[Ejemplos](ejemplos/)**
+  * Pipeline ETL simple
+  * Limpieza de datos
+  * Conexión a base de datos
+  * Procesar archivos grandes
 
 ---
 
@@ -47,6 +58,8 @@ Al finalizar esta sección, deberías poder:
 * Manipular datos eficientemente con pandas
 * Leer y escribir diferentes formatos de archivos
 * Estructurar proyectos Python de forma profesional
+* Usar Jupyter Notebooks para explorar y analizar datos
+* Conectar Python con bases de datos SQL
 
 ---
 

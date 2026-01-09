@@ -86,11 +86,12 @@ Ayudarte a:
 ### 🟦 Nivel 3 — Python aplicado
 
 * 📘 [Python (carpeta)](03_python/)
-* 📄 [Fundamentos Python para DE](03_python/fundamentos-python.md) *(próximo)*
-* 📄 [Python para Datos](03_python/python-para-datos/) *(próximo)*
-* 📄 [Manejo de archivos](03_python/manejo-de-archivos.md) *(próximo)*
-* 📄 [Scripts vs módulos](03_python/scripts-vs-modulos.md) *(próximo)*
-* 📘 [Ejemplos](03_python/ejemplos/) *(próximo)*
+* ✅ [Fundamentos Python para DE](03_python/fundamentos-python.md)
+* ✅ [Python para Datos](03_python/python-para-datos/)
+* ✅ [Manejo de archivos](03_python/manejo-de-archivos.md)
+* ✅ [Scripts vs módulos](03_python/scripts-vs-modulos.md)
+* ✅ [Jupyter Notebooks para Datos](03_python/jupyter-notebooks-para-datos.md)
+* ✅ [Ejemplos](03_python/ejemplos/)
 
 ---
 
