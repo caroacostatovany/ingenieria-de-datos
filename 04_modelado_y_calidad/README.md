@@ -6,39 +6,30 @@ Esta carpeta cubre cómo diseñar modelos de datos analíticos y asegurar la cal
 
 ## 📖 Contenido
 
-### 📘 Documentos disponibles
+### 📘 Estructura
 
-* ✅ **[Modelado analítico](modelado-analitico.md)**
+* ✅ **[Modelado](modelado/)**
   * Modelos dimensionales (Star Schema, Snowflake)
   * Tablas de hechos y dimensiones
   * Diseño para analytics
   * Patrones comunes
 
-* ✅ **[Calidad de datos](calidad-de-datos.md)**
-  * Dimensiones de calidad (completitud, exactitud, consistencia)
-  * Métricas y KPIs de calidad
-  * Detección de problemas
-  * Estrategias de mejora
+* ✅ **[Calidad de Datos](calidad/)**
+  * Dimensiones de calidad
+  * Métricas y KPIs
+  * **[Validaciones y Testing](calidad/validaciones/)**
+    * Validaciones en pipelines
+    * Tests unitarios e integración
+  * **[Herramientas](calidad/herramientas/)**
+    * Great Expectations
+    * Otras herramientas de calidad
 
-* ✅ **[Validaciones](validaciones.md)**
-  * Validaciones en pipelines
-  * Checks de integridad
-  * Validación de esquemas
-  * Alertas y notificaciones
-
-* ✅ **[Testing de datos](testing-de-datos.md)**
-  * Tests unitarios para transformaciones
-  * Tests de integración
-  * Tests de calidad
-  * Herramientas y frameworks
-
-* ✅ **[Great Expectations para Calidad](great-expectations-para-calidad.md)**
-  * ¿Qué es Great Expectations?
-  * Instalación y configuración
-  * Definir expectativas
-  * Validar datos automáticamente
-  * Integración en pipelines
-  * Data Docs y profiling
+* ✅ **[Ejemplos](ejemplos/)**
+  * Notebooks Jupyter con código ejecutable
+  * Modelado Star Schema
+  * Calidad de datos
+  * Great Expectations y Pandera
+  * Testing de datos
 
 ---
 
@@ -47,10 +38,19 @@ Esta carpeta cubre cómo diseñar modelos de datos analíticos y asegurar la cal
 Al finalizar esta sección, deberías poder:
 
 * Diseñar modelos de datos apropiados para analytics
-* Implementar validaciones en tus pipelines
-* Medir y mejorar la calidad de datos
-* Escribir tests para transformaciones de datos
-* Usar Great Expectations para validaciones avanzadas
+* Medir y mejorar la calidad de datos sistemáticamente
+* Implementar validaciones robustas en pipelines
+* Escribir tests efectivos para transformaciones
+* Usar herramientas como Great Expectations para validaciones avanzadas
+
+---
+
+## 📚 Flujo de aprendizaje recomendado
+
+1. **Empieza con [Modelado](modelado/)** - Diseña modelos efectivos para analytics
+2. **Aprende [Calidad de Datos](calidad/)** - Mide y mejora calidad sistemáticamente
+3. **Implementa [Validaciones](calidad/validaciones/)** - Checks automáticos en pipelines
+4. **Usa [Herramientas](calidad/herramientas/)** - Great Expectations para validaciones avanzadas
 
 ---
 
@@ -62,12 +62,18 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🚀 Siguiente paso
+## 🚀 ¿Qué sigue?
 
-Después de dominar modelado y calidad:
+Según el roadmap, después de dominar modelado y calidad:
 
-* **[05_pipelines](../05_pipelines/)** para construir pipelines que incorporen estas prácticas
-* **[07_proyectos](../07_proyectos/)** para proyectos completos con calidad garantizada
+**👉 Siguiente etapa: [05_pipelines](../05_pipelines/)** (Etapa 4 del roadmap)
+* Construir pipelines que incorporen estas prácticas
+* Orquestación y automatización
+* Pipelines robustos con validaciones
+
+**Después**: **[06_inteligencia_artificial](../06_inteligencia_artificial/)** (Etapa 5) para usar AI como copiloto, luego **[08_cloud](../08_cloud/)** (Etapa 6) y finalmente **[07_proyectos](../07_proyectos/)** (Etapa 7).
+
+> 💡 **Tip**: Revisa el [Roadmap completo](../00_introduccion/roadmap-data-engineer.md) para ver la ruta completa.
 
 ---
 

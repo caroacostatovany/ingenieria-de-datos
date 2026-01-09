@@ -4,17 +4,26 @@ Ejemplo 4: Procesar archivos grandes
 Técnicas para procesar archivos que no caben en memoria.
 """
 
+import os
 import pandas as pd
+from dotenv import load_dotenv
+from pathlib import Path
 
-def procesar_csv_grande(ruta_entrada, ruta_salida, chunk_size=10000):
+# Cargar variables de entorno desde .env en la raíz del proyecto
+env_path = Path(__file__).parent.parent.parent / '.env'
+load_dotenv(env_path)
+
+def procesar_csv_grande(ruta_entrada, ruta_salida, chunk_size=None):
     """
     Procesa un CSV grande en chunks.
     
     Args:
         ruta_entrada: Ruta al CSV grande
         ruta_salida: Ruta donde guardar resultado
-        chunk_size: Tamaño de cada chunk
+        chunk_size: Tamaño de cada chunk (usa CHUNK_SIZE del .env si no se especifica)
     """
+    if chunk_size is None:
+        chunk_size = int(os.getenv('CHUNK_SIZE', '10000'))
     chunks_procesados = []
     total_filas = 0
     

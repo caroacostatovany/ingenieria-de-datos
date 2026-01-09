@@ -172,7 +172,7 @@ Pero:
 Para profundizar:
 * **[Pipelines básicos](../05_pipelines/pipelines-basicos/)** - Cómo construir pipelines
 * **[Orquestadores](../05_pipelines/orquestadores/)** - Herramientas para orquestar pipelines
-* **[Batch vs Streaming](../01_fundamentos/batch-vs-streaming.md)** - Tipos de procesamiento
+* **[Batch vs Streaming](02_batch-vs-streaming.md)** - Tipos de procesamiento
 
 O aplica todo con:
 * **[Proyectos](../07_proyectos/)** - Proyectos end-to-end

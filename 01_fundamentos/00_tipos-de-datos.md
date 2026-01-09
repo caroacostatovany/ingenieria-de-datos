@@ -200,7 +200,7 @@ Pero:
 
 Para continuar:
 📄 `01_fundamentos/pipelines-basicos.md`
-📄 `01_fundamentos/buenas-practicas.md`
+📄 `01_fundamentos/07_buenas-practicas.md`
 
 O aplicar conceptos en:
 🚀 `07_proyectos/proyecto_01_pipeline_simple`

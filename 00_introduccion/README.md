@@ -39,9 +39,20 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🚀 Siguiente paso
+## 🚀 ¿Qué sigue?
 
-Una vez que entiendas los conceptos básicos, continúa con **[01_fundamentos](../01_fundamentos/)** para profundizar en los fundamentos técnicos.
+Sigue el roadmap en este orden:
+
+1. **⭐ PRIMERO: Configura Cursor** - **[Cursor para Data Engineers](../06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)** (Etapa 0.5 del roadmap)
+   > ⚠️ **IMPORTANTE**: Configura Cursor ANTES de continuar. Te ayudará durante todo el aprendizaje.
+
+2. **Herramientas esenciales** - **[01_fundamentos](../01_fundamentos/)** (Etapa 0.6 del roadmap)
+   * Git, .env, Docker, y conceptos fundamentales
+
+3. **SQL** - **[02_sql](../02_sql/)** (Etapa 1 del roadmap)
+   * La base de todo en Data Engineering
+
+> 💡 **Tip**: Revisa el [Roadmap completo](roadmap-data-engineer.md) para ver la ruta completa de aprendizaje.
 
 ---
 

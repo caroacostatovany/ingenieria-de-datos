@@ -174,7 +174,7 @@ Pero:
 Para profundizar:
 * **[Pipelines con Python](pipelines-con-python.md)** - Cómo construir pipelines prácticos
 * **[Orquestadores](../orquestadores/)** - Herramientas para orquestar pipelines
-* **[Batch vs Streaming](../../01_fundamentos/batch-vs-streaming.md)** - Tipos de procesamiento
+* **[Batch vs Streaming](../../01_fundamentos/02_batch-vs-streaming.md)** - Tipos de procesamiento
 
 O aplica todo con:
 * **[Proyectos](../../07_proyectos/)** - Proyectos end-to-end

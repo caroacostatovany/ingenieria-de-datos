@@ -57,13 +57,18 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🚀 Siguiente paso
+## 🚀 ¿Qué sigue?
 
-Después de dominar pipelines:
+Según el roadmap, después de dominar pipelines:
 
-* **[03_python/ejemplos/](../03_python/ejemplos/)** para ejemplos prácticos de pipelines con Python
-* **[07_proyectos](../07_proyectos/)** para proyectos end-to-end completos
-* **[06_ai_como_copiloto](../06_ai_como_copiloto/)** para usar AI en el desarrollo
+**👉 Siguiente etapa: [06_inteligencia_artificial](../06_inteligencia_artificial/)** (Etapa 5 del roadmap)
+* Usar AI como copiloto para aumentar productividad
+* Generar código, documentación y tests con AI
+* Aprender cuándo usar AI y cuándo no
+
+**Después**: **[08_cloud](../08_cloud/)** (Etapa 6) para aplicar conocimientos en cloud, y finalmente **[07_proyectos](../07_proyectos/)** (Etapa 7) para proyectos end-to-end completos.
+
+> 💡 **Tip**: Revisa el [Roadmap completo](../00_introduccion/roadmap-data-engineer.md) para ver la ruta completa.
 
 ---
 

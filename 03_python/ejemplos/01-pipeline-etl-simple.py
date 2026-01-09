@@ -7,8 +7,15 @@ Este ejemplo muestra un pipeline ETL básico:
 - Load: Guarda en Parquet
 """
 
+import os
 import pandas as pd
 from datetime import datetime
+from dotenv import load_dotenv
+from pathlib import Path
+
+# Cargar variables de entorno desde .env en la raíz del proyecto
+env_path = Path(__file__).parent.parent.parent / '.env'
+load_dotenv(env_path)
 
 def extract(ruta_entrada):
     """Extrae datos de un archivo CSV."""
@@ -43,8 +50,16 @@ def load(df, ruta_salida):
 
 def main():
     """Ejecuta el pipeline ETL."""
-    ruta_entrada = 'data/raw/ventas.csv'
-    ruta_salida = 'data/processed/ventas_limpias.parquet'
+    # Usar variables de entorno o valores por defecto
+    data_source = os.getenv('DATA_SOURCE_PATH', './data/raw')
+    data_output = os.getenv('DATA_OUTPUT_PATH', './data/processed')
+    
+    ruta_entrada = os.path.join(data_source, 'ventas.csv')
+    ruta_salida = os.path.join(data_output, 'ventas_limpias.parquet')
+    
+    # Crear directorios si no existen
+    os.makedirs(data_source, exist_ok=True)
+    os.makedirs(data_output, exist_ok=True)
     
     # Pipeline
     df = extract(ruta_entrada)

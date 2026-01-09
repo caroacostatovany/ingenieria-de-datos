@@ -1,26 +1,30 @@
-# 🚀 Proyectos End-to-End
+# 🚀 Proyectos Prácticos
 
-Esta carpeta contiene proyectos completos que integran todos los conceptos aprendidos en las secciones anteriores.
+Esta sección contiene proyectos prácticos organizados por nivel de dificultad para aplicar los conceptos aprendidos.
 
 ---
 
-## 📖 Contenido
+## 📖 Estructura de proyectos
 
-### 📘 Proyectos disponibles
+### 🟢 [Nivel Principiante](principiante/)
+Proyectos para quienes están empezando:
+* Pipeline ETL Simple
+* Análisis de Datos con Pandas
+* Pipeline con Docker
 
-* **[Proyecto 01: Pipeline Simple](proyecto_01_pipeline_simple/)** *(próximo)*
-  * Pipeline ETL básico
-  * Extracción de datos de una fuente
-  * Transformación simple
-  * Carga a destino
-  * Ideal para principiantes
+### 🟡 [Nivel Intermedio](intermedio/)
+Proyectos para quienes ya dominan fundamentos:
+* Pipeline SQL + Python
+* Pipeline con Validaciones
+* Pipeline con Airflow Local
+* Pipeline con IA como Copiloto
 
-* **[Proyecto 02: Pipeline SQL + Python](proyecto_02_pipeline_sql_python/)** *(próximo)*
-  * Pipeline híbrido
-  * SQL para transformaciones
-  * Python para orquestación
-  * Validaciones y calidad
-  * Nivel intermedio
+### 🔴 [Nivel Avanzado](avanzado/)
+Proyectos complejos que simulan producción:
+* Pipeline End-to-End Completo
+* Pipeline en Producción Local
+* Pipeline en Cloud (Sin Tarjeta)
+* Pipeline con IA Avanzada
 
 ---
 
@@ -70,6 +74,29 @@ Antes de empezar los proyectos, asegúrate de dominar:
 ## 💡 Tip
 
 No copies y pegues. Entiende el código, modifícalo, experimenta. Los proyectos son puntos de partida, no soluciones finales.
+
+---
+
+## 🚀 ¿Qué sigue?
+
+¡Felicitaciones! Has completado el roadmap de Data Engineering. 
+
+**Has llegado al final del camino de aprendizaje básico**, pero el aprendizaje nunca termina:
+
+* **Profundiza** en áreas específicas que te interesen
+* **Construye más proyectos** para tu portafolio
+* **Explora temas avanzados**:
+  * Streaming en tiempo real
+  * Machine Learning Engineering
+  * Data Lakes y arquitecturas modernas
+  * Especialización en un proveedor cloud específico
+
+**Próximos pasos sugeridos:**
+* Revisa el [Roadmap completo](../00_introduccion/roadmap-data-engineer.md) para identificar áreas de mejora
+* Contribuye al repositorio con tus propios proyectos
+* Comparte tu experiencia con la comunidad
+
+> 💡 **Recuerda**: La Ingeniería de Datos se construye con criterio, práctica y paciencia. ¡Sigue aprendiendo!
 
 ---
 

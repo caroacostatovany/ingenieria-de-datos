@@ -2,6 +2,8 @@
 
 La limpieza de datos es una tarea fundamental en Data Engineering. Aprende técnicas comunes.
 
+> 💡 **Ejemplo práctico**: Revisa el [notebook de limpieza de datos](../../ejemplos/04-limpieza-datos.ipynb) para ver estas técnicas en acción con ejemplos paso a paso.
+
 ---
 
 ## 🔍 Detectar problemas

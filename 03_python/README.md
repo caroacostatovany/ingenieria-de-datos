@@ -8,39 +8,28 @@ Esta carpeta cubre Python desde la perspectiva de un Data Engineer: manejo de da
 
 ### 📘 Documentos disponibles
 
-* ✅ **[Fundamentos Python para DE](fundamentos-python.md)**
+* ✅ **[Fundamentos](fundamentos/)**
   * Sintaxis esencial para Data Engineering
   * Estructuras de datos (listas, diccionarios, DataFrames)
   * Control de flujo y funciones
+  * Manejo de archivos (CSV, JSON, Parquet, APIs, DB)
+  * Scripts vs módulos
   * Librerías clave (pandas, requests, sqlalchemy)
 
-* ✅ **[Python para Datos](python-para-datos/)**
+* ✅ **[Pandas](pandas/)**
   * Introducción a Pandas
   * Operaciones con DataFrames
   * Limpieza de datos
+  * Exploración de datos (EDA)
   * Agregaciones y agrupaciones
   * Merge y Join
+  * Jupyter Notebooks para análisis
 
-* ✅ **[Manejo de archivos](manejo-de-archivos.md)**
-  * Leer/escribir CSV, JSON, Parquet, Excel
-  * Trabajar con APIs
-  * Conexión a bases de datos
-  * Procesar archivos grandes
-  * Buenas prácticas de I/O
-
-* ✅ **[Scripts vs módulos](scripts-vs-modulos.md)**
-  * Cuándo usar scripts simples
-  * Cuándo modularizar código
-  * Estructura de proyectos Python
-  * Reutilización de código
-
-* ✅ **[Jupyter Notebooks para Datos](jupyter-notebooks-para-datos.md)**
-  * ¿Qué es Jupyter?
-  * Instalación y configuración
-  * Flujo de trabajo para análisis
-  * Visualizaciones
-  * Integración con SQL
-  * Buenas prácticas
+* ✅ **[Storytelling con Datos](storytelling/)**
+  * Comunicar insights efectivamente
+  * Visualizaciones efectivas
+  * Estructura narrativa
+  * Principios de diseño
 
 * ✅ **[Ejemplos](ejemplos/)**
   * Pipeline ETL simple
@@ -56,10 +45,12 @@ Al finalizar esta sección, deberías poder:
 
 * Escribir código Python claro y mantenible
 * Manipular datos eficientemente con pandas
+* Realizar análisis exploratorio de datos (EDA)
 * Leer y escribir diferentes formatos de archivos
 * Estructurar proyectos Python de forma profesional
-* Usar Jupyter Notebooks para explorar y analizar datos
+* Usar Jupyter Notebooks para análisis interactivos
 * Conectar Python con bases de datos SQL
+* Comunicar insights de datos de forma efectiva (storytelling)
 
 ---
 
@@ -71,12 +62,27 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🚀 Siguiente paso
+## 📚 Flujo de aprendizaje recomendado
 
-Después de dominar Python para datos:
+1. **Empieza con [Fundamentos](fundamentos/)** - Sintaxis y conceptos básicos
+2. **Aprende [Pandas](pandas/)** - Manipulación y exploración de datos
+3. **Practica [Storytelling](storytelling/)** - Comunica tus hallazgos efectivamente
+4. **Revisa [Ejemplos](ejemplos/)** - Código práctico para referencia
 
-* **[05_pipelines](../05_pipelines/)** para construir pipelines completos
-* **[07_proyectos](../07_proyectos/)** para proyectos end-to-end
+---
+
+## 🚀 ¿Qué sigue?
+
+Según el roadmap, después de dominar Python:
+
+**👉 Siguiente etapa: [04_modelado_y_calidad](../04_modelado_y_calidad/)** (Etapa 3 del roadmap)
+* Diseño de modelos analíticos (Star Schema, etc.)
+* Calidad de datos y validaciones
+* Testing de datos
+
+**Después**: **[05_pipelines](../05_pipelines/)** (Etapa 4) para construir pipelines completos y orquestados.
+
+> 💡 **Tip**: Revisa el [Roadmap completo](../00_introduccion/roadmap-data-engineer.md) para ver la ruta completa.
 
 ---
 

@@ -27,4 +27,4 @@ Al finalizar esta sección, deberías poder:
 
 ## 🚀 Próximo paso
 
-Continúa con **[Manejo de archivos](../manejo-de-archivos.md)**.
+Continúa con **[Exploración de Datos](../exploracion-datos-pandas.md)** para análisis exploratorio.

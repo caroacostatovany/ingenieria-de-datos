@@ -15,6 +15,12 @@ Esta carpeta contiene todo lo que necesitas saber sobre SQL aplicado a la Ingeni
   * ¿Por qué usamos PostgreSQL?
   * SQL estándar vs extensiones PostgreSQL
 
+* ✅ **[Herramientas SQL](herramientas/)**
+  * DBeaver (recomendado)
+  * Visualización de datos
+  * Generación de queries
+  * Otras herramientas (pgAdmin, TablePlus, etc.)
+
 * ✅ **[SQL básico](sql-basico/)**
   * SELECT, FROM, WHERE
   * JOINs básicos
@@ -51,7 +57,9 @@ Esta carpeta contiene todo lo que necesitas saber sobre SQL aplicado a la Ingeni
 
 Al finalizar esta sección, deberías poder:
 
+* Usar herramientas SQL (DBeaver, pgAdmin, etc.) para visualizar datos
 * Escribir consultas SQL eficientes y mantenibles
+* Generar queries con ayuda visual (Query Builder)
 * Diseñar esquemas de bases de datos apropiados
 * Optimizar queries para grandes volúmenes de datos
 * Aplicar SQL en pipelines de datos
@@ -66,12 +74,28 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🚀 Siguiente paso
+## 📚 Flujo de aprendizaje recomendado
 
-Después de dominar SQL, continúa con:
+1. **Empieza con [Herramientas SQL](herramientas/)** - Configura DBeaver y aprende a visualizar datos
+2. **Aprende [SQL básico](sql-basico/)** - Fundamentos con ayuda visual
+3. **Profundiza en [SQL intermedio](sql-intermedio/)** - Conceptos avanzados
+4. **Explora [SQL avanzado](sql-avanzado/)** - Optimización y patrones complejos
+5. **Practica con [Ejercicios](ejercicios/)** - Usa DBeaver para visualizar resultados
 
-* **[03_python](../03_python/)** para automatización y pipelines más complejos
-* **[04_modelado_y_calidad](../04_modelado_y_calidad/)** para diseño de modelos analíticos
+---
+
+## 🚀 ¿Qué sigue?
+
+Según el roadmap, después de dominar SQL:
+
+**👉 Siguiente etapa: [03_python](../03_python/)** (Etapa 2 del roadmap)
+* Automatización y estructurar procesos
+* Python para Data Engineering
+* Manejo de archivos y Pandas
+
+**Después**: **[04_modelado_y_calidad](../04_modelado_y_calidad/)** (Etapa 3) para diseño de modelos analíticos y calidad de datos.
+
+> 💡 **Tip**: Revisa el [Roadmap completo](../00_introduccion/roadmap-data-engineer.md) para ver la ruta completa.
 
 ---
 

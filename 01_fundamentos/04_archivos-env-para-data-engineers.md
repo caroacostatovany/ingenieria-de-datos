@@ -2,6 +2,8 @@
 
 Los archivos `.env` (environment variables) son una forma estándar de **gestionar configuraciones y secretos** en aplicaciones sin hardcodear valores sensibles en el código.
 
+> 💡 **Este proyecto incluye un `.env.example` en la raíz** que puedes copiar y configurar. Los ejemplos y ejercicios del proyecto usan estas variables automáticamente. Ver más abajo cómo configurarlo.
+
 ---
 
 ## 🧠 ¿Por qué usar archivos .env?
@@ -180,42 +182,60 @@ Docker Compose **automáticamente** lee el archivo `.env` en el mismo directorio
 
 ## 📋 Archivo .env.example
 
-Siempre crea un archivo `.env.example` que muestre qué variables se necesitan **sin valores reales**:
+Este repositorio incluye un archivo **`.env.example`** en la raíz que muestra todas las variables de entorno necesarias para el proyecto.
 
-### .env.example
+### Usar el .env.example del proyecto
+
+1. **Copia el archivo de ejemplo:**
+   ```bash
+   # Desde la raíz del proyecto
+   cp .env.example .env
+   ```
+
+2. **Edita el archivo `.env`** con tus valores reales:
+   ```bash
+   # Abre .env en tu editor
+   nano .env
+   # o
+   code .env
+   ```
+
+3. **Completa las variables necesarias** según lo que vayas a usar:
+   - Si trabajas con SQL: configura `DB_HOST`, `DB_USER`, `DB_PASSWORD`, etc.
+   - Si usas APIs: configura `API_KEY`, `API_URL`, etc.
+   - Si procesas archivos: configura `DATA_SOURCE_PATH`, `DATA_OUTPUT_PATH`, etc.
+
+### Estructura del .env.example
+
+El archivo `.env.example` del proyecto está organizado en secciones:
 
 ```bash
-# Configuración de base de datos
+# ============================================
+# CONFIGURACIÓN DE BASE DE DATOS
+# ============================================
 DB_HOST=localhost
 DB_PORT=5432
-DB_NAME=nombre_de_tu_base_de_datos
-DB_USER=tu_usuario
+DB_NAME=data_engineering
+DB_USER=de_user
 DB_PASSWORD=tu_password_aqui
 
-# Configuración de API
+# ============================================
+# CONFIGURACIÓN DE API
+# ============================================
 API_KEY=tu_api_key_aqui
 API_URL=https://api.ejemplo.com
+API_TIMEOUT=30
 
-# Configuración de entorno
-ENVIRONMENT=development
-DEBUG=True
-```
-
-### .env (no se commitea)
-
-```bash
-# Tu configuración real (local)
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=mi_db_local
-DB_USER=admin
-DB_PASSWORD=mi_password_real_123
+# ... más secciones
 ```
 
 **Ventajas:**
 * Otros desarrolladores saben qué variables necesitan
 * Documenta la configuración requerida
 * Se puede commitear sin exponer secretos
+* Organizado por categorías para fácil navegación
+
+> 💡 **Nota**: El archivo `.env` (con tus valores reales) **NO se commitea** al repositorio. Solo el `.env.example` está versionado.
 
 ---
 
@@ -443,13 +463,70 @@ services:
 
 ---
 
-## 🚀 Flujo de trabajo recomendado
+## 🚀 Flujo de trabajo recomendado en este proyecto
 
-1. **Crea `.env.example`** con todas las variables necesarias (sin valores reales)
-2. **Agrega `.env` al `.gitignore`**
-3. **Commitea `.env.example`** al repositorio
-4. **Cada desarrollador copia** `.env.example` a `.env` y completa sus valores
-5. **En producción**, usa variables de entorno del sistema o gestores de secretos
+### Paso 1: Configurar .env en la raíz
+
+1. **Copia el `.env.example`** de la raíz del proyecto:
+   ```bash
+   # Desde la raíz del proyecto
+   cp .env.example .env
+   ```
+
+2. **Edita `.env`** con tus valores reales:
+   ```bash
+   nano .env  # o tu editor preferido
+   ```
+
+3. **Configura las variables que necesites:**
+   - Si trabajas con SQL: `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`
+   - Si procesas archivos: `DATA_SOURCE_PATH`, `DATA_OUTPUT_PATH`
+   - Si usas APIs: `API_KEY`, `API_URL`
+
+### Paso 2: Configurar .env para módulos específicos (opcional)
+
+Para módulos específicos como SQL con Docker, puedes usar el mismo `.env` o crear uno local:
+
+```bash
+# Opción 1: Usar el .env de la raíz (recomendado)
+# Los scripts Python buscan el .env en la raíz automáticamente
+
+# Opción 2: Crear .env específico para SQL
+cd 02_sql
+cp ../.env.example .env
+# O usa el .env.example específico del módulo si existe
+cp .env.example .env
+```
+
+### Paso 3: Verificar que funciona
+
+Los ejemplos y scripts del proyecto cargan automáticamente el `.env` desde la raíz:
+
+```python
+# Los scripts en 03_python/ejemplos/ buscan automáticamente:
+# - .env en la raíz del proyecto (3 niveles arriba)
+# - Usan variables como DB_HOST, DB_NAME, DATA_SOURCE_PATH, etc.
+```
+
+**Ejemplo de uso en scripts:**
+```python
+# 03_python/ejemplos/03-conexion-db.py ya está configurado así:
+from dotenv import load_dotenv
+from pathlib import Path
+
+env_path = Path(__file__).parent.parent.parent / '.env'
+load_dotenv(env_path)
+
+# Ahora puedes usar:
+db_host = os.getenv('DB_HOST', 'localhost')
+```
+
+### Importante
+
+- ✅ **El archivo `.env` ya está en `.gitignore`** - no se commitea automáticamente
+- ✅ **Solo el `.env.example` está versionado** - sin valores reales
+- ✅ **En producción**, usa variables de entorno del sistema o gestores de secretos
+- ✅ **Los ejemplos del proyecto** usan estas variables automáticamente
 
 ---
 

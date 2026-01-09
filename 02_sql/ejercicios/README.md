@@ -15,7 +15,7 @@ Ejercicios prácticos para reforzar tus conocimientos de SQL.
 
 ## 🎯 Cómo usar estos ejercicios
 
-1. **Levanta la base de datos local** usando Docker (ver [README-DOCKER.md](../README-DOCKER.md))
+1. **Levanta la base de datos local** usando Docker (ver [README-DOCKER.md](../../README-DOCKER.md))
 2. **Lee el ejercicio** y trata de resolverlo
 3. **Compara con la solución** proporcionada
 4. **Experimenta** modificando las queries

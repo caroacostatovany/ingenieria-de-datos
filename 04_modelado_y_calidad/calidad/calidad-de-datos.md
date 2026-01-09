@@ -2,6 +2,8 @@
 
 La calidad de datos es fundamental para confiar en tus análisis y decisiones. Aprende a medir y mejorar la calidad.
 
+> 💡 **Ejemplo práctico**: Revisa el [notebook de Calidad de Datos](../ejemplos/02-calidad-datos.ipynb) para calcular métricas de calidad y visualizar resultados interactivamente.
+
 ---
 
 ## 🧠 ¿Qué es calidad de datos?
@@ -267,7 +269,7 @@ Antes de usar datos en producción:
 
 ## 🚀 Próximo paso
 
-Continúa con **[Validaciones](validaciones.md)** para implementar checks automáticos.
+Continúa con **[Validaciones](validaciones/validaciones.md)** para implementar checks automáticos.
 
 ---
 

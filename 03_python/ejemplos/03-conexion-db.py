@@ -9,8 +9,10 @@ from sqlalchemy import create_engine
 import os
 from dotenv import load_dotenv
 
-# Cargar variables de entorno
-load_dotenv()
+# Cargar variables de entorno desde .env en la raíz del proyecto
+from pathlib import Path
+env_path = Path(__file__).parent.parent.parent / '.env'
+load_dotenv(env_path)
 
 def conectar_db():
     """Crea conexión a la base de datos."""

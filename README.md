@@ -1,4 +1,4 @@
-# 📊 Data Engineering en Español
+# 📊 Ingenería de datos
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
@@ -38,6 +38,47 @@ Ayudarte a:
 
 ---
 
+## 🚀 Cómo empezar
+
+1. **⭐ PRIMERO:** [Configura Cursor](06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md) - Tu copiloto de AI
+2. **Configura tu entorno:**
+   ```bash
+   # Copia el archivo de configuración
+   cp .env.example .env
+   # Edita .env con tus valores (ver instrucciones abajo)
+   ```
+3. **Lee** [¿Qué es Data Engineering?](00_introduccion/que-es-data-engineering.md)
+4. **Revisa** el [Roadmap](00_introduccion/roadmap-data-engineer.md)
+5. **Sigue** el orden sugerido en el roadmap
+6. **Practica** con los ejercicios y proyectos
+7. **Usa el chat de Cursor** para hacer preguntas sobre cualquier contenido
+
+### ⚙️ Configuración de variables de entorno
+
+Este proyecto usa archivos `.env` para gestionar configuraciones de forma segura. Lee **[Archivos .env para Data Engineers](01_fundamentos/04_archivos-env-para-data-engineers.md)** para más detalles.
+
+**Configuración rápida:**
+```bash
+# 1. Copia el archivo de ejemplo desde la raíz del proyecto
+cp .env.example .env
+
+# 2. Edita .env con tus valores reales
+nano .env  # o tu editor preferido
+
+# 3. Para el módulo SQL con Docker (opcional)
+cd 02_sql
+cp ../.env.example .env  # o usa el .env.example específico del módulo
+```
+
+**Variables importantes a configurar:**
+- **Base de datos**: `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`
+- **Rutas**: `DATA_SOURCE_PATH`, `DATA_OUTPUT_PATH`
+- **APIs**: `API_KEY`, `API_URL` (si usas APIs externas)
+
+> 💡 **Nota**: El archivo `.env` está en `.gitignore` (no se commitea). Solo el `.env.example` está versionado. Los ejemplos y ejercicios del proyecto usan estas variables automáticamente.
+
+---
+
 ## 🧭 Índice visual (ruta de aprendizaje)
 
 **Elige tu punto de partida:**
@@ -59,14 +100,15 @@ Ayudarte a:
 ### 🟨 Nivel 1 — Fundamentos
 
 * 📘 [Fundamentos (carpeta)](01_fundamentos/)
-* ✅ [Tipos de Datos](01_fundamentos/tipos-de-datos.md)
-* ✅ [Batch vs Streaming](01_fundamentos/batch-vs-streaming.md)
-* ✅ [Buenas Prácticas](01_fundamentos/buenas-practicas.md)
-* ✅ [Introducción a SQL](01_fundamentos/introduccion-sql.md)
-* ✅ [Git y GitHub para Data Engineers](01_fundamentos/git-y-github-para-data-engineers.md)
-* ✅ [Archivos .env para Data Engineers](01_fundamentos/archivos-env-para-data-engineers.md)
-* ✅ [Docker para Data Engineers](01_fundamentos/docker-para-data-engineers.md)
-* ✅ [Data Engineering en la Nube](01_fundamentos/data-engineering-en-la-nube.md)
+* ✅ [00. Tipos de Datos](01_fundamentos/00_tipos-de-datos.md)
+* ✅ [01. ¿Qué es un Pipeline?](01_fundamentos/01_que-es-un-pipeline.md)
+* ✅ [02. Batch vs Streaming](01_fundamentos/02_batch-vs-streaming.md)
+* ✅ [03. Git y GitHub](01_fundamentos/03_git-y-github-para-data-engineers.md)
+* ✅ [04. Archivos .env](01_fundamentos/04_archivos-env-para-data-engineers.md)
+* ✅ [05. Docker](01_fundamentos/05_docker-para-data-engineers.md)
+* ✅ [06. Introducción a SQL](01_fundamentos/06_introduccion-sql.md)
+* ✅ [07. Buenas Prácticas](01_fundamentos/07_buenas-practicas.md)
+* ✅ [08. Data Engineering en la Nube](01_fundamentos/08_data-engineering-en-la-nube.md)
 
 ---
 
@@ -74,6 +116,9 @@ Ayudarte a:
 
 * 📘 [SQL (carpeta)](02_sql/)
 * ✅ [SQL vs PostgreSQL](02_sql/sql-vs-postgresql.md) - ¿Por qué PostgreSQL?
+* ✅ [Herramientas SQL](02_sql/herramientas/)
+  * DBeaver (visualización y generación de queries)
+  * Otras herramientas (pgAdmin, TablePlus, etc.)
 * ✅ [SQL básico](02_sql/sql-basico/)
 * ✅ [SQL intermedio](02_sql/sql-intermedio/)
 * ✅ [SQL avanzado](02_sql/sql-avanzado/)
@@ -85,11 +130,12 @@ Ayudarte a:
 ### 🟦 Nivel 3 — Python aplicado
 
 * 📘 [Python (carpeta)](03_python/)
-* ✅ [Fundamentos Python para DE](03_python/fundamentos-python.md)
-* ✅ [Python para Datos](03_python/python-para-datos/)
-* ✅ [Manejo de archivos](03_python/manejo-de-archivos.md)
-* ✅ [Scripts vs módulos](03_python/scripts-vs-modulos.md)
-* ✅ [Jupyter Notebooks para Datos](03_python/jupyter-notebooks-para-datos.md)
+* ✅ [Fundamentos](03_python/fundamentos/)
+  * Sintaxis esencial, scripts vs módulos, manejo de archivos
+* ✅ [Pandas](03_python/pandas/)
+  * Manipulación de datos, exploración (EDA), Jupyter Notebooks
+* ✅ [Storytelling con Datos](03_python/storytelling/)
+  * Comunicar insights efectivamente, visualizaciones
 * ✅ [Ejemplos](03_python/ejemplos/)
 
 ---
@@ -97,11 +143,14 @@ Ayudarte a:
 ### 🟪 Nivel 4 — Modelado y calidad
 
 * 📘 [Modelado y calidad (carpeta)](04_modelado_y_calidad/)
-* ✅ [Modelado analítico](04_modelado_y_calidad/modelado-analitico.md)
-* ✅ [Calidad de datos](04_modelado_y_calidad/calidad-de-datos.md)
-* ✅ [Validaciones](04_modelado_y_calidad/validaciones.md)
-* ✅ [Testing de datos](04_modelado_y_calidad/testing-de-datos.md)
-* ✅ [Great Expectations para Calidad](04_modelado_y_calidad/great-expectations-para-calidad.md)
+* ✅ [Modelado](04_modelado_y_calidad/modelado/)
+  * Modelos dimensionales, Star Schema, Snowflake
+* ✅ [Calidad de Datos](04_modelado_y_calidad/calidad/)
+  * Métricas y KPIs de calidad
+  * Validaciones y Testing
+  * Herramientas (Great Expectations, Pandera)
+* ✅ [Ejemplos (Notebooks)](04_modelado_y_calidad/ejemplos/)
+  * Modelado Star Schema, Calidad, Validaciones, Testing, Great Expectations, Pandera
 
 ---
 
@@ -120,27 +169,34 @@ Ayudarte a:
 
 ### 🤖 AI como copiloto
 
-* 📘 [AI como copiloto (carpeta)](06_ai_como_copiloto/)
-* ✅ [Cursor para Data Engineers](06_ai_como_copiloto/cursor-para-data-engineers.md)
-* 📄 [Cómo usar AI como DE](06_ai_como_copiloto/como-usar-ai-como-de.md) *(próximo)*
-* 📄 [Ejemplos de Prompts](06_ai_como_copiloto/ejemplos-prompts.md) *(próximo)*
-* 📄 [Documentación con AI](06_ai_como_copiloto/documentacion-con-ai.md) *(próximo)*
-* 📄 [Límites de la AI](06_ai_como_copiloto/limites-de-la-ai.md) *(próximo)*
+* 📘 [AI como Copiloto (carpeta)](06_inteligencia_artificial/)
+* ✅ [Herramientas](06_inteligencia_artificial/herramientas/)
+  * Cursor para Data Engineers
+* ✅ [Uso Práctico](06_inteligencia_artificial/uso-practico/)
+  * Cómo usar AI como DE
+  * Ejemplos de Prompts
+  * Documentación con AI
+* ✅ [Límites de la AI](06_inteligencia_artificial/limites-de-la-ai.md)
+* ✅ [Buenas Prácticas de AI](06_inteligencia_artificial/buenas-practicas-ai.md)
 
 ---
 
 ### 🚀 Proyectos End-to-End
 
 * 📘 [Proyectos (carpeta)](07_proyectos/)
-* 🧪 (Próximo) Proyecto 01 — Pipeline simple
-* 🧪 (Próximo) Proyecto 02 — SQL + Python
+* ✅ [Nivel Principiante](07_proyectos/principiante/)
+  * Pipeline ETL Simple, Análisis con Pandas, Docker
+* ✅ [Nivel Intermedio](07_proyectos/intermedio/)
+  * SQL+Python, Validaciones, Airflow, IA como Copiloto
+* ✅ [Nivel Avanzado](07_proyectos/avanzado/)
+  * Pipeline Completo, Producción Local, Cloud Gratis, IA Avanzada
 
 ---
 
 ### ☁️ Data Engineering en la Nube
 
 * 📘 [Cloud (carpeta)](08_cloud/)
-* ✅ [Conceptos fundamentales](01_fundamentos/data-engineering-en-la-nube.md)
+* ✅ [Conceptos fundamentales](01_fundamentos/08_data-engineering-en-la-nube.md)
 * 📘 [AWS](08_cloud/aws/) *(próximo)*
 * 📘 [Google Cloud Platform](08_cloud/gcp/) *(próximo)*
 * 📘 [Microsoft Azure](08_cloud/azure/) *(próximo)*

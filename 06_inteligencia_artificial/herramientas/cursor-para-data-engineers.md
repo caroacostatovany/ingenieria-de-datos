@@ -2,6 +2,8 @@
 
 Cursor es un editor de código moderno basado en VS Code pero con **capacidades de AI integradas** que lo hacen especialmente útil para Data Engineers que quieren usar AI como copiloto.
 
+> ⭐ **IMPORTANTE**: Configura Cursor **ANTES** de empezar con SQL o Python. Te ayudará durante todo tu aprendizaje en este repositorio.
+
 ---
 
 ## 🧠 ¿Qué es Cursor?
@@ -12,7 +14,7 @@ Cursor es un editor de código que combina:
 * **Interfaz familiar** si ya conoces VS Code
 * **Gratis** para uso personal
 
-> Cursor es perfecto para Data Engineers que quieren usar AI como copiloto sin cambiar de editor.
+> Cursor es perfecto para Data Engineers que quieren usar AI como copiloto sin cambiar de editor. En este repositorio, puedes usar el chat de Cursor para hacer preguntas sobre cualquier contenido, pedir explicaciones adaptadas, o solicitar ayuda para ejecutar comandos.
 
 ---
 
@@ -61,7 +63,7 @@ Una vez abierto el proyecto, verás:
 ├── 📁 03_python/
 ├── 📁 04_modelado_y_calidad/
 ├── 📁 05_pipelines/
-├── 📁 06_ai_como_copiloto/
+├── 📁 06_inteligencia_artificial/
 ├── 📁 07_proyectos/
 ├── 📄 README.md
 ├── 📄 LICENSE
@@ -394,14 +396,256 @@ pytest tests/
 
 ---
 
-## 🎓 Próximos pasos
+## 💬 Cómo interactuar con el Chat de Cursor en este repositorio
 
-1. **Clona el repositorio** siguiendo los pasos arriba
-2. **Explora los archivos** usando la navegación de Cursor
-3. **Usa AI** para entender código que no conozcas
-4. **Practica** escribiendo código con ayuda de AI
-5. **Contribuye** al repositorio usando Git integrado
+El chat de Cursor puede ayudarte a navegar y aprender de este repositorio. Aquí tienes ejemplos de prompts que funcionan bien:
+
+### 🎓 Preguntas sobre progreso y aprendizaje
+
+**Ejemplos de prompts:**
+
+```
+"Ya terminé de aprender SQL, ¿qué sigue según el roadmap?"
+```
+
+```
+"He completado los fundamentos, ¿cuál es el siguiente módulo recomendado?"
+```
+
+```
+"¿En qué orden debo leer los archivos de 02_sql?"
+```
+
+**Qué esperar:** El chat te guiará según el roadmap y la estructura del repositorio.
 
 ---
 
-> **Tip**: Cursor es una herramienta poderosa, pero recuerda siempre **revisar y entender** el código que la AI genera. La AI es un copiloto, no un reemplazo de tu conocimiento.
+### 📖 Explicaciones adaptadas
+
+**Ejemplos de prompts:**
+
+```
+"Explica el archivo 01_fundamentos/05_docker-para-data-engineers.md como para una persona de negocio"
+```
+
+```
+"Explica qué es un pipeline de datos de forma simple, sin tecnicismos"
+```
+
+```
+"Resume el contenido de 02_sql/sql-basico/01-select-y-where.md en términos simples"
+```
+
+**Qué esperar:** Explicaciones adaptadas al nivel que solicites (negocio, principiante, técnico).
+
+---
+
+### 📚 Más ejemplos y práctica
+
+**Ejemplos de prompts:**
+
+```
+"Dame más ejemplos de queries SQL con GROUP BY"
+```
+
+```
+"Genera más ejemplos de pipelines ETL en Python"
+```
+
+```
+"Muéstrame más casos de uso de validaciones de datos"
+```
+
+**Qué esperar:** Ejemplos adicionales basados en el contenido del repositorio.
+
+---
+
+### 🐳 Ayuda con comandos y ejecución
+
+**Ejemplos de prompts:**
+
+```
+"Ayúdame a ejecutar Docker para la base de datos SQL según las instrucciones del repositorio"
+```
+
+```
+"¿Cómo ejecuto el docker-compose.yml de 02_sql?"
+```
+
+```
+"Guíame paso a paso para configurar la base de datos PostgreSQL local"
+```
+
+**Qué esperar:** El chat te guiará usando las instrucciones específicas del repositorio (como `02_sql/README-DOCKER.md`).
+
+---
+
+### 🔍 Explorar contenido
+
+**Ejemplos de prompts:**
+
+```
+"¿Qué archivos hablan sobre calidad de datos?"
+```
+
+```
+"Muéstrame todos los ejemplos de pipelines en el repositorio"
+```
+
+```
+"¿Dónde puedo encontrar información sobre Great Expectations?"
+```
+
+**Qué esperar:** Navegación inteligente por el repositorio.
+
+---
+
+### 🛠️ Ayuda con código
+
+**Ejemplos de prompts:**
+
+```
+"Explica este código SQL del archivo 02_sql/ejercicios/01-ejercicios-basicos.md"
+```
+
+```
+"¿Cómo puedo mejorar este pipeline Python?"
+```
+
+```
+"Genera un ejemplo similar al que está en 03_python/ejemplos/01-pipeline-etl-simple.py"
+```
+
+**Qué esperar:** Análisis y mejora de código basado en los ejemplos del repositorio.
+
+---
+
+## 📋 Reglas para mejores resultados
+
+### ✅ Haz esto:
+
+1. **Sé específico sobre el archivo o módulo:**
+   ```
+   ✅ "Explica 02_sql/sql-intermedio/03-window-functions.md"
+   ❌ "Explica window functions"
+   ```
+
+2. **Menciona el contexto del repositorio:**
+   ```
+   ✅ "Según el roadmap de este repositorio, ¿qué sigue después de SQL?"
+   ❌ "¿Qué sigue después de SQL?"
+   ```
+
+3. **Pide ayuda con comandos específicos del repo:**
+   ```
+   ✅ "Ayúdame a ejecutar Docker según 02_sql/README-DOCKER.md"
+   ❌ "Cómo ejecuto Docker"
+   ```
+
+4. **Solicita explicaciones adaptadas:**
+   ```
+   ✅ "Explica esto como para un principiante"
+   ✅ "Explica esto como para una persona de negocio"
+   ✅ "Explica esto de forma técnica"
+   ```
+
+5. **Pregunta sobre progreso:**
+   ```
+   ✅ "Ya terminé de aprender SQL, ¿qué sigue según el roadmap?"
+   ✅ "He completado los fundamentos, ¿cuál es el siguiente módulo?"
+   ```
+
+6. **Pide más ejemplos:**
+   ```
+   ✅ "Dame más ejemplos de queries SQL con GROUP BY"
+   ✅ "Muéstrame más casos de uso de validaciones de datos"
+   ```
+
+### ❌ Evita esto:
+
+1. **Preguntas muy genéricas sin contexto:**
+   ```
+   ❌ "¿Qué es SQL?"
+   ✅ "Explica la introducción a SQL en 01_fundamentos/06_introduccion-sql.md"
+   ```
+
+2. **Pedir código sin revisar ejemplos existentes:**
+   ```
+   ❌ "Crea un pipeline ETL"
+   ✅ "Crea un pipeline ETL similar al ejemplo en 03_python/ejemplos/01-pipeline-etl-simple.py"
+   ```
+
+3. **Preguntas sin mencionar el repositorio:**
+   ```
+   ❌ "¿Qué sigue después de SQL?"
+   ✅ "Según el roadmap de este repositorio, ¿qué sigue después de SQL?"
+   ```
+
+---
+
+## 🎯 Ejemplos de flujos completos
+
+### Flujo 1: Aprender un módulo nuevo
+
+```
+1. "¿Qué debo leer primero en 02_sql?"
+2. "Explica 02_sql/sql-basico/01-select-y-where.md de forma simple"
+3. "Dame más ejemplos de SELECT con WHERE"
+4. "Ya terminé SQL básico, ¿qué sigue?"
+```
+
+### Flujo 2: Configurar entorno
+
+```
+1. "Ayúdame a configurar Docker para SQL según las instrucciones del repo"
+2. "¿Cómo ejecuto el docker-compose.yml de 02_sql?"
+3. "¿Qué debo hacer después de que Docker esté corriendo?"
+```
+
+**Instrucciones para el chat:** Cuando el usuario pida ayuda con Docker, sigue estos pasos del repositorio:
+
+1. **Referenciar** `02_sql/README-DOCKER.md` para instrucciones completas
+2. **Guía paso a paso:**
+   ```bash
+   # Paso 1: Ir a la carpeta SQL
+   cd 02_sql
+   
+   # Paso 2: Copiar archivo de configuración
+   cp .env.example .env
+   
+   # Paso 3: (Opcional) Editar .env si se necesita
+   
+   # Paso 4: Iniciar servicios
+   docker-compose up -d
+   
+   # Paso 5: Verificar que está corriendo
+   docker-compose ps
+   ```
+3. **Explicar conexión:**
+   - **DBeaver (recomendado):** Host: localhost, Port: 5432, Database: data_engineering, User: de_user, Password: de_password
+   - **pgAdmin:** http://localhost:5050 (admin@example.com / admin)
+4. **Mencionar** que los datos de ejemplo se cargan automáticamente desde `init-scripts/`
+
+### Flujo 3: Entender un concepto
+
+```
+1. "Explica qué es un pipeline de datos como para un principiante"
+2. "Muéstrame ejemplos de pipelines en este repositorio"
+3. "¿Cómo se relaciona esto con lo que aprendí en fundamentos?"
+```
+
+---
+
+## 🎓 Próximos pasos
+
+1. **Clona el repositorio** siguiendo los pasos arriba
+2. **Configura Cursor** con las extensiones recomendadas
+3. **Abre el chat** (`Cmd+L` / `Ctrl+L`) y prueba los prompts de arriba
+4. **Explora los archivos** usando la navegación de Cursor
+5. **Usa AI** para entender código que no conozcas
+6. **Practica** escribiendo código con ayuda de AI
+7. **Contribuye** al repositorio usando Git integrado
+
+---
+
+> **Tip**: Cursor es una herramienta poderosa, pero recuerda siempre **revisar y entender** el código que la AI genera. La AI es un copiloto, no un reemplazo de tu conocimiento. Usa estos prompts como punto de partida y adapta según tus necesidades.

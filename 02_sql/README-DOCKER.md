@@ -9,15 +9,21 @@ Este directorio incluye una configuración de Docker para levantar una base de d
 ### 1. Copiar archivo de configuración
 
 ```bash
+# Opción 1: Usar el .env.example específico de este módulo
 cp .env.example .env
+
+# Opción 2: Usar el .env.example de la raíz del proyecto
+cp ../.env.example .env
 ```
 
 ### 2. (Opcional) Ajustar configuración
 
 Edita el archivo `.env` si quieres cambiar:
-* Nombre de la base de datos
-* Usuario y contraseña
-* Puertos
+* Nombre de la base de datos (`POSTGRES_DB` o `DB_NAME`)
+* Usuario y contraseña (`POSTGRES_USER`, `POSTGRES_PASSWORD` o `DB_USER`, `DB_PASSWORD`)
+* Puertos (`POSTGRES_PORT` o `DB_PORT`)
+
+> 💡 **Nota**: Este módulo usa las variables `POSTGRES_*` para Docker Compose, pero también puedes usar `DB_*` si prefieres consistencia con el resto del proyecto. Lee más sobre archivos `.env` en [01_fundamentos/04_archivos-env-para-data-engineers.md](../01_fundamentos/04_archivos-env-para-data-engineers.md).
 
 ### 3. Iniciar servicios
 
@@ -51,7 +57,33 @@ docker exec -it sql-practice-db psql -U de_user -d data_engineering
 psql -h localhost -p 5432 -U de_user -d data_engineering
 ```
 
-### Opción 2: pgAdmin (interfaz web)
+### Opción 2: DBeaver (Recomendado - Cliente Desktop)
+
+DBeaver es nuestra recomendación principal. Es más intuitivo y potente que pgAdmin.
+
+**Instalación:**
+```bash
+# macOS
+brew install --cask dbeaver-community
+
+# O descarga desde https://dbeaver.io/download/
+```
+
+**Configuración:**
+1. Abre DBeaver
+2. **File → New → Database Connection**
+3. Selecciona **PostgreSQL**
+4. Configura:
+   - Host: `localhost`
+   - Port: `5432`
+   - Database: `data_engineering`
+   - Username: `de_user`
+   - Password: `de_password`
+5. **Test Connection** y luego **Finish**
+
+**Lee la guía completa:** [DBeaver para Data Engineers](herramientas/dbeaver-cliente-sql.md)
+
+### Opción 3: pgAdmin (interfaz web)
 
 1. Abre tu navegador en: `http://localhost:5050`
 2. Login con:
@@ -64,7 +96,7 @@ psql -h localhost -p 5432 -U de_user -d data_engineering
    - Username: `de_user` (o el que configuraste)
    - Password: `de_password` (o el que configuraste)
 
-### Opción 3: Desde Python
+### Opción 4: Desde Python
 
 ```python
 import psycopg2
@@ -200,6 +232,69 @@ Una vez que tengas la base de datos corriendo:
 
 ---
 
+## 🛠️ Herramientas recomendadas
+
+### DBeaver (Recomendado)
+
+**Ventajas:**
+* ✅ Interfaz más intuitiva que pgAdmin
+* ✅ Query Builder visual
+* ✅ Mejor para visualizar datos
+* ✅ Exportar datos fácilmente
+* ✅ Gratis y multiplataforma
+
+**Instalación:**
+```bash
+# macOS
+brew install --cask dbeaver-community
+
+# O descarga desde https://dbeaver.io/download/
+```
+
+**Configuración:**
+* Host: `localhost`
+* Port: `5432`
+* Database: `data_engineering`
+* Username: `de_user`
+* Password: `de_password`
+
+Lee la **[guía completa de DBeaver](herramientas/dbeaver-cliente-sql.md)** para más detalles.
+
+### pgAdmin (Incluido en Docker)
+
+Ya está disponible en `http://localhost:5050` si usas Docker Compose.
+
+---
+
+## 🛠️ Herramientas recomendadas
+
+### DBeaver (Recomendado)
+
+**Instalación:**
+```bash
+# macOS
+brew install --cask dbeaver-community
+
+# Windows/Linux: Descarga desde https://dbeaver.io/download/
+```
+
+**Configuración:**
+* Host: `localhost`
+* Port: `5432`
+* Database: `data_engineering`
+* Username: `de_user`
+* Password: `de_password`
+
+**Lee la guía completa:** [DBeaver para Data Engineers](herramientas/dbeaver-cliente-sql.md)
+
+### pgAdmin (Incluido en Docker)
+
+Ya está disponible en `http://localhost:5050` si usas Docker Compose.
+
+**Comparación de herramientas:** [Otras Herramientas SQL](herramientas/otras-herramientas-sql.md)
+
+---
+
 ## 💡 Tips
 
 * Usa `\dt` en psql para listar todas las tablas
@@ -207,6 +302,7 @@ Una vez que tengas la base de datos corriendo:
 * Usa `\q` para salir de psql
 * Los datos persisten entre reinicios del contenedor
 * Puedes tener múltiples bases de datos en el mismo PostgreSQL
+* **Recomendación**: Usa DBeaver para mejor experiencia visual
 
 ---
 

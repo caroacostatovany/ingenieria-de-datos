@@ -6,39 +6,27 @@ Esta carpeta explora cómo usar Inteligencia Artificial como herramienta de apoy
 
 ## 📖 Contenido
 
-### 📘 Documentos disponibles
+### 📘 Estructura
 
-* **[Cursor para Data Engineers](cursor-para-data-engineers.md)**
-  * ¿Qué es Cursor y por qué usarlo?
-  * Cómo clonar y abrir el repositorio
-  * Usar AI integrada (Chat, Composer, Inline Edit)
-  * Configuración inicial y extensiones
-  * Flujo de trabajo recomendado
-  * Casos de uso específicos para Data Engineering
+* ✅ **[Herramientas](herramientas/)**
+  * Cursor para Data Engineers
+  * Otras herramientas de AI
 
-* **[Cómo usar AI como Data Engineer](como-usar-ai-como-de.md)** *(próximo)*
-  * Casos de uso prácticos
-  * Cuándo usar AI y cuándo no
-  * Integración en el flujo de trabajo
-  * Herramientas recomendadas
+* ✅ **[Uso Práctico](uso-practico/)**
+  * Cómo usar AI como Data Engineer
+  * Ejemplos de Prompts efectivos
+  * Documentación con AI
 
-* **[Ejemplos de Prompts](ejemplos-prompts.md)** *(próximo)*
-  * Prompts efectivos para Data Engineering
-  * Generación de código SQL/Python
-  * Documentación automática
-  * Debugging asistido
-
-* **[Documentación con AI](documentacion-con-ai.md)** *(próximo)*
-  * Generar documentación de pipelines
-  * Explicar código complejo
-  * Crear READMEs y guías
-  * Mantener documentación actualizada
-
-* **[Límites de la AI](limites-de-la-ai.md)** *(próximo)*
+* ✅ **[Límites y Buenas Prácticas](limites-de-la-ai.md)**
   * Qué NO puede hacer la AI
-  * Errores comunes al confiar en AI
+  * Errores comunes
   * Validación y revisión crítica
-  * Cuándo confiar y cuándo verificar
+
+* ✅ **[Buenas Prácticas de AI](buenas-practicas-ai.md)**
+  * Principios fundamentales
+  * Seguridad
+  * Validación y testing
+  * Flujo de trabajo recomendado
 
 ---
 
@@ -46,11 +34,12 @@ Esta carpeta explora cómo usar Inteligencia Artificial como herramienta de apoy
 
 Al finalizar esta sección, deberías poder:
 
-* Usar Cursor como editor con AI integrada para trabajar eficientemente
-* Usar AI para acelerar tareas repetitivas
-* Generar código y documentación con AI
-* Saber cuándo confiar en AI y cuándo validar manualmente
-* Integrar AI en tu flujo de trabajo sin depender de ella
+* Elegir y usar herramientas de AI apropiadas (Cursor, Copilot, etc.)
+* Escribir prompts efectivos para obtener mejores resultados
+* Usar AI para acelerar tareas repetitivas (código, documentación, tests)
+* Saber cuándo usar AI y cuándo no
+* Validar y revisar código generado por AI
+* Integrar AI en tu flujo de trabajo de forma segura y efectiva
 
 ---
 
@@ -81,12 +70,18 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🚀 Siguiente paso
+## 🚀 ¿Qué sigue?
 
-Después de entender cómo usar AI:
+Según el roadmap, después de entender cómo usar AI:
 
-* **[07_proyectos](../07_proyectos/)** para aplicar AI en proyectos reales
-* Revisa otras secciones con AI como herramienta de apoyo
+**👉 Siguiente etapa: [08_cloud](../08_cloud/)** (Etapa 6 del roadmap)
+* Aplicar conocimientos en entornos cloud
+* Servicios cloud para Data Engineering
+* AWS, GCP, Azure
+
+**Después**: **[07_proyectos](../07_proyectos/)** (Etapa 7) para proyectos end-to-end completos que integren todo lo aprendido.
+
+> 💡 **Tip**: Revisa el [Roadmap completo](../00_introduccion/roadmap-data-engineer.md) para ver la ruta completa.
 
 ---
 

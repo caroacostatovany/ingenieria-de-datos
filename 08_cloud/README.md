@@ -57,13 +57,13 @@ Antes de empezar, asegúrate de dominar:
 * **[05_pipelines](../05_pipelines/)**: Conceptos de pipelines
 
 Y especialmente:
-* **[Data Engineering en la Nube](../01_fundamentos/data-engineering-en-la-nube.md)**: Conceptos fundamentales
+* **[Data Engineering en la Nube](../01_fundamentos/08_data-engineering-en-la-nube.md)**: Conceptos fundamentales
 
 ---
 
 ## 🚀 Cómo empezar
 
-1. **Lee primero** [Data Engineering en la Nube](../01_fundamentos/data-engineering-en-la-nube.md) en fundamentos
+1. **Lee primero** [Data Engineering en la Nube](../01_fundamentos/08_data-engineering-en-la-nube.md) en fundamentos
 2. **Elige un proveedor** para empezar (recomendado: AWS o GCP)
 3. **Crea una cuenta** y usa el free tier
 4. **Sigue los tutoriales** del proveedor elegido
@@ -100,10 +100,18 @@ La nube es una herramienta poderosa, pero:
 
 ---
 
-## 🚀 Próximo paso
+## 🚀 ¿Qué sigue?
 
-Después de dominar un proveedor cloud:
+Según el roadmap, después de dominar cloud:
 
-* **[07_proyectos](../07_proyectos/)** para proyectos end-to-end en cloud
-* Explora servicios avanzados (streaming, ML, etc.)
-* Considera arquitecturas multi-cloud
+**👉 Siguiente etapa: [07_proyectos](../07_proyectos/)** (Etapa 7 del roadmap)
+* Proyectos end-to-end completos
+* Integrar todo lo aprendido
+* Proyectos para tu portafolio
+
+**También puedes:**
+* Explorar servicios avanzados (streaming, ML, etc.)
+* Considerar arquitecturas multi-cloud
+* Profundizar en un proveedor específico
+
+> 💡 **Tip**: Revisa el [Roadmap completo](../00_introduccion/roadmap-data-engineer.md) para ver la ruta completa.

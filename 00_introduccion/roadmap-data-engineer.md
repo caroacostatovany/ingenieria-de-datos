@@ -42,7 +42,29 @@ Necesitas **contexto**.
 
 ---
 
-## 🟢 Etapa 0.5 — Herramientas esenciales
+## 🟢 Etapa 0.5 — Cursor: Tu Copiloto de AI (PRIMERO)
+
+**Objetivo:** Configurar Cursor para usar AI como copiloto desde el inicio.
+
+**⚠️ IMPORTANTE:** Configura Cursor **ANTES** de empezar con SQL o Python. Te ayudará durante todo el aprendizaje.
+
+Aprende:
+
+* **Instalar y configurar Cursor**
+* **Clonar este repositorio en Cursor**
+* **Usar el chat de AI** para hacer preguntas sobre el contenido
+* **Pedir explicaciones** adaptadas a tu nivel
+* **Solicitar ayuda** para ejecutar comandos (Docker, etc.)
+
+> 💡 **Tip**: Usa Cursor desde el día 1. Puedes preguntarle sobre cualquier archivo del repositorio, pedir explicaciones simples, o solicitar ayuda para ejecutar comandos.
+
+📁 Contenido recomendado:
+
+* **[Cursor para Data Engineers](../06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)** ⭐ **EMPIEZA AQUÍ**
+
+---
+
+## 🟢 Etapa 0.6 — Herramientas esenciales
 
 **Objetivo:** Configurar tu entorno de trabajo.
 
@@ -51,17 +73,18 @@ Aprende:
 * **Git y GitHub** para versionar código
 * **Archivos .env** para gestionar configuraciones
 * **Docker** para entornos reproducibles
-* **Cursor** (o editor con AI) para trabajar eficientemente
 
 Estas herramientas te acompañarán durante todo el camino.
 Aprenderlas temprano te ahorrará tiempo después.
 
 📁 Contenido recomendado:
 
-* [Git y GitHub para Data Engineers](../01_fundamentos/git-y-github-para-data-engineers.md)
-* [Archivos .env para Data Engineers](../01_fundamentos/archivos-env-para-data-engineers.md)
-* [Docker para Data Engineers](../01_fundamentos/docker-para-data-engineers.md)
-* [Cursor para Data Engineers](../06_ai_como_copiloto/cursor-para-data-engineers.md)
+* [Tipos de Datos](../01_fundamentos/00_tipos-de-datos.md)
+* [¿Qué es un Pipeline?](../01_fundamentos/01_que-es-un-pipeline.md)
+* [Batch vs Streaming](../01_fundamentos/02_batch-vs-streaming.md)
+* [Git y GitHub para Data Engineers](../01_fundamentos/03_git-y-github-para-data-engineers.md)
+* [Archivos .env para Data Engineers](../01_fundamentos/04_archivos-env-para-data-engineers.md)
+* [Docker para Data Engineers](../01_fundamentos/05_docker-para-data-engineers.md)
 
 ---
 
@@ -88,7 +111,7 @@ Buenas prácticas:
 
 📁 Contenido recomendado:
 
-* [Introducción a SQL](../01_fundamentos/introduccion-sql.md)
+* [Introducción a SQL](../01_fundamentos/06_introduccion-sql.md)
 * [SQL básico](../02_sql/sql-basico/) *(próximo)*
 * [SQL intermedio](../02_sql/sql-intermedio/) *(próximo)*
 * [SQL avanzado](../02_sql/sql-avanzado/) *(próximo)*
@@ -115,10 +138,10 @@ Se trata de **escribir código mantenible**.
 
 📁 Contenido recomendado:
 
-* [Fundamentos Python para DE](../03_python/fundamentos-python.md) *(próximo)*
-* [Python para Datos](../03_python/python-para-datos/) *(próximo)*
-* [Manejo de archivos](../03_python/manejo-de-archivos.md) *(próximo)*
-* [Scripts vs módulos](../03_python/scripts-vs-modulos.md) *(próximo)*
+* [Fundamentos Python](../03_python/fundamentos/)
+* [Pandas para Datos](../03_python/pandas/)
+* [Storytelling con Datos](../03_python/storytelling/)
+* [Ejemplos](../03_python/ejemplos/)
 
 ---
 
@@ -138,10 +161,12 @@ Aquí pasas de "mover datos" a **ingeniería real**.
 
 📁 Contenido recomendado:
 
-* [Modelado analítico](../04_modelado_y_calidad/modelado-analitico.md) *(próximo)*
-* [Calidad de datos](../04_modelado_y_calidad/calidad-de-datos.md) *(próximo)*
-* [Validaciones](../04_modelado_y_calidad/validaciones.md) *(próximo)*
-* [Testing de datos](../04_modelado_y_calidad/testing-de-datos.md) *(próximo)*
+* [Modelado analítico](../04_modelado_y_calidad/modelado/)
+* [Calidad de datos](../04_modelado_y_calidad/calidad/)
+* [Validaciones](../04_modelado_y_calidad/calidad/validaciones/)
+* [Testing de datos](../04_modelado_y_calidad/calidad/validaciones/testing-de-datos.md)
+* [Herramientas](../04_modelado_y_calidad/calidad/herramientas/)
+* [Ejemplos (Notebooks)](../04_modelado_y_calidad/ejemplos/)
 
 ---
 
@@ -164,30 +189,15 @@ Es la **orquestación correcta**.
 📁 Contenido recomendado:
 
 * [¿Qué es un Pipeline?](../05_pipelines/pipelines-basicos/que-es-un-pipeline.md) *(conceptual)*
-* [Batch vs Streaming](../01_fundamentos/batch-vs-streaming.md)
+* [Batch vs Streaming](../01_fundamentos/02_batch-vs-streaming.md)
 * [Pipelines básicos](../05_pipelines/pipelines-basicos/)
 * [Pipelines con Python](../05_pipelines/pipelines-basicos/pipelines-con-python.md)
-* [Introducción a Airflow](../05_pipelines/introduccion-airflow.md) *(próximo)*
-* [Buenas Prácticas](../01_fundamentos/buenas-practicas.md)
+* [Introducción a Airflow](../05_pipelines/orquestadores/airflow.md)
+* [Buenas Prácticas](../01_fundamentos/07_buenas-practicas.md)
 
 ---
 
-## 🔵 Etapa 5 — Arquitectura de datos
-
-**Objetivo:** Pensar en sistemas, no solo en tareas.
-
-Aprende:
-
-* Data Warehouse vs Data Lake
-* Capas de datos
-* Trade-offs de diseño
-* Costos y escalabilidad
-
-Aquí empiezas a pensar como **Data Engineer senior**.
-
----
-
-## 🤖 Etapa 6 — AI como copiloto
+## 🤖 Etapa 5 — AI como copiloto
 
 **Objetivo:** Aumentar productividad sin perder criterio.
 
@@ -211,11 +221,36 @@ La responsabilidad sigue siendo tuya.
 
 📁 Contenido recomendado:
 
-* [Cursor para Data Engineers](../06_ai_como_copiloto/cursor-para-data-engineers.md)
-* [Cómo usar AI como DE](../06_ai_como_copiloto/como-usar-ai-como-de.md) *(próximo)*
-* [Ejemplos de Prompts](../06_ai_como_copiloto/ejemplos-prompts.md) *(próximo)*
-* [Documentación con AI](../06_ai_como_copiloto/documentacion-con-ai.md) *(próximo)*
-* [Límites de la AI](../06_ai_como_copiloto/limites-de-la-ai.md) *(próximo)*
+* [Cursor para Data Engineers](../06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)
+* [Cómo usar AI como DE](../06_inteligencia_artificial/uso-practico/como-usar-ai-como-de.md)
+* [Ejemplos de Prompts](../06_inteligencia_artificial/uso-practico/ejemplos-prompts.md)
+* [Documentación con AI](../06_inteligencia_artificial/uso-practico/documentacion-con-ai.md)
+* [Límites de la AI](../06_inteligencia_artificial/limites-de-la-ai.md)
+* [Buenas Prácticas de AI](../06_inteligencia_artificial/buenas-practicas-ai.md)
+
+---
+
+## 🔵 Etapa 6 — Data Engineering en la Nube
+
+**Objetivo:** Aplicar conocimientos en entornos cloud.
+
+Aprende:
+
+* **Conceptos fundamentales**: Serverless, almacenamiento de objetos, servicios gestionados
+* **Proveedores principales**: AWS, GCP, Azure
+* **Servicios clave**: Almacenamiento, procesamiento, orquestación
+* **Costos y optimización**: Free tier, monitoreo de costos
+* **Arquitecturas cloud**: Data Warehouse vs Data Lake en cloud
+
+> 💡 **Nota**: Puedes aprender cloud en paralelo con otras etapas. No es necesario esperar hasta aquí.
+
+📁 Contenido recomendado:
+
+* [Data Engineering en la Nube](../01_fundamentos/08_data-engineering-en-la-nube.md)
+* [AWS](../08_cloud/aws/) *(próximo)*
+* [Google Cloud Platform](../08_cloud/gcp/) *(próximo)*
+* [Microsoft Azure](../08_cloud/azure/) *(próximo)*
+* [Multi-Cloud](../08_cloud/multi-cloud/) *(próximo)*
 
 ---
 
@@ -236,8 +271,9 @@ Un proyecto bien hecho vale más que 10 cursos.
 
 📁 Contenido recomendado:
 
-* [Proyecto 01: Pipeline Simple](../07_proyectos/proyecto_01_pipeline_simple/) *(próximo)*
-* [Proyecto 02: SQL + Python](../07_proyectos/proyecto_02_pipeline_sql_python/) *(próximo)*
+* [Proyectos Principiantes](../07_proyectos/principiante/)
+* [Proyectos Intermedios](../07_proyectos/intermedio/)
+* [Proyectos Avanzados](../07_proyectos/avanzado/)
 
 ---
 

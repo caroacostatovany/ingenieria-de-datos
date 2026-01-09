@@ -4,8 +4,15 @@ Ejemplo 2: Limpieza de datos
 Ejemplo de cómo limpiar un dataset común.
 """
 
+import os
 import pandas as pd
 import numpy as np
+from dotenv import load_dotenv
+from pathlib import Path
+
+# Cargar variables de entorno desde .env en la raíz del proyecto
+env_path = Path(__file__).parent.parent.parent / '.env'
+load_dotenv(env_path)
 
 def limpiar_datos(df):
     """Limpia un DataFrame."""

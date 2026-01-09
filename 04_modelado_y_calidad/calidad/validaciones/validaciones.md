@@ -2,6 +2,8 @@
 
 Las validaciones aseguran que los datos cumplan con las expectativas antes de usarlos. Aprende a implementarlas efectivamente.
 
+> 💡 **Ejemplo práctico**: Revisa el [notebook de Validaciones](../ejemplos/06-validaciones.ipynb) para ver cómo implementar validaciones de esquema, rangos y completitud en pipelines.
+
 ---
 
 ## 🧠 ¿Qué son las validaciones?
@@ -362,7 +364,7 @@ validar_rangos(df_final)
 
 ## 🚀 Próximo paso
 
-Continúa con **[Testing de datos](testing-de-datos.md)** y **[Great Expectations](great-expectations-para-calidad.md)**.
+Continúa con **[Testing de datos](testing-de-datos.md)** y **[Great Expectations](../herramientas/great-expectations-para-calidad.md)**.
 
 ---
 
