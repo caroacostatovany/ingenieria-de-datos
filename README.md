@@ -98,10 +98,11 @@ Ayudarte a:
 ### 🟪 Nivel 4 — Modelado y calidad
 
 * 📘 [Modelado y calidad (carpeta)](04_modelado_y_calidad/)
-* 📄 [Modelado analítico](04_modelado_y_calidad/modelado-analitico.md) *(próximo)*
-* 📄 [Calidad de datos](04_modelado_y_calidad/calidad-de-datos.md) *(próximo)*
-* 📄 [Validaciones](04_modelado_y_calidad/validaciones.md) *(próximo)*
-* 📄 [Testing de datos](04_modelado_y_calidad/testing-de-datos.md) *(próximo)*
+* ✅ [Modelado analítico](04_modelado_y_calidad/modelado-analitico.md)
+* ✅ [Calidad de datos](04_modelado_y_calidad/calidad-de-datos.md)
+* ✅ [Validaciones](04_modelado_y_calidad/validaciones.md)
+* ✅ [Testing de datos](04_modelado_y_calidad/testing-de-datos.md)
+* ✅ [Great Expectations para Calidad](04_modelado_y_calidad/great-expectations-para-calidad.md)
 
 ---
 

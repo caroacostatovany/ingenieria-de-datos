@@ -8,29 +8,37 @@ Esta carpeta cubre cómo diseñar modelos de datos analíticos y asegurar la cal
 
 ### 📘 Documentos disponibles
 
-* **[Modelado analítico](modelado-analitico.md)** *(próximo)*
+* ✅ **[Modelado analítico](modelado-analitico.md)**
   * Modelos dimensionales (Star Schema, Snowflake)
   * Tablas de hechos y dimensiones
   * Diseño para analytics
   * Patrones comunes
 
-* **[Calidad de datos](calidad-de-datos.md)** *(próximo)*
+* ✅ **[Calidad de datos](calidad-de-datos.md)**
   * Dimensiones de calidad (completitud, exactitud, consistencia)
   * Métricas y KPIs de calidad
   * Detección de problemas
   * Estrategias de mejora
 
-* **[Validaciones](validaciones.md)** *(próximo)*
+* ✅ **[Validaciones](validaciones.md)**
   * Validaciones en pipelines
   * Checks de integridad
   * Validación de esquemas
   * Alertas y notificaciones
 
-* **[Testing de datos](testing-de-datos.md)** *(próximo)*
+* ✅ **[Testing de datos](testing-de-datos.md)**
   * Tests unitarios para transformaciones
   * Tests de integración
   * Tests de calidad
   * Herramientas y frameworks
+
+* ✅ **[Great Expectations para Calidad](great-expectations-para-calidad.md)**
+  * ¿Qué es Great Expectations?
+  * Instalación y configuración
+  * Definir expectativas
+  * Validar datos automáticamente
+  * Integración en pipelines
+  * Data Docs y profiling
 
 ---
 
@@ -42,6 +50,7 @@ Al finalizar esta sección, deberías poder:
 * Implementar validaciones en tus pipelines
 * Medir y mejorar la calidad de datos
 * Escribir tests para transformaciones de datos
+* Usar Great Expectations para validaciones avanzadas
 
 ---
 
