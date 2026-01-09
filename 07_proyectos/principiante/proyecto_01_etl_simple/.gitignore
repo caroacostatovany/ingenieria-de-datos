@@ -1,0 +1,30 @@
+# Archivos generados por el pipeline
+output/
+# Mantener data/ventas.csv (dataset de ejemplo)
+# Ignorar solo archivos CSV generados en output/
+output/*.csv
+*.parquet
+*.xlsx
+*.json
+
+# Entornos virtuales
+venv/
+env/
+.venv/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,6 +1,8 @@
 # Proyecto 1: Pipeline ETL Simple
 
-Construye tu primer pipeline ETL completo: extrae datos de CSV, transforma y limpia, y carga a una base de datos PostgreSQL.
+Construye tu primer pipeline ETL completo: extrae datos de CSV, transforma y limpia, y carga a archivos de salida.
+
+> ✅ **Este proyecto incluye código funcional y un dataset de ejemplo listo para usar**
 
 ---
 
@@ -9,304 +11,248 @@ Construye tu primer pipeline ETL completo: extrae datos de CSV, transforma y lim
 Aprender los fundamentos de un pipeline ETL:
 * **Extract**: Leer datos de archivos CSV
 * **Transform**: Limpiar y transformar datos
-* **Load**: Cargar datos a base de datos
+* **Load**: Guardar datos transformados en diferentes formatos
 
 ---
 
 ## 📋 Requisitos previos
 
 * Python 3.8+
-* PostgreSQL (puedes usar Docker del módulo SQL)
-* Conocimientos básicos de Python y SQL
+* Conocimientos básicos de Python y Pandas
 
 ---
 
-## 🚀 Pasos del proyecto
+## 🚀 Inicio Rápido
 
 ### 1. Preparar entorno
 
 ```bash
-# Crear entorno virtual
+# Navegar al proyecto
+cd 07_proyectos/principiante/proyecto_01_etl_simple
+
+# Crear entorno virtual (opcional pero recomendado)
 python -m venv venv
 source venv/bin/activate  # En Windows: venv\Scripts\activate
 
 # Instalar dependencias
-pip install pandas psycopg2-binary python-dotenv
+pip install -r requirements.txt
 ```
 
-### 2. Estructura del proyecto
+### 2. Ejecutar el pipeline
+
+```bash
+# Ejecutar el pipeline
+python pipeline.py
+```
+
+**¡Eso es todo!** El pipeline:
+- ✅ Lee el archivo `data/ventas.csv`
+- ✅ Transforma y limpia los datos
+- ✅ Guarda los resultados en `output/`
+
+---
+
+## 📁 Estructura del proyecto
 
 ```
 proyecto_01_etl_simple/
-├── README.md
-├── requirements.txt
-├── .env.example
+├── README.md                 # Este archivo
+├── requirements.txt          # Dependencias Python
+├── pipeline.py              # Pipeline ETL completo y funcional
 ├── data/
-│   └── ventas.csv
-├── src/
-│   ├── extract.py
-│   ├── transform.py
-│   ├── load.py
-│   └── pipeline.py
-└── tests/
-    └── test_pipeline.py
+│   └── ventas.csv          # Dataset de ejemplo (15 registros)
+└── output/                  # Directorio de salida (se crea automáticamente)
+    ├── ventas_transformadas_YYYYMMDD_HHMMSS.csv
+    ├── ventas_transformadas_YYYYMMDD_HHMMSS.parquet
+    └── resumen_ventas_YYYYMMDD_HHMMSS.csv
 ```
 
-### 3. Crear datos de ejemplo
+---
 
-Crea `data/ventas.csv`:
+## 📊 Dataset de ejemplo
 
+El archivo `data/ventas.csv` contiene datos de ventas con las siguientes columnas:
+
+| Columna | Tipo | Descripción |
+|---------|------|-------------|
+| fecha | string | Fecha de la venta (YYYY-MM-DD) |
+| producto | string | Nombre del producto |
+| cantidad | int | Cantidad vendida |
+| precio | float | Precio unitario |
+| cliente | string | Nombre del cliente |
+| ciudad | string | Ciudad donde se realizó la venta |
+
+**Ejemplo de datos:**
 ```csv
-fecha,producto,cantidad,precio,cliente
-2024-01-15,Producto A,5,10.50,Cliente 1
-2024-01-16,Producto B,3,25.00,Cliente 2
-2024-01-17,Producto A,2,10.50,Cliente 1
-2024-01-18,Producto C,1,50.00,Cliente 3
-```
-
-### 4. Implementar Extract
-
-`src/extract.py`:
-
-```python
-import pandas as pd
-from pathlib import Path
-
-def extract_csv(file_path: str) -> pd.DataFrame:
-    """
-    Extrae datos de un archivo CSV.
-    
-    Args:
-        file_path: Ruta al archivo CSV
-        
-    Returns:
-        DataFrame con los datos
-    """
-    try:
-        df = pd.read_csv(file_path)
-        print(f"✅ Extraídos {len(df)} registros de {file_path}")
-        return df
-    except FileNotFoundError:
-        print(f"❌ Error: No se encontró el archivo {file_path}")
-        raise
-    except Exception as e:
-        print(f"❌ Error al extraer datos: {e}")
-        raise
-```
-
-### 5. Implementar Transform
-
-`src/transform.py`:
-
-```python
-import pandas as pd
-from datetime import datetime
-
-def transform_ventas(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Transforma y limpia datos de ventas.
-    
-    Args:
-        df: DataFrame con datos de ventas
-        
-    Returns:
-        DataFrame transformado
-    """
-    # Copiar para no modificar original
-    df_clean = df.copy()
-    
-    # Convertir fecha a datetime
-    df_clean['fecha'] = pd.to_datetime(df_clean['fecha'])
-    
-    # Calcular total
-    df_clean['total'] = df_clean['cantidad'] * df_clean['precio']
-    
-    # Eliminar duplicados
-    df_clean = df_clean.drop_duplicates()
-    
-    # Eliminar filas con valores nulos críticos
-    df_clean = df_clean.dropna(subset=['fecha', 'producto', 'cantidad', 'precio'])
-    
-    # Validar que cantidad y precio sean positivos
-    df_clean = df_clean[
-        (df_clean['cantidad'] > 0) & 
-        (df_clean['precio'] > 0)
-    ]
-    
-    print(f"✅ Transformados {len(df_clean)} registros")
-    return df_clean
-```
-
-### 6. Implementar Load
-
-`src/load.py`:
-
-```python
-import psycopg2
-from psycopg2.extras import execute_values
-import pandas as pd
-import os
-from dotenv import load_dotenv
-
-load_dotenv()
-
-def create_table(conn):
-    """Crea la tabla si no existe."""
-    cursor = conn.cursor()
-    cursor.execute("""
-        CREATE TABLE IF NOT EXISTS ventas (
-            id SERIAL PRIMARY KEY,
-            fecha DATE NOT NULL,
-            producto VARCHAR(100) NOT NULL,
-            cantidad INTEGER NOT NULL,
-            precio DECIMAL(10, 2) NOT NULL,
-            total DECIMAL(10, 2) NOT NULL,
-            cliente VARCHAR(100),
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        )
-    """)
-    conn.commit()
-    cursor.close()
-    print("✅ Tabla 'ventas' creada/verificada")
-
-def load_to_postgres(df: pd.DataFrame):
-    """
-    Carga datos a PostgreSQL.
-    
-    Args:
-        df: DataFrame con datos transformados
-    """
-    # Conectar a base de datos
-    conn = psycopg2.connect(
-        host=os.getenv('DB_HOST', 'localhost'),
-        port=os.getenv('DB_PORT', '5432'),
-        database=os.getenv('DB_NAME', 'data_engineering'),
-        user=os.getenv('DB_USER', 'de_user'),
-        password=os.getenv('DB_PASSWORD', 'de_password')
-    )
-    
-    try:
-        # Crear tabla
-        create_table(conn)
-        
-        # Insertar datos
-        cursor = conn.cursor()
-        execute_values(
-            cursor,
-            """
-            INSERT INTO ventas (fecha, producto, cantidad, precio, total, cliente)
-            VALUES %s
-            ON CONFLICT DO NOTHING
-            """,
-            [
-                (row['fecha'], row['producto'], row['cantidad'], 
-                 row['precio'], row['total'], row['cliente'])
-                for _, row in df.iterrows()
-            ]
-        )
-        
-        conn.commit()
-        print(f"✅ Cargados {len(df)} registros a PostgreSQL")
-        
-    except Exception as e:
-        conn.rollback()
-        print(f"❌ Error al cargar datos: {e}")
-        raise
-    finally:
-        cursor.close()
-        conn.close()
-```
-
-### 7. Pipeline completo
-
-`src/pipeline.py`:
-
-```python
-from extract import extract_csv
-from transform import transform_ventas
-from load import load_to_postgres
-
-def run_pipeline(file_path: str):
-    """
-    Ejecuta el pipeline ETL completo.
-    
-    Args:
-        file_path: Ruta al archivo CSV
-    """
-    print("🚀 Iniciando pipeline ETL...")
-    
-    # Extract
-    print("\n📥 Fase 1: Extract")
-    df = extract_csv(file_path)
-    
-    # Transform
-    print("\n🔄 Fase 2: Transform")
-    df_clean = transform_ventas(df)
-    
-    # Load
-    print("\n📤 Fase 3: Load")
-    load_to_postgres(df_clean)
-    
-    print("\n✅ Pipeline completado exitosamente!")
-
-if __name__ == "__main__":
-    run_pipeline("data/ventas.csv")
-```
-
-### 8. Archivo de configuración
-
-`.env.example`:
-
-```env
-DB_HOST=localhost
-DB_PORT=5432
-DB_NAME=data_engineering
-DB_USER=de_user
-DB_PASSWORD=de_password
-```
-
-`requirements.txt`:
-
-```
-pandas==2.0.3
-psycopg2-binary==2.9.9
-python-dotenv==1.0.0
+fecha,producto,cantidad,precio,cliente,ciudad
+2024-01-15,Producto A,5,10.50,Cliente 1,Madrid
+2024-01-16,Producto B,3,25.00,Cliente 2,Barcelona
+...
 ```
 
 ---
 
-## ✅ Checklist de completado
+## 🔍 ¿Qué hace el pipeline?
 
-- [ ] Entorno virtual creado y dependencias instaladas
-- [ ] Archivo CSV con datos de ejemplo creado
-- [ ] Función `extract_csv` implementada y probada
-- [ ] Función `transform_ventas` implementada y probada
-- [ ] Función `load_to_postgres` implementada y probada
-- [ ] Pipeline completo ejecutado exitosamente
-- [ ] Datos verificados en PostgreSQL
-- [ ] Código documentado y limpio
+### Extract (Extracción)
+- Lee el archivo CSV `data/ventas.csv`
+- Valida que el archivo existe
+- Muestra estadísticas básicas
 
----
+### Transform (Transformación)
+1. **Convierte fechas** a formato datetime
+2. **Calcula total** por venta (precio × cantidad)
+3. **Agrega columna de mes** para análisis
+4. **Elimina duplicados**
+5. **Elimina registros con valores nulos** en columnas críticas
+6. **Filtra registros válidos** (total > 0)
+7. **Ordena por fecha**
 
-## 🎓 Conceptos aprendidos
-
-* ✅ Estructura de un pipeline ETL
-* ✅ Separación de responsabilidades (extract, transform, load)
-* ✅ Manejo de errores básico
-* ✅ Uso de pandas para transformaciones
-* ✅ Conexión a PostgreSQL desde Python
-* ✅ Variables de entorno para configuración
-
----
-
-## 🚀 Próximo paso
-
-Después de completar este proyecto:
-* Agrega validaciones más robustas
-* Implementa logging
-* Agrega tests unitarios
-* Avanza a **[Proyecto 2: Análisis con Pandas](../proyecto_02_analisis_pandas/)**
+### Load (Carga)
+Guarda los datos en 3 archivos:
+1. **CSV**: `ventas_transformadas_*.csv` - Formato legible
+2. **Parquet**: `ventas_transformadas_*.parquet` - Formato eficiente
+3. **Resumen**: `resumen_ventas_*.csv` - Agregaciones por producto
 
 ---
 
-> **Recuerda**: Este es tu primer pipeline. Tómate tu tiempo para entender cada paso.
+## 📝 Ejemplo de salida
+
+Después de ejecutar el pipeline, verás algo como:
+
+```
+============================================================
+🚀 Pipeline ETL Simple - Ejecutando...
+============================================================
+📥 Extrayendo datos de data/ventas.csv...
+✅ Extraídos 15 registros
+   Columnas: fecha, producto, cantidad, precio, cliente, ciudad
+🔄 Transformando datos...
+✅ Transformación completada: 15 registros válidos
+   Total de ventas: €450.00
+💾 Guardando datos transformados...
+   ✅ CSV guardado: output/ventas_transformadas_20240115_143022.csv
+   ✅ Parquet guardado: output/ventas_transformadas_20240115_143022.parquet
+   ✅ Resumen guardado: output/resumen_ventas_20240115_143022.csv
+✅ Pipeline completado exitosamente!
+
+============================================================
+✨ Pipeline ejecutado exitosamente!
+📁 Archivos de salida en: output
+============================================================
+```
+
+---
+
+## 🧪 Experimentar con el código
+
+### Modificar el dataset
+
+1. Edita `data/ventas.csv` y agrega más registros
+2. Ejecuta el pipeline nuevamente: `python pipeline.py`
+3. Observa cómo se procesan los nuevos datos
+
+### Agregar nuevas transformaciones
+
+Edita `pipeline.py` en la función `transform()`:
+
+```python
+def transform(df: pd.DataFrame) -> pd.DataFrame:
+    # ... código existente ...
+    
+    # Agregar nueva transformación
+    df_transformed['descuento'] = df_transformed['total'] * 0.1  # 10% descuento
+    
+    return df_transformed
+```
+
+### Cambiar el formato de salida
+
+Modifica la función `load()` para guardar en otros formatos:
+
+```python
+# Guardar en JSON
+df.to_json(output_dir / 'ventas.json', orient='records', indent=2)
+
+# Guardar en Excel
+df.to_excel(output_dir / 'ventas.xlsx', index=False)
+```
+
+---
+
+## 📚 Conceptos aprendidos
+
+Al completar este proyecto, habrás aprendido:
+
+✅ **Extract**: Cómo leer datos de archivos CSV con Pandas  
+✅ **Transform**: Técnicas de limpieza y transformación de datos  
+✅ **Load**: Cómo guardar datos en diferentes formatos  
+✅ **Manejo de errores**: Validación de archivos y datos  
+✅ **Estructura de proyectos**: Organización de código en funciones  
+✅ **Logging**: Mensajes informativos durante la ejecución  
+
+---
+
+## 🔗 Próximos pasos
+
+Una vez que domines este pipeline básico:
+
+1. **Proyecto 2**: [Análisis de Datos con Pandas](../proyecto_02_analisis_pandas/README.md)
+   - Análisis exploratorio de datos (EDA)
+   - Visualizaciones con Matplotlib/Seaborn
+
+2. **Proyecto 3**: [Pipeline con Docker](../proyecto_03_docker_pipeline/README.md)
+   - Containerizar el pipeline
+   - Ejecutar en contenedores Docker
+
+3. **Módulo SQL**: [02_sql](../../../02_sql/README.md)
+   - Aprender a cargar datos a bases de datos
+   - Usar SQL para transformaciones
+
+---
+
+## 🐛 Solución de problemas
+
+### Error: "No se encontró el archivo"
+
+**Solución**: Asegúrate de ejecutar el script desde el directorio del proyecto:
+```bash
+cd 07_proyectos/principiante/proyecto_01_etl_simple
+python pipeline.py
+```
+
+### Error: "ModuleNotFoundError: No module named 'pandas'"
+
+**Solución**: Instala las dependencias:
+```bash
+pip install -r requirements.txt
+```
+
+### Error al guardar Parquet
+
+**Solución**: Instala pyarrow:
+```bash
+pip install pyarrow
+```
+
+---
+
+## 💡 Tips
+
+- **Revisa los archivos de salida** para entender qué datos se generaron
+- **Experimenta modificando el código** para ver cómo cambian los resultados
+- **Agrega más datos** al CSV para probar con datasets más grandes
+- **Lee el código línea por línea** para entender cada transformación
+
+---
+
+## 📖 Recursos adicionales
+
+- [Pandas Documentation](https://pandas.pydata.org/docs/)
+- [Python para Data Engineers](../../../03_python/fundamentos/fundamentos-python.md)
+- [Manejo de Archivos](../../../03_python/fundamentos/manejo-de-archivos.md)
+- [¿Qué es un Pipeline?](../../../01_fundamentos/01_que-es-un-pipeline.md)
+
+---
+
+> **💡 Recuerda**: Este es un ejemplo educativo. En producción, agrega más validaciones, logging estructurado, y manejo robusto de errores.

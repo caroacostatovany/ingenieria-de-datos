@@ -27,8 +27,9 @@ Para hacer el contenido más accesible a la comunidad de habla hispana. La mayor
 
 ### ¿Por dónde empiezo?
 
-1. **PRIMERO**: Configura [Cursor](06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)
-2. Sigue el [Roadmap](00_introduccion/roadmap-data-engineer.md) en orden
+1. **Configura tu entorno**: Sigue la [Guía de Configuración Inicial](SETUP.md)
+2. **⭐ Opcional**: Configura [Cursor](06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md) para usar AI como copiloto
+3. Sigue el [Roadmap](00_introduccion/roadmap-data-engineer.md) en orden
 3. Empieza con [Introducción](00_introduccion/) y luego [Fundamentos](01_fundamentos/)
 
 ### ¿Debo seguir el orden del roadmap?
@@ -106,11 +107,11 @@ Sí, todos los ejemplos están probados y funcionan. Si encuentras algún proble
 
 ### ¿Debo usar Cursor?
 
-**Sí, altamente recomendado**. Cursor te ayudará durante todo el aprendizaje. Configúralo ANTES de empezar con SQL o Python.
+**Cursor es opcional pero recomendado**. Puede ayudarte durante el aprendizaje con AI como copiloto, pero no es un requisito. Puedes usar cualquier editor que prefieras.
 
 ### ¿Puedo usar otro IDE?
 
-Sí, puedes usar VS Code, PyCharm, o cualquier otro IDE. Pero Cursor está optimizado para este repositorio y te dará mejor experiencia.
+**Sí, absolutamente**. Puedes usar VS Code, PyCharm, DBeaver, o cualquier otro IDE. Cursor es solo una opción si quieres usar AI como copiloto. El contenido del repositorio funciona con cualquier editor.
 
 ### ¿La AI reemplaza el aprendizaje?
 

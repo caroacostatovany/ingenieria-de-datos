@@ -1,14 +1,16 @@
-# Estos son ejemplos de plataformas de financiamiento compatibles
+# Configuración del botón de patrocinio (Sponsor button)
+# Este archivo habilita el botón de patrocinio en el repositorio
 
-# github: caroacostatovany # Reemplaza con tu usuario de GitHub si usas GitHub Sponsors
-# patreon: # Reemplaza con tu usuario de Patreon
-# open_collective: # Reemplaza con tu organización de Open Collective
-# ko_fi: # Reemplaza con tu usuario de Ko-fi
-# liberapay: # Reemplaza con tu usuario de Liberapay
-# issuehunt: # Reemplaza con tu usuario de IssueHunt
-# otechie: # Reemplaza con tu usuario de Otechie
-# lfx_crowdfunding: # Reemplaza con tu proyecto de LFX Crowdfunding
-# custom: # Reemplaza con URLs personalizadas
+github: caroacostatovany # GitHub Sponsors
 
-# Si quieres mostrar un botón de financiamiento en tu repositorio, descomenta las líneas arriba
-# y reemplaza con tu información. Más info: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository
+# Otras plataformas de financiamiento (descomenta si las usas):
+# patreon: # Tu usuario de Patreon
+# open_collective: # Tu organización de Open Collective
+# ko_fi: # Tu usuario de Ko-fi
+# liberapay: # Tu usuario de Liberapay
+# issuehunt: # Tu usuario de IssueHunt
+# otechie: # Tu usuario de Otechie
+# lfx_crowdfunding: # Tu proyecto de LFX Crowdfunding
+# custom: # URLs personalizadas (ejemplo: ["https://mi-sitio.com/donar", "https://otro-sitio.com/patrocinar"]
+
+# Más información: https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/displaying-a-sponsor-button-in-your-repository

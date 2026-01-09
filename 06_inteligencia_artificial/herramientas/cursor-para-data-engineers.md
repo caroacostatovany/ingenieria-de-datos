@@ -2,7 +2,7 @@
 
 Cursor es un editor de código moderno basado en VS Code pero con **capacidades de AI integradas** que lo hacen especialmente útil para Data Engineers que quieren usar AI como copiloto.
 
-> ⭐ **IMPORTANTE**: Configura Cursor **ANTES** de empezar con SQL o Python. Te ayudará durante todo tu aprendizaje en este repositorio.
+> ⭐ **Opcional**: Cursor puede ayudarte durante el aprendizaje, pero **no es un requisito**. Puedes usar cualquier editor (VS Code, PyCharm, etc.) y configurar Cursor más adelante si lo deseas.
 
 ---
 

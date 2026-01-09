@@ -11,7 +11,7 @@ Esta guía te ayudará a configurar tu entorno de desarrollo para seguir el road
 * **Python 3.8+** - [Descargar Python](https://www.python.org/downloads/)
 * **Git** - [Descargar Git](https://git-scm.com/downloads)
 * **Docker Desktop** (opcional pero recomendado) - [Descargar Docker](https://www.docker.com/products/docker-desktop)
-* **Cursor IDE** (recomendado) - [Descargar Cursor](https://cursor.sh/)
+* **Cursor IDE** (opcional) - [Descargar Cursor](https://cursor.sh/) - Para usar AI como copiloto
 
 ### Verificar instalaciones
 
@@ -44,13 +44,7 @@ cd ingenieria-de-datos
 git pull origin main
 ```
 
-### 2. Configurar Cursor (Recomendado - PRIMERO)
-
-**⚠️ IMPORTANTE**: Configura Cursor ANTES de continuar. Te ayudará durante todo el aprendizaje.
-
-Sigue la guía completa: **[Cursor para Data Engineers](06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)**
-
-### 3. Configurar variables de entorno
+### 2. Configurar variables de entorno
 
 ```bash
 # Copiar archivo de ejemplo
@@ -61,6 +55,14 @@ nano .env  # o tu editor preferido
 ```
 
 Lee más sobre `.env` en: **[Archivos .env para Data Engineers](01_fundamentos/04_archivos-env-para-data-engineers.md)**
+
+### 3. ⭐ Opcional: Configurar Cursor para uso de AI
+
+Si quieres usar AI como copiloto durante tu aprendizaje, puedes configurar Cursor:
+
+Sigue la guía completa: **[Cursor para Data Engineers](06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)**
+
+> 💡 **Nota**: Cursor es completamente opcional. Puedes usar cualquier editor (VS Code, PyCharm, etc.). Si prefieres configurarlo más adelante, está bien.
 
 ### 4. Crear entorno virtual de Python (Recomendado)
 
@@ -207,7 +209,7 @@ jupyter lab
 
 * **Usa entornos virtuales** para cada proyecto
 * **Lee los READMEs** de cada módulo antes de empezar
-* **Configura Cursor primero** - te ahorrará mucho tiempo
+* **⭐ Opcional: Configura Cursor** - puede ayudarte con AI como copiloto
 * **Usa el chat de Cursor** para resolver dudas sobre el contenido
 
 ---

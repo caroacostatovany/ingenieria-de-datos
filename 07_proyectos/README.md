@@ -8,7 +8,7 @@ Esta sección contiene proyectos prácticos organizados por nivel de dificultad 
 
 ### 🟢 [Nivel Principiante](principiante/)
 Proyectos para quienes están empezando:
-* Pipeline ETL Simple
+* ✅ **Pipeline ETL Simple** - Incluye dataset y código funcional
 * Análisis de Datos con Pandas
 * Pipeline con Docker
 

@@ -37,27 +37,27 @@ Ayudarte a:
 
 ## 🚀 Cómo empezar
 
-### Opción A: Cursor (Recomendado) ⭐
+### 1. Configura tu entorno
 
-Si usas [Cursor](https://cursor.sh/), puedes configurarlo como copiloto de AI para obtener ayuda mientras aprendes:
+Sigue la [Guía de Configuración Inicial](SETUP.md) completa para configurar:
+- Python y dependencias
+- Git
+- Docker (opcional, para SQL)
+- Variables de entorno
+
+### 2. ⭐ Opcional: Configura Cursor para uso de AI
+
+Si quieres usar AI como copiloto durante tu aprendizaje, puedes configurar [Cursor](https://cursor.sh/):
 - [Guía de Cursor para Data Engineers](06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)
 - El chat de Cursor puede ayudarte con preguntas sobre cualquier contenido
+- **Nota**: Cursor es completamente opcional. Puedes usar cualquier editor (VS Code, PyCharm, etc.)
 
-### Opción B: Tu editor favorito
+### 3. Sigue la ruta de aprendizaje
 
-Puedes usar cualquier editor de código:
-- **VS Code** + extensiones (Python, SQL, Markdown)
-- **PyCharm** para Python
-- **DBeaver** o **pgAdmin** para SQL
-- Cualquier editor que prefieras
-
-### Pasos siguientes (para todos)
-
-1. **Configura tu entorno:** Sigue la [Guía de Configuración Inicial](SETUP.md) completa
-2. **Lee** [¿Qué es Data Engineering?](00_introduccion/que-es-data-engineering.md)
-3. **Revisa** el [Roadmap](00_introduccion/roadmap-data-engineer.md)
-4. **Sigue** el orden sugerido en el roadmap
-5. **Practica** con los ejercicios y proyectos
+1. **Lee** [¿Qué es Data Engineering?](00_introduccion/que-es-data-engineering.md)
+2. **Revisa** el [Roadmap](00_introduccion/roadmap-data-engineer.md)
+3. **Sigue** el orden sugerido en el roadmap
+4. **Practica** con los ejercicios y proyectos
 
 > 💡 **Nuevo**: Revisa [SETUP.md](SETUP.md) para una guía completa de configuración inicial con todos los requisitos y pasos detallados.
 
@@ -110,120 +110,126 @@ Aprende haciendo: proyectos prácticos desde el primer día
 * 👩‍💻 **Si ya manejas SQL/Python:** salta a **Modelado, Calidad y Pipelines**
 * 🚀 **Si buscas enfoque moderno:** revisa **Inteligencia Artificial como copiloto** y **Proyectos End-to-End**
 
----
-
-### 🟩 Nivel 0 — Introducción
-
-* ✅ [¿Qué es Data Engineering?](00_introduccion/que-es-data-engineering.md)
-* ✅ [Roadmap para convertirte en Data Engineer](00_introduccion/roadmap-data-engineer.md)
-* ✅ [Roles en datos](00_introduccion/roles-en-datos.md)
+**Leyenda:**
+* ✔️ = Contenido completo y listo para usar
+* 🚧 = Contenido en progreso o parcial
+* 📘 = Carpeta con múltiples archivos
 
 ---
 
-### 🟨 Nivel 1 — Fundamentos
+### 🟩 Nivel 0 — Introducción ✔️
+
+* ✔️ [¿Qué es Data Engineering?](00_introduccion/que-es-data-engineering.md)
+* ✔️ [Roadmap para convertirte en Data Engineer](00_introduccion/roadmap-data-engineer.md)
+* ✔️ [Roles en datos](00_introduccion/roles-en-datos.md)
+
+---
+
+### 🟨 Nivel 1 — Fundamentos ✔️
 
 * 📘 [Fundamentos (carpeta)](01_fundamentos/)
-* ✅ [00. Tipos de Datos](01_fundamentos/00_tipos-de-datos.md)
-* ✅ [01. ¿Qué es un Pipeline?](01_fundamentos/01_que-es-un-pipeline.md)
-* ✅ [02. Batch vs Streaming](01_fundamentos/02_batch-vs-streaming.md)
-* ✅ [03. Git y GitHub](01_fundamentos/03_git-y-github-para-data-engineers.md)
-* ✅ [04. Archivos .env](01_fundamentos/04_archivos-env-para-data-engineers.md)
-* ✅ [05. Docker](01_fundamentos/05_docker-para-data-engineers.md)
-* ✅ [06. Introducción a SQL](01_fundamentos/06_introduccion-sql.md)
-* ✅ [07. Buenas Prácticas](01_fundamentos/07_buenas-practicas.md)
-* ✅ [08. Data Engineering en la Nube](01_fundamentos/08_data-engineering-en-la-nube.md)
+* ✔️ [00. Tipos de Datos](01_fundamentos/00_tipos-de-datos.md)
+* ✔️ [01. ¿Qué es un Pipeline?](01_fundamentos/01_que-es-un-pipeline.md)
+* ✔️ [02. Batch vs Streaming](01_fundamentos/02_batch-vs-streaming.md)
+* ✔️ [03. Git y GitHub](01_fundamentos/03_git-y-github-para-data-engineers.md)
+* ✔️ [04. Archivos .env](01_fundamentos/04_archivos-env-para-data-engineers.md)
+* ✔️ [05. Docker](01_fundamentos/05_docker-para-data-engineers.md)
+* ✔️ [06. Introducción a SQL](01_fundamentos/06_introduccion-sql.md)
+* ✔️ [07. Buenas Prácticas](01_fundamentos/07_buenas-practicas.md)
+* ✔️ [08. Data Engineering en la Nube](01_fundamentos/08_data-engineering-en-la-nube.md)
 
 ---
 
-### 🟧 Nivel 2 — SQL para Data Engineers
+### 🟧 Nivel 2 — SQL para Data Engineers ✔️
 
 * 📘 [SQL (carpeta)](02_sql/)
-* ✅ [SQL vs PostgreSQL](02_sql/sql-vs-postgresql.md) - ¿Por qué PostgreSQL?
-* ✅ [Herramientas SQL](02_sql/herramientas/)
+* ✔️ [SQL vs PostgreSQL](02_sql/sql-vs-postgresql.md) - ¿Por qué PostgreSQL?
+* ✔️ [Herramientas SQL](02_sql/herramientas/)
   * DBeaver (visualización y generación de queries)
   * Otras herramientas (pgAdmin, TablePlus, etc.)
-* ✅ [SQL básico](02_sql/sql-basico/)
-* ✅ [SQL intermedio](02_sql/sql-intermedio/)
-* ✅ [SQL avanzado](02_sql/sql-avanzado/)
-* ✅ [Modelado Relacional](02_sql/modelado-relacional.md)
-* ✅ [Ejercicios](02_sql/ejercicios/)
+* ✔️ [SQL básico](02_sql/sql-basico/)
+* ✔️ [SQL intermedio](02_sql/sql-intermedio/)
+* ✔️ [SQL avanzado](02_sql/sql-avanzado/)
+* ✔️ [Modelado Relacional](02_sql/modelado-relacional.md)
+* ✔️ [Ejercicios](02_sql/ejercicios/)
 
 ---
 
-### 🟦 Nivel 3 — Python aplicado
+### 🟦 Nivel 3 — Python aplicado ✔️
 
 * 📘 [Python (carpeta)](03_python/)
-* ✅ [Fundamentos](03_python/fundamentos/)
+* ✔️ [Fundamentos](03_python/fundamentos/)
   * Sintaxis esencial, scripts vs módulos, manejo de archivos
-* ✅ [Pandas](03_python/pandas/)
+* ✔️ [Pandas](03_python/pandas/)
   * Manipulación de datos, exploración (EDA), Jupyter Notebooks
-* ✅ [Storytelling con Datos](03_python/storytelling/)
+* ✔️ [Storytelling con Datos](03_python/storytelling/)
   * Comunicar insights efectivamente, visualizaciones
-* ✅ [Ejemplos](03_python/ejemplos/)
+* ✔️ [Ejemplos](03_python/ejemplos/)
 
 ---
 
-### 🟪 Nivel 4 — Modelado y calidad
+### 🟪 Nivel 4 — Modelado y calidad ✔️
 
 * 📘 [Modelado y calidad (carpeta)](04_modelado_y_calidad/)
-* ✅ [Modelado](04_modelado_y_calidad/modelado/)
+* ✔️ [Modelado](04_modelado_y_calidad/modelado/)
   * Modelos dimensionales, Star Schema, Snowflake
-* ✅ [Calidad de Datos](04_modelado_y_calidad/calidad/)
+* ✔️ [Calidad de Datos](04_modelado_y_calidad/calidad/)
   * Métricas y KPIs de calidad
   * Validaciones y Testing
   * Herramientas (Great Expectations, Pandera)
-* ✅ [Ejemplos (Notebooks)](04_modelado_y_calidad/ejemplos/)
+* ✔️ [Ejemplos (Notebooks)](04_modelado_y_calidad/ejemplos/)
   * Modelado Star Schema, Calidad, Validaciones, Testing, Great Expectations, Pandera
 
 ---
 
-### 🟥 Nivel 5 — Pipelines y orquestación
+### 🟥 Nivel 5 — Pipelines y orquestación ✔️
 
 * 📘 [Pipelines (carpeta)](05_pipelines/)
-* ✅ [Pipelines básicos](05_pipelines/pipelines-basicos/)
+* ✔️ [Pipelines básicos](05_pipelines/pipelines-basicos/)
   * Conceptos fundamentales
   * Pipelines con Python puro
-* ✅ [Orquestadores](05_pipelines/orquestadores/)
+* ✔️ [Orquestadores](05_pipelines/orquestadores/)
   * Prefect, Dagster (local - empezar aquí)
   * Airflow, Luigi (enterprise)
   * Step Functions, Composer, Data Factory (cloud)
 
 ---
 
-### 🤖 Inteligencia Artificial como copiloto
+### 🤖 Inteligencia Artificial como copiloto ✔️
 
 * 📘 [Inteligencia Artificial como Copiloto (carpeta)](06_inteligencia_artificial/)
-* ✅ [Herramientas](06_inteligencia_artificial/herramientas/)
+* ✔️ [Herramientas](06_inteligencia_artificial/herramientas/)
   * Cursor para Data Engineers
-* ✅ [Uso Práctico](06_inteligencia_artificial/uso-practico/)
+* ✔️ [Uso Práctico](06_inteligencia_artificial/uso-practico/)
   * Cómo usar AI como DE
   * Ejemplos de Prompts
   * Documentación con AI
-* ✅ [Límites de la AI](06_inteligencia_artificial/limites-de-la-ai.md)
-* ✅ [Buenas Prácticas de AI](06_inteligencia_artificial/buenas-practicas-ai.md)
+* ✔️ [Límites de la AI](06_inteligencia_artificial/limites-de-la-ai.md)
+* ✔️ [Buenas Prácticas de AI](06_inteligencia_artificial/buenas-practicas-ai.md)
 
 ---
 
-### 🚀 Proyectos End-to-End
+### 🚀 Proyectos End-to-End 🚧
 
 * 📘 [Proyectos (carpeta)](07_proyectos/)
-* ✅ [Nivel Principiante](07_proyectos/principiante/)
-  * Pipeline ETL Simple, Análisis con Pandas, Docker
-* ✅ [Nivel Intermedio](07_proyectos/intermedio/)
-  * SQL+Python, Validaciones, Airflow, IA como Copiloto
-* ✅ [Nivel Avanzado](07_proyectos/avanzado/)
-  * Pipeline Completo, Producción Local, Cloud Gratis, IA Avanzada
+* 🚧 [Nivel Principiante](07_proyectos/principiante/)
+  * ✅ **Proyecto 1 (ETL Simple)**: Dataset y código funcional completos
+  * 🚧 Otros proyectos: Estructura y READMEs completos, código en desarrollo
+* 🚧 [Nivel Intermedio](07_proyectos/intermedio/)
+  * Estructura y READMEs completos, código en desarrollo
+* 🚧 [Nivel Avanzado](07_proyectos/avanzado/)
+  * Estructura y READMEs completos, código en desarrollo
 
 ---
 
-### ☁️ Data Engineering en la Nube
+### ☁️ Data Engineering en la Nube 🚧
 
 * 📘 [Cloud (carpeta)](08_cloud/)
-* ✅ [Conceptos fundamentales](01_fundamentos/08_data-engineering-en-la-nube.md)
-* 📘 [AWS](08_cloud/aws/) *(próximo)*
-* 📘 [Google Cloud Platform](08_cloud/gcp/) *(próximo)*
-* 📘 [Microsoft Azure](08_cloud/azure/) *(próximo)*
-* 📘 [Multi-Cloud](08_cloud/multi-cloud/) *(próximo)*
+* ✔️ [Conceptos fundamentales](01_fundamentos/08_data-engineering-en-la-nube.md)
+* 🚧 [AWS](08_cloud/aws/) - Guía introductoria disponible, contenido en expansión
+* 🚧 [Google Cloud Platform](08_cloud/gcp/) - Guía introductoria disponible, contenido en expansión
+* 🚧 [Microsoft Azure](08_cloud/azure/) - Guía introductoria disponible, contenido en expansión
+* 🚧 [Multi-Cloud](08_cloud/multi-cloud/) - Guía introductoria disponible, contenido en expansión
 
 ---
 

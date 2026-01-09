@@ -42,11 +42,11 @@ Necesitas **contexto**.
 
 ---
 
-## 🟢 Etapa 0.5 — Cursor: Tu Copiloto de AI (PRIMERO)
+## 🟢 Etapa 0.5 — Cursor: Tu Copiloto de AI (Opcional)
 
-**Objetivo:** Configurar Cursor para usar AI como copiloto desde el inicio.
+**Objetivo:** Configurar Cursor para usar AI como copiloto durante el aprendizaje.
 
-**⚠️ IMPORTANTE:** Configura Cursor **ANTES** de empezar con SQL o Python. Te ayudará durante todo el aprendizaje.
+> ⭐ **Opcional**: Cursor puede ayudarte durante el aprendizaje, pero no es un requisito. Puedes usar cualquier editor (VS Code, PyCharm, etc.) y configurar Cursor más adelante si lo deseas.
 
 Aprende:
 
@@ -56,11 +56,11 @@ Aprende:
 * **Pedir explicaciones** adaptadas a tu nivel
 * **Solicitar ayuda** para ejecutar comandos (Docker, etc.)
 
-> 💡 **Tip**: Usa Cursor desde el día 1. Puedes preguntarle sobre cualquier archivo del repositorio, pedir explicaciones simples, o solicitar ayuda para ejecutar comandos.
+> 💡 **Tip**: Si decides usar Cursor, puedes preguntarle sobre cualquier archivo del repositorio, pedir explicaciones simples, o solicitar ayuda para ejecutar comandos.
 
 📁 Contenido recomendado:
 
-* **[Cursor para Data Engineers](../06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)** ⭐ **EMPIEZA AQUÍ**
+* **[Cursor para Data Engineers](../06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)** ⭐ **Opcional**
 
 ---
 

@@ -8,11 +8,14 @@ Proyectos diseñados para quienes están empezando en Data Engineering. Enfócat
 
 ### 🟢 Nivel: Principiante
 
-* ✅ **[Proyecto 1: Pipeline ETL Simple](proyecto_01_etl_simple/)**
+* ✅ **[Proyecto 1: Pipeline ETL Simple](proyecto_01_etl_simple/)** ⭐ **Código funcional incluido**
+  * ✅ Dataset de ejemplo (`data/ventas.csv`) - 15 registros listos para usar
+  * ✅ Pipeline Python completo (`pipeline.py`) - Ejecutable de inmediato
   * Extraer datos de CSV
   * Transformar y limpiar
-  * Cargar a base de datos
-  * Conceptos: ETL básico, Python, SQL
+  * Guardar en CSV y Parquet
+  * Conceptos: ETL básico, Python, Pandas
+  * **Ejecución**: `python pipeline.py`
 
 * ✅ **[Proyecto 2: Análisis de Datos con Pandas](proyecto_02_analisis_pandas/)**
   * Cargar y explorar datos
