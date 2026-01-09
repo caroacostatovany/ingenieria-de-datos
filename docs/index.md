@@ -103,4 +103,21 @@ Antes de empezar, configura **[Cursor](https://github.com/caroacostatovany/ingen
 
 ---
 
-> **Nota**: Esta es la versión web del repositorio. Para el contenido completo y actualizado, visita el [repositorio en GitHub](https://github.com/caroacostatovany/ingenieria-de-datos).
+## 📖 Sobre esta página
+
+Esta es la **versión web (GitHub Pages)** del repositorio, diseñada como un **landing page** y **índice de navegación**.
+
+**Todo el contenido completo** (archivos `.md`, notebooks, código, ejemplos) está en el [repositorio de GitHub](https://github.com/caroacostatovany/ingenieria-de-datos).
+
+**¿Por qué usar esta página?**
+- ✅ Punto de entrada rápido al contenido
+- ✅ Vista general de toda la ruta de aprendizaje
+- ✅ Enlaces directos a cada sección
+- ✅ Fácil de compartir y bookmark
+
+**Para el contenido completo y actualizado:**
+👉 [Visita el repositorio en GitHub](https://github.com/caroacostatovany/ingenieria-de-datos)
+
+---
+
+> **💡 Tip:** Puedes usar esta página como bookmark o landing page, y desde aquí navegar a cualquier sección del repositorio.

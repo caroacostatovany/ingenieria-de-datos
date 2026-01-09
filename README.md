@@ -230,7 +230,6 @@ cp ../.env.example .env  # o usa el .env.example específico del módulo
 * **[FAQ.md](FAQ.md)** - Preguntas frecuentes
 * **[CONTRIBUTING.md](CONTRIBUTING.md)** - Cómo contribuir
 * **[requirements.txt](requirements.txt)** - Dependencias del proyecto
-* **[GITHUB_FEATURES.md](GITHUB_FEATURES.md)** - Características de GitHub configuradas 🆕
 * **[.github/GUIDE_DISCUSSIONS.md](.github/GUIDE_DISCUSSIONS.md)** - Guía completa para usar Discussions 💬
 
 ## 💬 Comunidad
@@ -245,7 +244,9 @@ cp ../.env.example .env  # o usa el .env.example específico del módulo
 
 ## 🌐 Documentación Web
 
-📄 **GitHub Pages**: [Ver sitio web](https://caroacostatovany.github.io/ingenieria-de-datos/) *(se activará después de configurar Pages en GitHub)*
+📄 **GitHub Pages**: [Ver sitio web](https://caroacostatovany.github.io/ingenieria-de-datos/) ✅
+
+> **💡 Nota:** Pages es un índice de navegación. El contenido completo está en el repositorio de GitHub para mejor experiencia con código, notebooks y ejemplos.
 
 ---
 

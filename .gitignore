@@ -111,3 +111,6 @@ htmlcov/
 .mypy_cache/
 .dmypy.json
 dmypy.json
+
+# Archivos privados del mantenedor
+GITHUB_FEATURES.md

@@ -1,43 +1,42 @@
-# 📄 GitHub Pages - Documentación Web
+# 📄 GitHub Pages - Landing Page
 
-Esta carpeta contiene la documentación para GitHub Pages.
+Esta carpeta contiene el landing page simple para GitHub Pages.
 
----
-
-## 🚀 Cómo activar GitHub Pages
-
-1. Ve a **Settings** → **Pages** en tu repositorio de GitHub
-2. En **Source**, selecciona:
-   - **Branch**: `main`
-   - **Folder**: `/docs`
-3. Click en **Save**
-4. Tu sitio estará disponible en:
-   ```
-   https://caroacostatovany.github.io/ingenieria-de-datos/
-   ```
+**Estado:** ✅ Activado  
+**URL:** [https://caroacostatovany.github.io/ingenieria-de-datos/](https://caroacostatovany.github.io/ingenieria-de-datos/)
 
 ---
 
 ## 📁 Estructura
 
-- `index.md` - Página principal
-- `_config.yml` - Configuración de Jekyll (opcional)
+- `index.md` - Landing page principal (índice de navegación)
+- `_config.yml` - Configuración mínima de Jekyll
+- `README.md` - Este archivo
 
 ---
 
 ## 🔄 Actualizar el sitio
 
-Cualquier cambio que hagas en la carpeta `docs/` se reflejará automáticamente en GitHub Pages después de hacer commit y push.
+Cualquier cambio que hagas en `index.md` se reflejará automáticamente en GitHub Pages después de hacer commit y push.
+
+**Tiempo de actualización:** Generalmente 1-2 minutos después del push.
 
 ---
 
-## 💡 Personalización
+## 💡 Filosofía del sitio
 
-Puedes personalizar el sitio:
-- Edita `index.md` para cambiar el contenido
-- Modifica `_config.yml` para cambiar el tema o configuración
-- Agrega más páginas en `docs/` si lo deseas
+**Landing page simple, no duplicación:**
+- Esta página es un **punto de entrada** y **índice de navegación**
+- Todos los links apuntan al repositorio de GitHub donde está el contenido completo
+- No hay duplicación de contenido
+- Fácil de mantener (solo un archivo)
 
 ---
 
-> **Nota**: GitHub Pages usa Jekyll por defecto. Si prefieres otro generador (MkDocs, Docusaurus, etc.), puedes configurarlo con GitHub Actions.
+## 🎨 Personalización
+
+Puedes personalizar el sitio editando `index.md`. Es un archivo Markdown simple que Jekyll procesará automáticamente.
+
+---
+
+> **Nota**: Esta es una configuración minimalista. Si en el futuro necesitas más funcionalidad, puedes agregar layouts e includes de Jekyll.
