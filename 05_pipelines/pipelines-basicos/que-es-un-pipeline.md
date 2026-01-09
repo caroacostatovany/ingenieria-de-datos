@@ -54,6 +54,8 @@ Ejemplo:
 Extraer → Transformar → Cargar
 ```
 
+**DAG (Directed Acyclic Graph)**: En orquestadores, las dependencias se representan como un DAG (grafo acíclico dirigido). Un DAG es una estructura que define tareas y sus dependencias sin ciclos, asegurando que las tareas se ejecuten en el orden correcto. Por ejemplo, en Airflow, cada pipeline es un DAG donde las tareas tienen dependencias claras.
+
 Sin dependencias claras:
 
 * hay datos incompletos
@@ -170,12 +172,12 @@ Pero:
 ## ➡️ ¿Qué sigue?
 
 Para profundizar:
-* **[Pipelines básicos](../05_pipelines/pipelines-basicos/)** - Cómo construir pipelines
-* **[Orquestadores](../05_pipelines/orquestadores/)** - Herramientas para orquestar pipelines
-* **[Batch vs Streaming](../01_fundamentos/batch-vs-streaming.md)** - Tipos de procesamiento
+* **[Pipelines con Python](pipelines-con-python.md)** - Cómo construir pipelines prácticos
+* **[Orquestadores](../orquestadores/)** - Herramientas para orquestar pipelines
+* **[Batch vs Streaming](../../01_fundamentos/batch-vs-streaming.md)** - Tipos de procesamiento
 
 O aplica todo con:
-* **[Proyectos](../07_proyectos/)** - Proyectos end-to-end
+* **[Proyectos](../../07_proyectos/)** - Proyectos end-to-end
 
 ---
 

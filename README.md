@@ -60,7 +60,6 @@ Ayudarte a:
 
 * 📘 [Fundamentos (carpeta)](01_fundamentos/)
 * ✅ [Tipos de Datos](01_fundamentos/tipos-de-datos.md)
-* ✅ [¿Qué es un Pipeline?](01_fundamentos/que-es-un-pipeline.md) *(conceptual)*
 * ✅ [Batch vs Streaming](01_fundamentos/batch-vs-streaming.md)
 * ✅ [Buenas Prácticas](01_fundamentos/buenas-practicas.md)
 * ✅ [Introducción a SQL](01_fundamentos/introduccion-sql.md)
@@ -109,10 +108,13 @@ Ayudarte a:
 ### 🟥 Nivel 5 — Pipelines y orquestación
 
 * 📘 [Pipelines (carpeta)](05_pipelines/)
-* ✅ [Pipelines básicos](05_pipelines/pipelines-basicos.md) *(práctico)*
-* 📄 [Pipelines con Python](05_pipelines/pipelines-con-python.md) *(próximo)*
-* 📄 [Introducción a Airflow](05_pipelines/introduccion-airflow.md) *(próximo)*
-* 📘 [Ejemplos](05_pipelines/ejemplos/) *(próximo)*
+* ✅ [Pipelines básicos](05_pipelines/pipelines-basicos/)
+  * Conceptos fundamentales
+  * Pipelines con Python puro
+* ✅ [Orquestadores](05_pipelines/orquestadores/)
+  * Prefect, Dagster (local - empezar aquí)
+  * Airflow, Luigi (enterprise)
+  * Step Functions, Composer, Data Factory (cloud)
 
 ---
 

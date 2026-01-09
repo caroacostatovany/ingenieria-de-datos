@@ -14,11 +14,6 @@ Esta carpeta cubre los conceptos fundamentales que todo Data Engineer debe domin
   * Cuándo usar cada formato
   * Consideraciones de almacenamiento
 
-* **[¿Qué es un Pipeline?](que-es-un-pipeline.md)** *(conceptual)*
-  * Definición y propósito de un pipeline
-  * Diferencia entre pipeline y script
-  * Elementos fundamentales (tareas, dependencias, monitoreo)
-  * Principios de diseño
 
 * **[Batch vs Streaming](batch-vs-streaming.md)**
   * Diferencias entre procesamiento batch y streaming

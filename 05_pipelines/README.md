@@ -8,28 +8,24 @@ Esta carpeta cubre cómo construir, orquestar y monitorear pipelines de datos en
 
 ### ✅ Documentos disponibles
 
-* **[Pipelines básicos](pipelines-basicos.md)** *(práctico)*
-  * Componentes básicos de un pipeline
-  * Pipeline ETL simple
-  * Manejo de errores
-  * Ejecución y monitoreo básico
-
-* **[Pipelines con Python](pipelines-con-python.md)** *(próximo)*
-  * Construir pipelines con Python puro
-  * Librerías útiles (pandas, requests, etc.)
+* ✅ **[Pipelines básicos](pipelines-basicos/)**
+  * Conceptos fundamentales de pipelines
+  * Componentes básicos
+  * Pipelines con Python puro
   * Estructura de proyectos
   * Testing de pipelines
 
-* **[Introducción a Airflow](introduccion-airflow.md)** *(próximo)*
-  * ¿Qué es Airflow?
-  * Conceptos básicos (DAGs, Tasks, Operators)
-  * Primer pipeline en Airflow
-  * Mejores prácticas
-
-* **[Ejemplos](ejemplos/)** *(próximo)*
-  * Ejemplos de pipelines completos
-  * Casos de uso reales
-  * Patrones comunes
+* ✅ **[Orquestadores](orquestadores/)**
+  * Comparación de orquestadores
+  * **Orquestadores locales** (empezar aquí):
+    * Prefect (moderno, Python-first)
+    * Dagster (data assets, UI excelente)
+  * **Orquestadores enterprise/cloud**:
+    * Airflow (estándar industria, completo)
+    * Luigi (simple, Python puro)
+    * AWS Step Functions (serverless)
+    * Google Cloud Composer (Airflow gestionado)
+    * Azure Data Factory (Azure nativo)
 
 ---
 
@@ -37,7 +33,9 @@ Esta carpeta cubre cómo construir, orquestar y monitorear pipelines de datos en
 
 Al finalizar esta sección, deberías poder:
 
-* Diseñar y construir pipelines ETL/ELT
+* Diseñar y construir pipelines ETL/ELT básicos
+* Construir pipelines con Python puro (sin orquestadores)
+* Elegir el orquestador apropiado para tu caso
 * Orquestar pipelines con herramientas modernas
 * Manejar errores y dependencias
 * Monitorear y mantener pipelines en producción
@@ -51,12 +49,19 @@ Al finalizar esta sección, deberías poder:
 * Implementa con Python de **[03_python](../03_python/)**
 * Aplica calidad de **[04_modelado_y_calidad](../04_modelado_y_calidad/)**
 
+## 📚 Flujo de aprendizaje recomendado
+
+1. **Empieza con [Pipelines básicos](pipelines-basicos/)** - Aprende conceptos y Python puro
+2. **Prueba [Orquestadores locales](orquestadores/)** - Prefect o Dagster para desarrollo
+3. **Escala a [Orquestadores enterprise](orquestadores/)** - Airflow u otros cuando necesites producción
+
 ---
 
 ## 🚀 Siguiente paso
 
 Después de dominar pipelines:
 
+* **[03_python/ejemplos/](../03_python/ejemplos/)** para ejemplos prácticos de pipelines con Python
 * **[07_proyectos](../07_proyectos/)** para proyectos end-to-end completos
 * **[06_ai_como_copiloto](../06_ai_como_copiloto/)** para usar AI en el desarrollo
 
@@ -68,11 +73,9 @@ Un pipeline no es solo código. Piensa en orquestación, monitoreo, manejo de er
 
 ---
 
-## 📝 Nota sobre duplicación
+## 📚 Flujo de aprendizaje recomendado
 
-Hay dos documentos sobre pipelines:
-
-* **[01_fundamentos/que-es-un-pipeline.md](../01_fundamentos/que-es-un-pipeline.md)**: Enfoque **conceptual** - qué es un pipeline, principios de diseño
-* **[pipelines-basicos.md](pipelines-basicos.md)**: Enfoque **práctico** - cómo construir pipelines básicos
-
-Ambos son complementarios. Lee primero el conceptual, luego el práctico.
+1. **Empieza con [¿Qué es un pipeline?](pipelines-basicos/que-es-un-pipeline.md)** - Conceptos fundamentales
+2. **Aprende [Pipelines con Python](pipelines-basicos/pipelines-con-python.md)** - Implementación práctica
+3. **Prueba [Orquestadores locales](orquestadores/)** - Prefect o Dagster para desarrollo
+4. **Escala a [Orquestadores enterprise](orquestadores/)** - Airflow u otros cuando necesites producción

@@ -163,10 +163,10 @@ Es la **orquestación correcta**.
 
 📁 Contenido recomendado:
 
-* [¿Qué es un Pipeline?](../01_fundamentos/que-es-un-pipeline.md) *(conceptual)*
+* [¿Qué es un Pipeline?](../05_pipelines/pipelines-basicos/que-es-un-pipeline.md) *(conceptual)*
 * [Batch vs Streaming](../01_fundamentos/batch-vs-streaming.md)
-* [Pipelines básicos](../05_pipelines/pipelines-basicos.md)
-* [Pipelines con Python](../05_pipelines/pipelines-con-python.md) *(próximo)*
+* [Pipelines básicos](../05_pipelines/pipelines-basicos/)
+* [Pipelines con Python](../05_pipelines/pipelines-basicos/pipelines-con-python.md)
 * [Introducción a Airflow](../05_pipelines/introduccion-airflow.md) *(próximo)*
 * [Buenas Prácticas](../01_fundamentos/buenas-practicas.md)
 
