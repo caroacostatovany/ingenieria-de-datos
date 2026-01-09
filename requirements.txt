@@ -1,0 +1,71 @@
+# Dependencias principales para el repositorio de Ingeniería de Datos
+# 
+# Instalación:
+#   pip install -r requirements.txt
+#
+# O instala solo lo que necesites según el módulo que estés estudiando
+
+# ============================================
+# CORE - Fundamentos
+# ============================================
+python-dotenv>=1.0.0          # Manejo de variables de entorno (.env)
+
+# ============================================
+# SQL - Base de datos
+# ============================================
+psycopg2-binary>=2.9.0        # PostgreSQL adapter para Python
+sqlalchemy>=2.0.0             # ORM y conexiones a bases de datos
+
+# ============================================
+# Python - Manipulación de datos
+# ============================================
+pandas>=2.0.0                 # Manipulación y análisis de datos
+numpy>=1.24.0                 # Operaciones numéricas
+
+# ============================================
+# Visualización
+# ============================================
+matplotlib>=3.7.0             # Visualizaciones básicas
+seaborn>=0.12.0               # Visualizaciones estadísticas
+
+# ============================================
+# Jupyter Notebooks
+# ============================================
+jupyter>=1.0.0                # Jupyter Notebook
+jupyterlab>=4.0.0             # JupyterLab (alternativa moderna)
+ipykernel>=6.25.0             # Kernel de Python para Jupyter
+
+# ============================================
+# Calidad de Datos
+# ============================================
+great-expectations>=0.18.0    # Validación de datos
+pandera>=0.17.0               # Validación de esquemas Pandas
+
+# ============================================
+# Pipelines y Orquestación
+# ============================================
+# Airflow (instalar según necesidad)
+# apache-airflow>=2.7.0
+
+# Prefect (moderno, recomendado para empezar)
+prefect>=2.14.0
+
+# ============================================
+# Testing
+# ============================================
+pytest>=7.4.0                 # Framework de testing
+pytest-cov>=4.1.0             # Coverage para tests
+
+# ============================================
+# Utilidades
+# ============================================
+requests>=2.31.0              # HTTP requests (APIs)
+pyyaml>=6.0                   # Manejo de YAML
+
+# ============================================
+# NOTAS
+# ============================================
+# - Estas son las dependencias principales
+# - Cada proyecto puede tener dependencias adicionales
+# - Para proyectos específicos, revisa el README del proyecto
+# - Para Docker, las dependencias están en docker-compose.yml

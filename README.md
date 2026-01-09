@@ -41,17 +41,14 @@ Ayudarte a:
 ## 🚀 Cómo empezar
 
 1. **⭐ PRIMERO:** [Configura Cursor](06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md) - Tu copiloto de AI
-2. **Configura tu entorno:**
-   ```bash
-   # Copia el archivo de configuración
-   cp .env.example .env
-   # Edita .env con tus valores (ver instrucciones abajo)
-   ```
+2. **Configura tu entorno:** Sigue la [Guía de Configuración Inicial](SETUP.md) completa
 3. **Lee** [¿Qué es Data Engineering?](00_introduccion/que-es-data-engineering.md)
 4. **Revisa** el [Roadmap](00_introduccion/roadmap-data-engineer.md)
 5. **Sigue** el orden sugerido en el roadmap
 6. **Practica** con los ejercicios y proyectos
 7. **Usa el chat de Cursor** para hacer preguntas sobre cualquier contenido
+
+> 💡 **Nuevo**: Revisa [SETUP.md](SETUP.md) para una guía completa de configuración inicial con todos los requisitos y pasos detallados.
 
 ### ⚙️ Configuración de variables de entorno
 
@@ -214,6 +211,26 @@ cp ../.env.example .env  # o usa el .env.example específico del módulo
 * Revisa nuestro [Código de Conducta](CODE_OF_CONDUCT.md)
 
 ⭐ Si este repo te ayuda, dale **Star** para apoyar el contenido en español.
+
+---
+
+## ❓ Preguntas Frecuentes
+
+¿Tienes dudas? Revisa nuestro [FAQ](FAQ.md) con preguntas comunes sobre:
+* Cómo empezar
+* Configuración técnica
+* Problemas comunes
+* Sobre el aprendizaje
+* Contribuciones
+
+---
+
+## 📚 Documentación Adicional
+
+* **[SETUP.md](SETUP.md)** - Guía completa de configuración inicial
+* **[FAQ.md](FAQ.md)** - Preguntas frecuentes
+* **[CONTRIBUTING.md](CONTRIBUTING.md)** - Cómo contribuir
+* **[requirements.txt](requirements.txt)** - Dependencias del proyecto
 
 ---
 

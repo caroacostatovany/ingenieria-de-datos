@@ -100,6 +100,19 @@ La nube es una herramienta poderosa, pero:
 
 ---
 
+## 📚 Estructura del módulo
+
+Este módulo está organizado por proveedor:
+
+1. **[AWS](aws/)** - Amazon Web Services (el más popular)
+2. **[GCP](gcp/)** - Google Cloud Platform (excelente para BigQuery)
+3. **[Azure](azure/)** - Microsoft Azure (ideal para entornos Microsoft)
+4. **[Multi-Cloud](multi-cloud/)** - Estrategias multi-proveedor
+
+> 💡 **Recomendación**: Empieza con **un solo proveedor** (AWS o GCP son buenas opciones). Una vez que domines uno, será más fácil aprender otros.
+
+---
+
 ## 🚀 ¿Qué sigue?
 
 Según el roadmap, después de dominar cloud:
@@ -113,5 +126,6 @@ Según el roadmap, después de dominar cloud:
 * Explorar servicios avanzados (streaming, ML, etc.)
 * Considerar arquitecturas multi-cloud
 * Profundizar en un proveedor específico
+* Obtener certificaciones cloud (AWS, GCP, Azure)
 
 > 💡 **Tip**: Revisa el [Roadmap completo](../00_introduccion/roadmap-data-engineer.md) para ver la ruta completa.
