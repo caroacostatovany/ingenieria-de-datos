@@ -8,9 +8,34 @@ Bienvenido/a a la documentación web del repositorio de **Ingeniería de Datos e
 
 Este repositorio está diseñado para aprender **Ingeniería de Datos desde cero hasta un nivel profesional**, con **bases sólidas**, ejemplos prácticos y un enfoque moderno donde la **AI se usa como copiloto**, no como reemplazo.
 
-### ⭐ PRIMERO: Configura Cursor
+### Opción A: Cursor (Recomendado) ⭐
 
-Antes de empezar, configura **[Cursor](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)** - Tu copiloto de AI. Te ayudará durante todo el aprendizaje.
+Si usas [Cursor](https://cursor.sh/), puedes configurarlo como copiloto de AI para obtener ayuda mientras aprendes:
+- [Guía de Cursor para Data Engineers](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)
+- El chat de Cursor puede ayudarte con preguntas sobre cualquier contenido
+
+### Opción B: Tu editor favorito
+
+Puedes usar cualquier editor de código:
+- **VS Code** + extensiones (Python, SQL, Markdown)
+- **PyCharm** para Python
+- **DBeaver** o **pgAdmin** para SQL
+- Cualquier editor que prefieras
+
+---
+
+## 🎯 Start Here
+
+**¿No sabes por dónde empezar?** Elige una de estas opciones:
+
+### 📖 [Empieza aquí → Introducción](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/00_introduccion/que-es-data-engineering.md)
+Conceptos básicos de Data Engineering para principiantes
+
+### 🗺️ [Ruta sugerida → Roadmap](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/00_introduccion/roadmap-data-engineer.md)
+Guía completa paso a paso para convertirte en Data Engineer
+
+### 🚀 [Primer proyecto → Principiante](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/07_proyectos/principiante/)
+Aprende haciendo: proyectos prácticos desde el primer día
 
 ---
 
@@ -59,9 +84,9 @@ Antes de empezar, configura **[Cursor](https://github.com/caroacostatovany/ingen
   * Pipelines básicos con Python
   * Orquestadores (Prefect, Dagster, Airflow, etc.)
 
-### 🤖 AI como Copiloto
+### 🤖 Inteligencia Artificial como copiloto
 
-* [AI como Copiloto](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/06_inteligencia_artificial)
+* [Inteligencia Artificial como Copiloto](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/06_inteligencia_artificial)
   * Cursor para Data Engineers
   * Uso práctico de AI
   * Buenas prácticas

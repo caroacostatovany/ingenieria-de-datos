@@ -522,6 +522,24 @@ El chat de Cursor puede ayudarte a navegar y aprender de este repositorio. Aquí
 
 ## 📋 Reglas para mejores resultados
 
+### 🔄 Sincronización Automática README ↔ Landing Page
+
+Este repositorio tiene configurado un archivo `.cursorrules` que contiene reglas para mantener sincronizados `README.md` y `docs/index.md`.
+
+**Cuando modifiques README.md**, el asistente de Cursor automáticamente:
+- Detectará los cambios
+- Aplicará los mismos cambios a `docs/index.md`
+- Mantendrá la consistencia entre ambos archivos
+
+**Para activar esta funcionalidad:**
+1. Asegúrate de que el archivo `.cursorrules` existe en la raíz del proyecto
+2. El asistente de Cursor lo leerá automáticamente
+3. Cuando pidas cambios en README.md, también actualizará docs/index.md
+
+---
+
+## 📋 Reglas para mejores resultados
+
 ### ✅ Haz esto:
 
 1. **Sé específico sobre el archivo o módulo:**

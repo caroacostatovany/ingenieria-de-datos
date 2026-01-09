@@ -1,8 +1,6 @@
-# 📊 Ingenería de datos
+# 📊 Ingeniería de Datos
 
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
-![Status](https://img.shields.io/badge/status-active-success.svg)
-![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)
 ![Language](https://img.shields.io/badge/language-español-red.svg)
 ![Contributions](https://img.shields.io/badge/contributions-welcome-brightgreen.svg)
 
@@ -39,13 +37,27 @@ Ayudarte a:
 
 ## 🚀 Cómo empezar
 
-1. **⭐ PRIMERO:** [Configura Cursor](06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md) - Tu copiloto de AI
-2. **Configura tu entorno:** Sigue la [Guía de Configuración Inicial](SETUP.md) completa
-3. **Lee** [¿Qué es Data Engineering?](00_introduccion/que-es-data-engineering.md)
-4. **Revisa** el [Roadmap](00_introduccion/roadmap-data-engineer.md)
-5. **Sigue** el orden sugerido en el roadmap
-6. **Practica** con los ejercicios y proyectos
-7. **Usa el chat de Cursor** para hacer preguntas sobre cualquier contenido
+### Opción A: Cursor (Recomendado) ⭐
+
+Si usas [Cursor](https://cursor.sh/), puedes configurarlo como copiloto de AI para obtener ayuda mientras aprendes:
+- [Guía de Cursor para Data Engineers](06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)
+- El chat de Cursor puede ayudarte con preguntas sobre cualquier contenido
+
+### Opción B: Tu editor favorito
+
+Puedes usar cualquier editor de código:
+- **VS Code** + extensiones (Python, SQL, Markdown)
+- **PyCharm** para Python
+- **DBeaver** o **pgAdmin** para SQL
+- Cualquier editor que prefieras
+
+### Pasos siguientes (para todos)
+
+1. **Configura tu entorno:** Sigue la [Guía de Configuración Inicial](SETUP.md) completa
+2. **Lee** [¿Qué es Data Engineering?](00_introduccion/que-es-data-engineering.md)
+3. **Revisa** el [Roadmap](00_introduccion/roadmap-data-engineer.md)
+4. **Sigue** el orden sugerido en el roadmap
+5. **Practica** con los ejercicios y proyectos
 
 > 💡 **Nuevo**: Revisa [SETUP.md](SETUP.md) para una guía completa de configuración inicial con todos los requisitos y pasos detallados.
 
@@ -75,13 +87,28 @@ cp ../.env.example .env  # o usa el .env.example específico del módulo
 
 ---
 
+## 🎯 Start Here
+
+**¿No sabes por dónde empezar?** Elige una de estas opciones:
+
+### 📖 [Empieza aquí → Introducción](00_introduccion/que-es-data-engineering.md)
+Conceptos básicos de Data Engineering para principiantes
+
+### 🗺️ [Ruta sugerida → Roadmap](00_introduccion/roadmap-data-engineer.md)
+Guía completa paso a paso para convertirte en Data Engineer
+
+### 🚀 [Primer proyecto → Principiante](07_proyectos/principiante/)
+Aprende haciendo: proyectos prácticos desde el primer día
+
+---
+
 ## 🧭 Índice visual (ruta de aprendizaje)
 
 **Elige tu punto de partida:**
 
 * 👶 **Si vas empezando:** empieza por **Introducción → Fundamentos**
 * 👩‍💻 **Si ya manejas SQL/Python:** salta a **Modelado, Calidad y Pipelines**
-* 🚀 **Si buscas enfoque moderno:** revisa **AI como copiloto** y **Proyectos End-to-End**
+* 🚀 **Si buscas enfoque moderno:** revisa **Inteligencia Artificial como copiloto** y **Proyectos End-to-End**
 
 ---
 
@@ -163,9 +190,9 @@ cp ../.env.example .env  # o usa el .env.example específico del módulo
 
 ---
 
-### 🤖 AI como copiloto
+### 🤖 Inteligencia Artificial como copiloto
 
-* 📘 [AI como Copiloto (carpeta)](06_inteligencia_artificial/)
+* 📘 [Inteligencia Artificial como Copiloto (carpeta)](06_inteligencia_artificial/)
 * ✅ [Herramientas](06_inteligencia_artificial/herramientas/)
   * Cursor para Data Engineers
 * ✅ [Uso Práctico](06_inteligencia_artificial/uso-practico/)
@@ -250,7 +277,7 @@ cp ../.env.example .env  # o usa el .env.example específico del módulo
 
 ---
 
-## 🤖 AI como copiloto
+## 🤖 Inteligencia Artificial como copiloto
 
 En este repositorio:
 
