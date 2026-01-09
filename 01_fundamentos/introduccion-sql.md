@@ -119,7 +119,7 @@ SELECT * FROM datos_transformados;
 
 ## 🔧 Herramientas SQL comunes en Data Engineering
 
-* **PostgreSQL**: Base de datos relacional open source
+* **PostgreSQL**: Base de datos relacional open source (la que usamos en este repositorio)
 * **MySQL**: Popular para aplicaciones web
 * **BigQuery**: Data warehouse de Google Cloud
 * **Snowflake**: Data warehouse en la nube
@@ -127,6 +127,8 @@ SELECT * FROM datos_transformados;
 * **SQL Server**: Microsoft SQL Server
 
 **No importa cuál uses, el SQL básico es muy similar entre todas.**
+
+> 💡 **Nota**: En este repositorio usamos **PostgreSQL** porque es excelente para aprender SQL estándar y muy usado en la industria. Lee más sobre [SQL vs PostgreSQL](../02_sql/sql-vs-postgresql.md) para entender las diferencias.
 
 ---
 

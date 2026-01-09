@@ -2,37 +2,45 @@
 
 Esta carpeta contiene todo lo que necesitas saber sobre SQL aplicado a la Ingeniería de Datos.
 
+> **💡 Nota importante**: Este módulo usa **PostgreSQL** como sistema de base de datos, pero enseña **SQL estándar** que funciona en otros sistemas. Lee [SQL vs PostgreSQL](sql-vs-postgresql.md) para entender las diferencias y por qué elegimos PostgreSQL.
+
 ---
 
 ## 📖 Contenido
 
 ### 📘 Estructura
 
-* **[SQL básico](sql-basico/)** *(próximo)*
+* ✅ **[SQL vs PostgreSQL](sql-vs-postgresql.md)**
+  * ¿Cuál es la diferencia?
+  * ¿Por qué usamos PostgreSQL?
+  * SQL estándar vs extensiones PostgreSQL
+
+* ✅ **[SQL básico](sql-basico/)**
   * SELECT, FROM, WHERE
   * JOINs básicos
   * Agregaciones (GROUP BY, HAVING)
+  * Ordenamiento y límites
   * Funciones comunes
 
-* **[SQL intermedio](sql-intermedio/)** *(próximo)*
+* ✅ **[SQL intermedio](sql-intermedio/)**
   * Subconsultas y CTEs
   * Window functions
-  * Manejo de fechas y strings
+  * Manejo avanzado de fechas
   * Optimización básica
 
-* **[SQL avanzado](sql-avanzado/)** *(próximo)*
+* ✅ **[SQL avanzado](sql-avanzado/)**
   * Particionamiento
-  * Índices y performance
+  * Índices avanzados
   * Funciones analíticas avanzadas
   * Patrones complejos
 
-* **[Modelado Relacional](modelado-relacional.md)** *(próximo)*
+* ✅ **[Modelado Relacional](modelado-relacional.md)**
   * Normalización
   * Diseño de esquemas
   * Relaciones y claves
   * Data Warehouses
 
-* **[Ejercicios](ejercicios/)** *(próximo)*
+* ✅ **[Ejercicios](ejercicios/)**
   * Ejercicios prácticos por nivel
   * Casos de uso reales
   * Soluciones comentadas
@@ -69,7 +77,7 @@ Después de dominar SQL, continúa con:
 
 ## 🐳 Base de Datos Local con Docker
 
-Para practicar SQL, puedes usar una base de datos PostgreSQL local con Docker:
+Para practicar SQL, puedes usar una base de datos **PostgreSQL 15** local con Docker:
 
 1. **Copia el archivo de configuración:**
    ```bash
@@ -84,9 +92,11 @@ Para practicar SQL, puedes usar una base de datos PostgreSQL local con Docker:
 3. **Lee las instrucciones completas** en [README-DOCKER.md](README-DOCKER.md)
 
 Esto te dará:
-* PostgreSQL listo para usar
+* **PostgreSQL 15** listo para usar
 * Datos de ejemplo (usuarios, productos, ventas)
 * pgAdmin (interfaz web opcional)
+
+> 💡 **¿Por qué PostgreSQL?** Lee [SQL vs PostgreSQL](sql-vs-postgresql.md) para entender por qué usamos PostgreSQL en este repositorio y cómo se relaciona con SQL estándar.
 
 ---
 

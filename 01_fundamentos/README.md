@@ -61,6 +61,14 @@ Esta carpeta cubre los conceptos fundamentales que todo Data Engineer debe domin
   * Comandos esenciales
   * Buenas prácticas
 
+* **[Data Engineering en la Nube](data-engineering-en-la-nube.md)**
+  * ¿Qué es Data Engineering en la nube?
+  * Principales proveedores (AWS, GCP, Azure)
+  * Ventajas del cloud
+  * Conceptos clave (serverless, almacenamiento de objetos)
+  * Arquitecturas típicas
+  * Modelo de costos y seguridad
+
 ---
 
 ## 🎯 Objetivo de esta sección
@@ -75,6 +83,7 @@ Al finalizar esta sección, deberías poder:
 * Entender el rol de SQL en Data Engineering y cuándo usarlo
 * Gestionar configuraciones y secretos con archivos .env de forma segura
 * Usar Docker para crear entornos reproducibles y pipelines portables
+* Entender conceptos de Data Engineering en la nube y cuándo usarlo
 
 ---
 

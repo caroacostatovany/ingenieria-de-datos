@@ -67,17 +67,19 @@ Ayudarte a:
 * ✅ [Git y GitHub para Data Engineers](01_fundamentos/git-y-github-para-data-engineers.md)
 * ✅ [Archivos .env para Data Engineers](01_fundamentos/archivos-env-para-data-engineers.md)
 * ✅ [Docker para Data Engineers](01_fundamentos/docker-para-data-engineers.md)
+* ✅ [Data Engineering en la Nube](01_fundamentos/data-engineering-en-la-nube.md)
 
 ---
 
 ### 🟧 Nivel 2 — SQL para Data Engineers
 
 * 📘 [SQL (carpeta)](02_sql/)
-* 📄 [Modelado Relacional](02_sql/modelado-relacional.md) *(próximo)*
-* 📘 [SQL básico](02_sql/sql-basico/) *(próximo)*
-* 📘 [SQL intermedio](02_sql/sql-intermedio/) *(próximo)*
-* 📘 [SQL avanzado](02_sql/sql-avanzado/) *(próximo)*
-* 📘 [Ejercicios](02_sql/ejercicios/) *(próximo)*
+* ✅ [SQL vs PostgreSQL](02_sql/sql-vs-postgresql.md) - ¿Por qué PostgreSQL?
+* ✅ [SQL básico](02_sql/sql-basico/)
+* ✅ [SQL intermedio](02_sql/sql-intermedio/)
+* ✅ [SQL avanzado](02_sql/sql-avanzado/)
+* ✅ [Modelado Relacional](02_sql/modelado-relacional.md)
+* ✅ [Ejercicios](02_sql/ejercicios/)
 
 ---
 
@@ -128,6 +130,17 @@ Ayudarte a:
 * 📘 [Proyectos (carpeta)](07_proyectos/)
 * 🧪 (Próximo) Proyecto 01 — Pipeline simple
 * 🧪 (Próximo) Proyecto 02 — SQL + Python
+
+---
+
+### ☁️ Data Engineering en la Nube
+
+* 📘 [Cloud (carpeta)](08_cloud/)
+* ✅ [Conceptos fundamentales](01_fundamentos/data-engineering-en-la-nube.md)
+* 📘 [AWS](08_cloud/aws/) *(próximo)*
+* 📘 [Google Cloud Platform](08_cloud/gcp/) *(próximo)*
+* 📘 [Microsoft Azure](08_cloud/azure/) *(próximo)*
+* 📘 [Multi-Cloud](08_cloud/multi-cloud/) *(próximo)*
 
 ---
 
