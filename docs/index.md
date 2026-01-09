@@ -1,0 +1,106 @@
+# 📊 Ingeniería de Datos en Español
+
+Bienvenido/a a la documentación web del repositorio de **Ingeniería de Datos en Español**.
+
+---
+
+## 🚀 Inicio Rápido
+
+Este repositorio está diseñado para aprender **Ingeniería de Datos desde cero hasta un nivel profesional**, con **bases sólidas**, ejemplos prácticos y un enfoque moderno donde la **AI se usa como copiloto**, no como reemplazo.
+
+### ⭐ PRIMERO: Configura Cursor
+
+Antes de empezar, configura **[Cursor](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)** - Tu copiloto de AI. Te ayudará durante todo el aprendizaje.
+
+---
+
+## 🧭 Ruta de Aprendizaje
+
+### 🟩 Nivel 0 — Introducción
+
+* [¿Qué es Data Engineering?](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/00_introduccion/que-es-data-engineering.md)
+* [Roadmap para convertirte en Data Engineer](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/00_introduccion/roadmap-data-engineer.md)
+* [Roles en datos](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/00_introduccion/roles-en-datos.md)
+
+### 🟨 Nivel 1 — Fundamentos
+
+* [Fundamentos](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/01_fundamentos)
+  * Tipos de Datos, Pipelines, Batch vs Streaming
+  * Git, .env, Docker
+  * Introducción a SQL
+  * Buenas Prácticas
+
+### 🟧 Nivel 2 — SQL
+
+* [SQL para Data Engineers](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/02_sql)
+  * SQL básico, intermedio y avanzado
+  * Modelado Relacional
+  * Ejercicios prácticos
+
+### 🟦 Nivel 3 — Python
+
+* [Python aplicado](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/03_python)
+  * Fundamentos Python
+  * Pandas para datos
+  * Storytelling con datos
+  * Ejemplos en Jupyter Notebooks
+
+### 🟪 Nivel 4 — Modelado y Calidad
+
+* [Modelado y Calidad](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/04_modelado_y_calidad)
+  * Modelado analítico (Star Schema)
+  * Calidad de datos
+  * Validaciones y Testing
+  * Great Expectations, Pandera
+
+### 🟥 Nivel 5 — Pipelines
+
+* [Pipelines y Orquestación](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/05_pipelines)
+  * Pipelines básicos con Python
+  * Orquestadores (Prefect, Dagster, Airflow, etc.)
+
+### 🤖 AI como Copiloto
+
+* [AI como Copiloto](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/06_inteligencia_artificial)
+  * Cursor para Data Engineers
+  * Uso práctico de AI
+  * Buenas prácticas
+
+### ☁️ Data Engineering en la Nube
+
+* [Cloud](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/08_cloud)
+  * AWS, GCP, Azure
+  * Multi-Cloud
+
+### 🚀 Proyectos
+
+* [Proyectos End-to-End](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/07_proyectos)
+  * Principiante, Intermedio, Avanzado
+
+---
+
+## 📚 Recursos
+
+* [Guía de Configuración Inicial](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/SETUP.md)
+* [FAQ](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/FAQ.md)
+* [Cómo Contribuir](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/CONTRIBUTING.md)
+
+---
+
+## 🔗 Enlaces Útiles
+
+* [📦 Repositorio en GitHub](https://github.com/caroacostatovany/ingenieria-de-datos)
+* [💬 Discussions](https://github.com/caroacostatovany/ingenieria-de-datos/discussions) - Preguntas y comunidad
+* [🐛 Issues](https://github.com/caroacostatovany/ingenieria-de-datos/issues) - Reportar errores
+* [📖 README Principal](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/README.md)
+* [❓ FAQ](https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/FAQ.md)
+
+---
+
+## 📬 Contacto
+
+* [LinkedIn](https://www.linkedin.com/in/carolina-acosta-tovany-1a6689275/)
+
+---
+
+> **Nota**: Esta es la versión web del repositorio. Para el contenido completo y actualizado, visita el [repositorio en GitHub](https://github.com/caroacostatovany/ingenieria-de-datos).

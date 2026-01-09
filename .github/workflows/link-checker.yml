@@ -1,0 +1,36 @@
+name: 🔗 Verificar Links
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Ejecuta cada domingo a las 2 AM UTC
+    - cron: '0 2 * * 0'
+
+jobs:
+  check-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: |
+          pip install markdown-link-check
+
+      - name: Verificar links en Markdown
+        run: |
+          find . -name "*.md" -not -path "./.git/*" -not -path "./node_modules/*" | \
+          xargs -I {} markdown-link-check {} --config .github/link-check-config.json || true
+
+      - name: Reportar resultados
+        if: failure()
+        run: |
+          echo "⚠️ Se encontraron algunos links rotos. Revisa el output arriba."

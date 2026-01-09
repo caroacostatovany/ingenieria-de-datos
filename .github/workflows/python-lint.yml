@@ -1,0 +1,43 @@
+name: 🐍 Lint Python
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - '**.py'
+      - '**.ipynb'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - '**.py'
+      - '**.ipynb'
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: |
+          pip install flake8 black isort
+          pip install -r requirements.txt || true
+
+      - name: Lint con flake8
+        run: |
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics || true
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics || true
+
+      - name: Verificar formato con black
+        run: |
+          black --check . || true
+
+      - name: Verificar imports con isort
+        run: |
+          isort --check-only . || true

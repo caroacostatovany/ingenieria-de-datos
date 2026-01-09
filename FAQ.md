@@ -210,16 +210,20 @@ Sí, bajo la licencia MIT. Revisa [LICENSE](LICENSE) para más detalles.
 
 ### ¿Dónde puedo hacer preguntas?
 
-* Abre un **Issue** en GitHub
-* Usa el **chat de Cursor** para preguntas sobre el contenido
-* Contacta al mantenedor por [LinkedIn](https://www.linkedin.com/in/carolina-acosta-tovany-1a6689275/)
+* 💬 **GitHub Discussions** (recomendado) - Para preguntas, ideas y recursos
+* 🐛 **Issues** - Para reportar errores o problemas técnicos
+* 💬 **Chat de Cursor** - Para preguntas sobre el contenido mientras trabajas
+* 📧 **LinkedIn** - Para contacto directo con el mantenedor
 
 ### ¿Hay comunidad o foro?
 
-Actualmente no hay comunidad oficial, pero puedes:
-* Abrir Issues para discusiones
-* Contribuir con contenido
-* Compartir tus proyectos
+¡Sí! Usamos **GitHub Discussions** como espacio de comunidad. Puedes:
+* 💬 Hacer preguntas en la categoría **Q&A**
+* 💡 Compartir ideas y sugerencias
+* 📚 Compartir recursos útiles
+* 🤝 Ayudar a otros miembros
+
+📖 **¿No sabes cómo usar Discussions?** Lee la [guía completa](.github/GUIDE_DISCUSSIONS.md).
 
 ---
 

@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 GitHub Discussions
+    url: https://github.com/caroacostatovany/ingenieria-de-datos/discussions
+    about: Haz preguntas y comparte ideas con la comunidad (recomendado para preguntas)
+  - name: 📖 FAQ
+    url: https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/FAQ.md
+    about: Revisa preguntas frecuentes antes de abrir un issue
+  - name: 🌐 Documentación Web
+    url: https://caroacostatovany.github.io/ingenieria-de-datos/
+    about: Versión web del repositorio (GitHub Pages)

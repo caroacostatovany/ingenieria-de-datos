@@ -1,0 +1,19 @@
+# Configuración para GitHub Pages con Jekyll
+# GitHub Pages usa Jekyll por defecto
+
+title: Ingeniería de Datos en Español
+description: Repositorio educativo para aprender Data Engineering desde cero
+theme: jekyll-theme-minimal
+
+# Configuración
+show_downloads: false
+github: [username: "caroacostatovany", repository: "ingenieria-de-datos"]
+
+# Navegación
+nav:
+  - title: Inicio
+    url: /
+  - title: Roadmap
+    url: https://github.com/caroacostatovany/ingenieria-de-datos/blob/main/00_introduccion/roadmap-data-engineer.md
+  - title: GitHub
+    url: https://github.com/caroacostatovany/ingenieria-de-datos
