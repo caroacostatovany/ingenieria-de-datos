@@ -30,9 +30,13 @@ Aprender los fundamentos de un pipeline ETL:
 # Navegar al proyecto
 cd 07_proyectos/principiante/proyecto_01_etl_simple
 
-# Crear entorno virtual (opcional pero recomendado)
-python -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+# Activar entorno virtual con pyenv (recomendado)
+# Si ya creaste el entorno en la raíz del proyecto:
+pyenv activate ingenieria-de-datos
+
+# O crear un entorno específico para este proyecto:
+# pyenv virtualenv 3.11.0 proyecto-etl-simple
+# pyenv activate proyecto-etl-simple
 
 # Instalar dependencias
 pip install -r requirements.txt

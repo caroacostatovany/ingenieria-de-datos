@@ -8,7 +8,8 @@ Esta guía te ayudará a configurar tu entorno de desarrollo para seguir el road
 
 ### Software necesario
 
-* **Python 3.8+** - [Descargar Python](https://www.python.org/downloads/)
+* **pyenv** - Gestor de versiones de Python (recomendado) - [Instalar pyenv](https://github.com/pyenv/pyenv#installation)
+* **Python 3.8+** - Se instalará con pyenv
 * **Git** - [Descargar Git](https://git-scm.com/downloads)
 * **Docker Desktop** (opcional pero recomendado) - [Descargar Docker](https://www.docker.com/products/docker-desktop)
 * **Cursor IDE** (opcional) - [Descargar Cursor](https://cursor.sh/) - Para usar AI como copiloto
@@ -16,10 +17,11 @@ Esta guía te ayudará a configurar tu entorno de desarrollo para seguir el road
 ### Verificar instalaciones
 
 ```bash
-# Verificar Python
-python --version  # Debe ser 3.8 o superior
-# o
-python3 --version
+# Verificar pyenv
+pyenv --version
+
+# Verificar Python instalado con pyenv
+pyenv versions
 
 # Verificar Git
 git --version
@@ -44,17 +46,16 @@ cd ingenieria-de-datos
 git pull origin main
 ```
 
-### 2. Configurar variables de entorno
+### 2. Configurar variables de entorno (Opcional para desarrollo local)
 
 ```bash
 # Copiar archivo de ejemplo
 cp .env.example .env
-
-# Editar con tus valores
-nano .env  # o tu editor preferido
 ```
 
-Lee más sobre `.env` en: **[Archivos .env para Data Engineers](01_fundamentos/04_archivos-env-para-data-engineers.md)**
+> 💡 **Para desarrollo local**: Los valores por defecto en `.env.example` funcionan perfectamente para trabajar localmente. **No necesitas editar nada** por ahora. Solo copia el archivo y ya está listo.
+
+> 📝 **Más adelante**: Si necesitas configurar valores específicos (como credenciales de base de datos, APIs, etc.), puedes editar el archivo `.env`. Lee más sobre `.env` en: **[Archivos .env para Data Engineers](01_fundamentos/04_archivos-env-para-data-engineers.md)**
 
 ### 3. ⭐ Opcional: Configurar Cursor para uso de AI
 
@@ -64,19 +65,86 @@ Sigue la guía completa: **[Cursor para Data Engineers](06_inteligencia_artifici
 
 > 💡 **Nota**: Cursor es completamente opcional. Puedes usar cualquier editor (VS Code, PyCharm, etc.). Si prefieres configurarlo más adelante, está bien.
 
-### 4. Crear entorno virtual de Python (Recomendado)
+### 4. Instalar Python con pyenv y crear entorno virtual (Recomendado)
+
+#### 4.1. Instalar pyenv (si no lo tienes)
+
+**macOS/Linux:**
+```bash
+# Instalar pyenv con Homebrew (macOS)
+brew install pyenv
+
+# O con el instalador automático
+curl https://pyenv.run | bash
+
+# Agregar a tu shell (agrega estas líneas a ~/.zshrc o ~/.bashrc)
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.zshrc
+echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.zshrc
+echo 'eval "$(pyenv init -)"' >> ~/.zshrc
+
+# Recargar shell
+exec $SHELL
+```
+
+**Windows:**
+```bash
+# Instalar pyenv-win
+git clone https://github.com/pyenv-win/pyenv-win.git %USERPROFILE%\.pyenv
+```
+
+#### 4.2. Instalar Python con pyenv
 
 ```bash
-# Crear entorno virtual
-python -m venv venv
+# Ver versiones disponibles
+pyenv install --list
+
+# Instalar Python 3.11 (o la versión que prefieras, mínimo 3.8)
+pyenv install 3.11.0
+
+# Establecer como versión global (opcional)
+pyenv global 3.11.0
+
+# O establecer solo para este proyecto
+cd ingenieria-de-datos
+pyenv local 3.11.0
+```
+
+#### 4.3. Instalar pyenv-virtualenv (plugin para entornos virtuales)
+
+**macOS/Linux:**
+```bash
+# Instalar el plugin
+git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+
+# Agregar a tu shell (agrega esta línea a ~/.zshrc o ~/.bashrc)
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
+
+# Recargar shell
+exec $SHELL
+```
+
+**Windows:**
+```bash
+# pyenv-win incluye virtualenv por defecto
+```
+
+#### 4.4. Crear entorno virtual con pyenv-virtualenv
+
+```bash
+# Crear entorno virtual (desde la raíz del proyecto)
+pyenv virtualenv 3.11.0 ingenieria-de-datos
 
 # Activar entorno virtual
-# En macOS/Linux:
-source venv/bin/activate
+pyenv activate ingenieria-de-datos
 
-# En Windows:
-venv\Scripts\activate
+# O usar automáticamente cuando entres al directorio (recomendado)
+# Crea un archivo .python-version en la raíz del proyecto
+echo "ingenieria-de-datos" > .python-version
+
+# pyenv activará automáticamente el entorno al entrar al directorio
 ```
+
+> 💡 **Tip**: Con `pyenv-virtualenv`, el entorno se activa automáticamente cuando entras al directorio si tienes `.python-version` configurado.
 
 ### 5. Instalar dependencias
 
@@ -108,7 +176,7 @@ Si vas a trabajar con SQL:
 ```bash
 cd 02_sql
 
-# Copiar configuración
+# Copiar configuración (usa valores por defecto, no necesitas editar)
 cp ../.env.example .env
 
 # Iniciar PostgreSQL con Docker
@@ -117,6 +185,8 @@ docker-compose up -d
 # Verificar que está corriendo
 docker-compose ps
 ```
+
+> 💡 **Nota**: Los valores por defecto funcionan perfectamente para desarrollo local. No necesitas editar el `.env` a menos que quieras cambiar puertos o credenciales.
 
 Lee más en: **[README-DOCKER.md](02_sql/README-DOCKER.md)**
 
@@ -188,9 +258,10 @@ python3 -m pip install --upgrade pip
 ### Error: "ModuleNotFoundError"
 
 **Solución**: 
-1. Asegúrate de tener el entorno virtual activado
-2. Instala las dependencias: `pip install -r requirements.txt`
-3. Verifica que estás en el directorio correcto
+1. Asegúrate de tener el entorno virtual activado: `pyenv activate ingenieria-de-datos`
+2. Verifica que estás usando la versión correcta de Python: `pyenv version`
+3. Instala las dependencias: `pip install -r requirements.txt`
+4. Verifica que estás en el directorio correcto
 
 ### Jupyter no inicia
 
@@ -207,7 +278,8 @@ jupyter lab
 
 ## 💡 Tips
 
-* **Usa entornos virtuales** para cada proyecto
+* **Usa pyenv para gestionar versiones de Python** - facilita cambiar entre versiones
+* **Usa pyenv-virtualenv para entornos virtuales** - se activan automáticamente
 * **Lee los READMEs** de cada módulo antes de empezar
 * **⭐ Opcional: Configura Cursor** - puede ayudarte con AI como copiloto
 * **Usa el chat de Cursor** para resolver dudas sobre el contenido

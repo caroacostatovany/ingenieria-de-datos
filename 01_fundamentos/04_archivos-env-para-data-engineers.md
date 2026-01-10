@@ -96,6 +96,10 @@ OUTPUT_PATH=/app/output
 ### Instalación
 
 ```bash
+# Asegúrate de tener tu entorno virtual activado (con pyenv)
+pyenv activate ingenieria-de-datos
+
+# Instalar python-dotenv
 pip install python-dotenv
 ```
 

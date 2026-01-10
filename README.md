@@ -157,29 +157,25 @@ Si quieres usar AI como copiloto durante tu aprendizaje, puedes configurar [Curs
 
 > 💡 **Nuevo**: Revisa [SETUP.md](SETUP.md) para una guía completa de configuración inicial con todos los requisitos y pasos detallados.
 
-### ⚙️ Configuración de variables de entorno
+### ⚙️ Configuración de variables de entorno (Opcional)
 
-Este proyecto usa archivos `.env` para gestionar configuraciones de forma segura. Lee **[Archivos .env para Data Engineers](01_fundamentos/04_archivos-env-para-data-engineers.md)** para más detalles.
+Este proyecto usa archivos `.env` para gestionar configuraciones de forma segura. Para desarrollo local, **no necesitas configurar nada** - los valores por defecto funcionan perfectamente.
 
 **Configuración rápida:**
 ```bash
 # 1. Copia el archivo de ejemplo desde la raíz del proyecto
 cp .env.example .env
 
-# 2. Edita .env con tus valores reales
-nano .env  # o tu editor preferido
-
-# 3. Para el módulo SQL con Docker (opcional)
+# 2. Para el módulo SQL con Docker (opcional)
 cd 02_sql
-cp ../.env.example .env  # o usa el .env.example específico del módulo
+cp ../.env.example .env
 ```
 
-**Variables importantes a configurar:**
-- **Base de datos**: `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`
-- **Rutas**: `DATA_SOURCE_PATH`, `DATA_OUTPUT_PATH`
-- **APIs**: `API_KEY`, `API_URL` (si usas APIs externas)
+> 💡 **Para desarrollo local**: Los valores por defecto funcionan sin necesidad de editar nada. Solo copia el archivo y ya está listo.
 
-> 💡 **Nota**: El archivo `.env` está en `.gitignore` (no se commitea). Solo el `.env.example` está versionado. Los ejemplos y ejercicios del proyecto usan estas variables automáticamente.
+> 📝 **Más adelante**: Si necesitas configurar valores específicos (credenciales de producción, APIs externas, etc.), puedes editar el archivo `.env`. Lee más sobre `.env` en: **[Archivos .env para Data Engineers](01_fundamentos/04_archivos-env-para-data-engineers.md)**
+
+> 🔒 **Nota**: El archivo `.env` está en `.gitignore` (no se commitea). Solo el `.env.example` está versionado. Los ejemplos y ejercicios del proyecto usan estas variables automáticamente.
 
 ---
 

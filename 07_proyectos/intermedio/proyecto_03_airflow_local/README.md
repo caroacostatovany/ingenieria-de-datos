@@ -26,9 +26,12 @@ Aprender a:
 ### 1. Instalar Airflow
 
 ```bash
-# Crear entorno virtual
-python -m venv venv
-source venv/bin/activate
+# Activar entorno virtual con pyenv (recomendado)
+pyenv activate ingenieria-de-datos
+
+# O crear un entorno específico para este proyecto:
+# pyenv virtualenv 3.11.0 proyecto-airflow-local
+# pyenv activate proyecto-airflow-local
 
 # Instalar Airflow
 pip install apache-airflow

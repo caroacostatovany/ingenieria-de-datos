@@ -27,9 +27,12 @@ Aprender a:
 ### 1. Preparar entorno
 
 ```bash
-# Crear entorno virtual
-python -m venv venv
-source venv/bin/activate
+# Activar entorno virtual con pyenv (recomendado)
+pyenv activate ingenieria-de-datos
+
+# O crear un entorno específico para este proyecto:
+# pyenv virtualenv 3.11.0 proyecto-analisis-pandas
+# pyenv activate proyecto-analisis-pandas
 
 # Instalar dependencias
 pip install pandas matplotlib seaborn jupyter

@@ -145,12 +145,19 @@ Instala estas extensiones para Data Engineering:
 Si trabajas con Python:
 
 1. **Selecciona el intérprete**: `Cmd+Shift+P` → "Python: Select Interpreter"
-2. **Crea un entorno virtual**:
+2. **Usa pyenv para el entorno virtual** (recomendado):
    ```bash
-   python -m venv venv
-   source venv/bin/activate  # Mac/Linux
-   # o
-   venv\Scripts\activate  # Windows
+   # Si no tienes pyenv instalado, instálalo primero
+   # Ver SETUP.md para instrucciones completas
+   
+   # Crear entorno virtual con pyenv-virtualenv
+   pyenv virtualenv 3.11.0 ingenieria-de-datos
+   
+   # Activar entorno virtual
+   pyenv activate ingenieria-de-datos
+   
+   # O configurar activación automática
+   echo "ingenieria-de-datos" > .python-version
    ```
 3. **Instala dependencias**:
    ```bash
@@ -333,8 +340,8 @@ Cursor incluye terminal integrada:
 ### Comandos útiles
 
 ```bash
-# Activar entorno virtual
-source venv/bin/activate
+# Activar entorno virtual con pyenv
+pyenv activate ingenieria-de-datos
 
 # Ejecutar scripts Python
 python pipeline.py
