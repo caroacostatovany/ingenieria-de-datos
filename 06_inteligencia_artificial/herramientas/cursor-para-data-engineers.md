@@ -84,11 +84,43 @@ Una vez abierto el proyecto, verás:
 ### Chat con AI
 
 1. **Abre el panel de AI**: `Cmd+L` / `Ctrl+L`
-2. **Haz preguntas** sobre el código:
+2. **Haz preguntas** sobre el repositorio:
    ```
-   ¿Cómo funciona este pipeline?
-   Explica esta función SQL
-   ¿Qué hace este código?
+   Explícame a grandes rasgos este repositorio
+   ```
+   ```   
+   ¿Por dónde debería empezar si soy principiante?
+   ```
+   ```
+   ¿Qué módulos tiene este repositorio y en qué orden debo seguirlos?
+   ```
+   
+3. **Para preguntas sobre código específico**, puedes:
+   
+   **Opción A: Arrastrar archivos al chat**
+   - Abre el archivo en Cursor (ej: `03_python/ejemplos/01-pipeline-etl-simple.py`)
+   - Arrastra el archivo desde el explorador al panel de chat
+   - O haz click derecho en el archivo → "Add to Chat"
+   
+   **Opción B: Mencionar el archivo en tu pregunta**
+   - Escribe la ruta del archivo en tu pregunta
+   - Cursor automáticamente lo incluirá en el contexto
+   
+   **Ejemplos de preguntas con archivos específicos:**
+   ```
+   Explica cómo funciona el pipeline en 03_python/ejemplos/01-pipeline-etl-simple.py
+   ```
+   ```
+   ¿Qué hace la función transform() en 03_python/ejemplos/01-pipeline-etl-simple.py?
+   ```
+   ```
+   Explica las queries SQL en 02_sql/ejercicios/01-ejercicios-basicos.md
+   ```
+   ```
+   ¿Cómo se crean las tablas en 02_sql/init-scripts/01-create-example-tables.sql?
+   ```
+   ```
+   Analiza el código de 03_python/ejemplos/03-conexion-db.py y explícame cómo se conecta a PostgreSQL
    ```
 
 ### Composer (Editar múltiples archivos)

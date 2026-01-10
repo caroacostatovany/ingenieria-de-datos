@@ -26,6 +26,12 @@ Esta carpeta contiene los conceptos fundamentales para entender qué es la Ingen
   * Cómo elegir tu camino
   * Habilidades traslapadas
 
+* **[Ruta de Aprendizaje Visual](ruta-aprendizaje-visual.md)**
+  * Diagrama visual de la ruta completa
+  * Flujo recomendado de aprendizaje
+  * Conexiones entre módulos
+  * Tips para navegar el repositorio
+
 ---
 
 ## 🎯 Objetivo de esta sección

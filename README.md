@@ -64,50 +64,11 @@ A lo largo de esta ruta de aprendizaje, dominarás:
 
 ## 🗺️ Ruta de Aprendizaje Visual
 
-```mermaid
-graph TD
-    A[🎯 Introducción] --> B[🛠️ Fundamentos]
-    B --> C[💾 SQL]
-    C --> D[🐍 Python]
-    D --> E[🏗️ Modelado y Calidad]
-    E --> F[⚙️ Pipelines]
-    F --> G[☁️ Cloud]
-    
-    H[🤖 AI como Copiloto] -.Opcional.-> B
-    H -.Opcional.-> C
-    H -.Opcional.-> D
-    
-    I[🚀 Proyectos] --> J[Principiante]
-    I --> K[Intermedio]
-    I --> L[Avanzado]
-    
-    C --> I
-    D --> I
-    E --> I
-    F --> I
-    
-    style A fill:#e1f5e1
-    style B fill:#fff4e1
-    style C fill:#ffe1e1
-    style D fill:#e1e5ff
-    style E fill:#f0e1ff
-    style F fill:#ffe1f0
-    style G fill:#e1f5ff
-    style H fill:#fff0e1
-    style I fill:#ffe1e1
-```
+Para ver el diagrama completo de la ruta de aprendizaje con el flujo recomendado, visita:
 
-**Flujo recomendado:**
-1. **Introducción** → Entiende qué es Data Engineering
-2. **Fundamentos** → Configura tu entorno y aprende conceptos base
-3. **SQL** → La base de todo (empieza aquí si ya tienes fundamentos)
-4. **Python** → Programación para datos
-5. **Modelado y Calidad** → Diseño y confiabilidad de datos
-6. **Pipelines** → Automatización y orquestación
-7. **Cloud** → Escalabilidad y servicios gestionados
-8. **Proyectos** → Aplica todo lo aprendido (puedes empezar en cualquier momento)
+📄 **[Ruta de Aprendizaje Visual](00_introduccion/ruta-aprendizaje-visual.md)**
 
-> 💡 **Tip**: Puedes saltar etapas si ya tienes experiencia, pero te recomendamos revisar los fundamentos primero.
+> 💡 El diagrama visual muestra cómo se conectan todos los módulos y cuál es el orden recomendado de aprendizaje.
 
 ---
 
@@ -167,8 +128,9 @@ Este proyecto usa archivos `.env` para gestionar configuraciones de forma segura
 cp .env.example .env
 
 # 2. Para el módulo SQL con Docker (opcional)
+# El docker-compose.yml usa automáticamente el .env de la raíz
 cd 02_sql
-cp ../.env.example .env
+docker-compose up -d
 ```
 
 > 💡 **Para desarrollo local**: Los valores por defecto funcionan sin necesidad de editar nada. Solo copia el archivo y ya está listo.

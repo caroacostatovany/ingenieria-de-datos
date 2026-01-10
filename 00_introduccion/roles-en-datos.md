@@ -187,8 +187,6 @@ Hay roles **mejor alineados contigo**.
 
 Si te interesa Data Engineering, continúa con:
 📄 [Roadmap Data Engineer](roadmap-data-engineer.md)
-o
-📄 [Pipelines Básicos](../01_fundamentos/pipelines-basicos.md)
 
 ---
 

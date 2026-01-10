@@ -125,7 +125,7 @@ Sí, todos los ejemplos están probados y funcionan. Si encuentras algún proble
 
 1. Verifica que Docker esté corriendo: `docker ps`
 2. Verifica los contenedores: `cd 02_sql && docker-compose ps`
-3. Revisa el archivo `.env` en `02_sql/`
+3. Verifica que el archivo `.env` existe en la raíz del proyecto: `ls -la .env`
 4. Lee [README-DOCKER.md](02_sql/README-DOCKER.md)
 
 ### Error: "ModuleNotFoundError"

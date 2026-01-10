@@ -35,6 +35,13 @@ docker-compose --version
 
 ## 🚀 Configuración Paso a Paso
 
+> ⚡ **Antes de instalar cosas con `pip`, asegúrate de tener la última versión de pip (opcional pero recomendado):**
+```bash
+python -m pip install --upgrade pip
+
+[notice] To update, run: python -m pip install --upgrade pip
+```
+
 ### 1. Clonar el repositorio
 
 ```bash
@@ -95,7 +102,7 @@ git clone https://github.com/pyenv-win/pyenv-win.git %USERPROFILE%\.pyenv
 #### 4.2. Instalar Python con pyenv
 
 ```bash
-# Ver versiones disponibles
+# Ver versiones disponibles de Python
 pyenv install --list
 
 # Instalar Python 3.11 (o la versión que prefieras, mínimo 3.8)
@@ -103,11 +110,23 @@ pyenv install 3.11.0
 
 # Establecer como versión global (opcional)
 pyenv global 3.11.0
+```
 
-# O establecer solo para este proyecto
-cd ingenieria-de-datos
+> 👇 **Antes de establecer la versión local, asegúrate de estar dentro de la carpeta del repositorio "ingenieria-de-datos".**
+
+```bash
+# Verifica tu ubicación actual
+pwd  # Debería terminar en "ingenieria-de-datos"
+
+# Si NO estás en el directorio correcto, navega primero:
+cd ruta/al/directorio/ingenieria-de-datos
+```
+
+```bash
+# Ahora sí puedes establecer la versión local de Python para este proyecto
 pyenv local 3.11.0
 ```
+> 💡 Si tienes dudas, usa `pwd` para confirmar que estás dentro de "ingenieria-de-datos" antes de correr `pyenv local`.
 
 #### 4.3. Instalar pyenv-virtualenv (plugin para entornos virtuales)
 
@@ -139,9 +158,8 @@ pyenv activate ingenieria-de-datos
 
 # O usar automáticamente cuando entres al directorio (recomendado)
 # Crea un archivo .python-version en la raíz del proyecto
-echo "ingenieria-de-datos" > .python-version
-
 # pyenv activará automáticamente el entorno al entrar al directorio
+echo "ingenieria-de-datos" > .python-version
 ```
 
 > 💡 **Tip**: Con `pyenv-virtualenv`, el entorno se activa automáticamente cuando entras al directorio si tienes `.python-version` configurado.
@@ -175,9 +193,6 @@ Si vas a trabajar con SQL:
 
 ```bash
 cd 02_sql
-
-# Copiar configuración (usa valores por defecto, no necesitas editar)
-cp ../.env.example .env
 
 # Iniciar PostgreSQL con Docker
 docker-compose up -d
@@ -253,7 +268,7 @@ python3 -m pip install --upgrade pip
 **Solución**: 
 1. Verifica que Docker esté corriendo: `docker ps`
 2. Verifica que los contenedores estén activos: `cd 02_sql && docker-compose ps`
-3. Revisa el archivo `.env` en `02_sql/`
+3. Verifica que el archivo `.env` existe en la raíz del proyecto: `ls -la .env`
 
 ### Error: "ModuleNotFoundError"
 

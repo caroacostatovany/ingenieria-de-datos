@@ -88,31 +88,54 @@ En realidad, también implica:
 
 * diseño
 * decisiones de arquitectura
-* trade-offs
+* **trade-offs** (compromisos entre opciones)
 * comunicación con otros equipos
 * pensar en el impacto en el negocio
+
+### 🤔 ¿Qué es un trade-off?
+
+Un **trade-off** (compromiso o intercambio) es cuando eliges una opción sabiendo que estás renunciando a algo a cambio de otra cosa. En Data Engineering, esto es muy común:
+
+**Ejemplos de trade-offs:**
+
+* **Velocidad vs Costo**: 
+  * Puedes procesar datos más rápido usando más recursos (más caro)
+  * O procesar más lento usando menos recursos (más barato)
+  * **Trade-off**: ¿Prefieres velocidad o ahorro?
+
+* **Simplicidad vs Flexibilidad**:
+  * Un pipeline simple es fácil de mantener pero menos flexible
+  * Un pipeline complejo es más flexible pero más difícil de mantener
+  * **Trade-off**: ¿Prefieres simplicidad o capacidad de adaptación?
+
+* **Batch vs Streaming**:
+  * Batch es más simple y barato, pero los datos llegan con retraso
+  * Streaming es más complejo y costoso, pero los datos llegan en tiempo real
+  * **Trade-off**: ¿Necesitas datos en tiempo real o puedes esperar?
+
+* **Data Warehouse vs Data Lake**:
+  * Data Warehouse: estructura fija, rápido para consultas, más caro
+  * Data Lake: estructura flexible, más lento para consultas, más barato
+  * **Trade-off**: ¿Prefieres estructura y velocidad o flexibilidad y costo?
+
+* **Calidad vs Velocidad de entrega**:
+  * Validaciones exhaustivas = datos más confiables pero tardan más en llegar
+  * Validaciones mínimas = datos llegan rápido pero pueden tener errores
+  * **Trade-off**: ¿Qué es más importante: calidad o velocidad?
+
+> 💡 **En Data Engineering, no hay soluciones perfectas. Solo hay soluciones que equilibran diferentes necesidades según el contexto del negocio.**
 
 ---
 
 ## 🆚 Data Engineering vs otros roles
 
-### 📊 Data Analyst
+Data Engineering es parte de un ecosistema más amplio. Trabaja junto con:
 
-* Consume datos
-* Analiza y visualiza
-* Depende de datos bien modelados
+* **Data Analysts**: Consumen y analizan los datos que tú preparas
+* **Data Scientists**: Usan tus datos para construir modelos
+* **Analytics Engineers**: Transforman datos en modelos analíticos
 
-### 🤖 Data Scientist
-
-* Usa datos para modelos
-* Experimenta
-* Necesita datos confiables y consistentes
-
-### 🧱 Data Engineer
-
-* Construye la base
-* Garantiza calidad y disponibilidad
-* Hace posible el trabajo de los demás
+> 💡 **Para entender mejor las diferencias y cómo interactúan estos roles, lee:** [Roles en Datos](roles-en-datos.md)
 
 > Sin Data Engineering, los otros roles no escalan.
 
@@ -154,8 +177,6 @@ Aquí aprenderás a usar AI:
 
 Continúa con:
 📄 [Roles en Datos](roles-en-datos.md)
-o
-📄 [Roadmap Data Engineer](roadmap-data-engineer.md)
 
 
 ---
