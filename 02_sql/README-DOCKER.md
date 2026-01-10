@@ -6,19 +6,23 @@ Este directorio incluye una configuración de Docker para levantar una base de d
 
 ## 🚀 Inicio rápido
 
-### 1. Copiar archivo de configuración
+### 1. Asegúrate de tener el archivo .env en la raíz del proyecto
+
+El `docker-compose.yml` de este módulo **usa automáticamente el `.env` de la raíz del proyecto** (no necesitas crear uno en `02_sql/`).
 
 ```bash
-# Opción 1: Usar el .env.example específico de este módulo
+# Si aún no tienes el .env en la raíz, cópialo desde la raíz del proyecto
+# (desde la raíz, no desde 02_sql/)
+cd ..  # Ir a la raíz del proyecto
 cp .env.example .env
-
-# Opción 2: Usar el .env.example de la raíz del proyecto
-cp ../.env.example .env
 ```
+
+> 💡 **Importante**: El `.env` siempre debe estar en la **raíz del proyecto**, no en `02_sql/`. El `docker-compose.yml` está configurado para leerlo automáticamente desde la raíz.
 
 ### 2. (Opcional) Ajustar configuración
 
-Edita el archivo `.env` si quieres cambiar:
+Si necesitas cambiar valores, edita el archivo `.env` en la **raíz del proyecto** (no en `02_sql/`):
+
 * Nombre de la base de datos (`POSTGRES_DB` o `DB_NAME`)
 * Usuario y contraseña (`POSTGRES_USER`, `POSTGRES_PASSWORD` o `DB_USER`, `DB_PASSWORD`)
 * Puertos (`POSTGRES_PORT` o `DB_PORT`)
@@ -186,11 +190,13 @@ docker-compose ps
 
 ```
 02_sql/
-├── docker-compose.yml      # Configuración de Docker
-├── .env.example            # Plantilla de variables de entorno
-├── .env                    # Variables de entorno (no commiteado)
+├── docker-compose.yml      # Configuración de Docker (lee .env de la raíz)
 └── init-scripts/           # Scripts SQL que se ejecutan al iniciar
     └── 01-create-tables.sql
+
+# El .env está en la raíz del proyecto (no en 02_sql/)
+../.env                     # Variables de entorno (no commiteado)
+../.env.example             # Plantilla de variables de entorno
 ```
 
 ---
@@ -208,7 +214,7 @@ docker-compose ps
 
 ### Puerto ya en uso
 Si el puerto 5432 ya está ocupado:
-1. Edita `.env` y cambia `POSTGRES_PORT=5433` (o otro puerto)
+1. Edita el archivo `.env` en la **raíz del proyecto** y cambia `POSTGRES_PORT=5433` (o otro puerto)
 2. Reinicia: `docker-compose down && docker-compose up -d`
 
 ### No puedo conectarme

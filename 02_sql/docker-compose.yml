@@ -1,10 +1,10 @@
-version: '3.8'
-
 services:
   # PostgreSQL - Base de datos principal para SQL
   postgres:
     image: postgres:15-alpine
     container_name: sql-practice-db
+    env_file:
+      - ../.env  # Usa el .env de la raíz del proyecto
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-data_engineering}
       POSTGRES_USER: ${POSTGRES_USER:-de_user}
@@ -26,6 +26,8 @@ services:
   pgadmin:
     image: dpage/pgadmin4:latest
     container_name: sql-practice-pgadmin
+    env_file:
+      - ../.env  # Usa el .env de la raíz del proyecto
     environment:
       PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL:-admin@example.com}
       PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD:-admin}

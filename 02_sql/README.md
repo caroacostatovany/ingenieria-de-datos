@@ -103,13 +103,16 @@ Según el roadmap, después de dominar SQL:
 
 Para practicar SQL, puedes usar una base de datos **PostgreSQL 15** local con Docker:
 
-1. **Copia el archivo de configuración:**
+1. **Asegúrate de tener el archivo `.env` en la raíz del proyecto:**
    ```bash
+   # Desde la raíz del proyecto (no desde 02_sql/)
    cp .env.example .env
    ```
+   > 💡 **Nota**: El `docker-compose.yml` usa automáticamente el `.env` de la raíz del proyecto, no necesitas crear uno en `02_sql/`.
 
 2. **Inicia la base de datos:**
    ```bash
+   cd 02_sql
    docker-compose up -d
    ```
 
