@@ -59,7 +59,7 @@ Esta carpeta cubre los conceptos fundamentales que todo Data Engineer debe domin
   * Cuándo usar SQL vs otras herramientas
 
 **Buenas Prácticas:**
-* **[07. Buenas Prácticas](07_buenas-practicas.md)**
+* **[Buenas Prácticas de Pipelines](01_que-es-un-pipeline.md#-buen-diseño-de-pipelines)** (integrado en "¿Qué es un pipeline?")
   * Principios de diseño de pipelines
   * Manejo de errores
   * Versionado y documentación

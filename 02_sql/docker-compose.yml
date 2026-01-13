@@ -1,8 +1,10 @@
+name: ing-datos
+
 services:
   # PostgreSQL - Base de datos principal para SQL
   postgres:
     image: postgres:15-alpine
-    container_name: sql-practice-db
+    container_name: ing-datos-db
     env_file:
       - ../.env  # Usa el .env de la raíz del proyecto
     environment:
@@ -25,7 +27,7 @@ services:
   # pgAdmin - Interfaz web para administrar PostgreSQL (opcional)
   pgadmin:
     image: dpage/pgadmin4:latest
-    container_name: sql-practice-pgadmin
+    container_name: ing-datos-pgadmin
     env_file:
       - ../.env  # Usa el .env de la raíz del proyecto
     environment:

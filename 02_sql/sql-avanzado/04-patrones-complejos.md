@@ -33,19 +33,55 @@ GROUP BY categoria;
 
 Convertir columnas en filas.
 
+> 💡 **Nota**: PostgreSQL no tiene `UNPIVOT` como SQL Server. Se usa `UNION ALL` o `LATERAL` para lograr lo mismo.
+
 ```sql
--- Convertir columnas de meses en filas
+-- Convertir columnas de meses en filas (usando UNION ALL)
+-- Primero creamos una vista o CTE con datos pivotados
+WITH ventas_pivot AS (
+    SELECT 
+        p.categoria,
+        SUM(CASE WHEN DATE_TRUNC('month', v.fecha_venta) = '2026-01-01'::date THEN v.total ELSE 0 END) AS enero,
+        SUM(CASE WHEN DATE_TRUNC('month', v.fecha_venta) = '2026-02-01'::date THEN v.total ELSE 0 END) AS febrero,
+        SUM(CASE WHEN DATE_TRUNC('month', v.fecha_venta) = '2026-03-01'::date THEN v.total ELSE 0 END) AS marzo
+    FROM ventas v
+    JOIN productos p ON v.producto_id = p.id
+    GROUP BY p.categoria
+)
+-- Unpivot usando UNION ALL
+SELECT categoria, 'enero' AS mes, enero AS ingresos FROM ventas_pivot
+UNION ALL
+SELECT categoria, 'febrero' AS mes, febrero AS ingresos FROM ventas_pivot
+UNION ALL
+SELECT categoria, 'marzo' AS mes, marzo AS ingresos FROM ventas_pivot
+ORDER BY categoria, mes;
+```
+
+**Alternativa con LATERAL (más elegante):**
+```sql
+WITH ventas_pivot AS (
+    SELECT 
+        p.categoria,
+        SUM(CASE WHEN DATE_TRUNC('month', v.fecha_venta) = '2026-01-01'::date THEN v.total ELSE 0 END) AS enero,
+        SUM(CASE WHEN DATE_TRUNC('month', v.fecha_venta) = '2026-02-01'::date THEN v.total ELSE 0 END) AS febrero,
+        SUM(CASE WHEN DATE_TRUNC('month', v.fecha_venta) = '2026-03-01'::date THEN v.total ELSE 0 END) AS marzo
+    FROM ventas v
+    JOIN productos p ON v.producto_id = p.id
+    GROUP BY p.categoria
+)
 SELECT 
-    categoria,
-    mes,
-    ingresos
-FROM (
-    SELECT categoria, enero, febrero, marzo
-    FROM ventas_pivot
-) AS p
-UNPIVOT (
-    ingresos FOR mes IN (enero, febrero, marzo)
-) AS unpvt;
+    p.categoria,
+    unpvt.mes,
+    unpvt.ingresos
+FROM ventas_pivot p
+CROSS JOIN LATERAL (
+    VALUES 
+        ('enero', p.enero),
+        ('febrero', p.febrero),
+        ('marzo', p.marzo)
+) AS unpvt(mes, ingresos)
+WHERE unpvt.ingresos > 0
+ORDER BY p.categoria, unpvt.mes;
 ```
 
 ---

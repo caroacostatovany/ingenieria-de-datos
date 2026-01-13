@@ -60,10 +60,15 @@ sudo snap install dbeaver-ce
 ```
 Host: localhost
 Port: 5432
-Database: data_engineering
-Username: de_user
+Database: data_engineering    ⚠️ IMPORTANTE: No uses "de_user" aquí
+Username: de_user             ⚠️ Este es el USUARIO, no la base de datos
 Password: de_password
 ```
+
+> ⚠️ **Error común**: No confundas el **Username** (`de_user`) con el **Database** (`data_engineering`). Son diferentes:
+> - **Database**: `data_engineering` (nombre de la base de datos)
+> - **Username**: `de_user` (usuario para conectarse)
+> - **Password**: `de_password` (contraseña del usuario)
 
 **Opciones útiles:**
 * ✅ **Save password**: Para no escribirla cada vez

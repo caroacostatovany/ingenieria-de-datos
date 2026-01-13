@@ -198,8 +198,9 @@ postgres:
 
 1. **Aprende SQL estándar** con PostgreSQL
 2. **Practica** con la base de datos Docker
-3. **Cuando necesites otro sistema**, adapta las funciones específicas
-4. **El 90% del SQL** que aprendas funcionará en otros sistemas
+3. **Aprende modelado relacional** en **[modelado-relacional.md](modelado-relacional.md)** - Diseño de esquemas y normalización
+4. **Cuando necesites otro sistema**, adapta las funciones específicas
+5. **El 90% del SQL** que aprendas funcionará en otros sistemas
 
 ---
 

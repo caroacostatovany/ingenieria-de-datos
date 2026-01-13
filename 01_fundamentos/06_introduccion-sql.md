@@ -158,9 +158,23 @@ SELECT * FROM datos_transformados;
 
 Una vez que entiendas estos conceptos básicos:
 
-1. **Aprende SQL básico** en **[02_sql/sql-basico/](../02_sql/sql-basico/)**
-2. **Practica con ejercicios** en **[02_sql/ejercicios/](../02_sql/ejercicios/)**
-3. **Avanza a SQL intermedio** en **[02_sql/sql-intermedio/](../02_sql/sql-intermedio/)**
+> 💡 **Tip**: Si usas Cursor, puedes pedir ayuda en el chat mencionando los archivos relevantes. Por ejemplo: "de acuerdo a @02_sql/README-DOCKER.md ayudame a levantar mi docker"
+
+1. **Configura la base de datos local con Docker** (necesario para practicar):
+   ```bash
+   # Asegúrate de tener el .env en la raíz del proyecto
+   cp .env.example .env
+   
+   # Inicia PostgreSQL con Docker
+   cd 02_sql
+   docker-compose up -d
+   ```
+   > 💡 **Instrucciones completas**: Lee **[02_sql/README-DOCKER.md](../02_sql/README-DOCKER.md)** para más detalles sobre la configuración.
+
+2. **Aprende SQL básico** en **[02_sql/sql-basico/](../02_sql/sql-basico/)**
+3. **Practica con ejercicios** en **[02_sql/ejercicios/](../02_sql/ejercicios/)**
+4. **Avanza a SQL intermedio** en **[02_sql/sql-intermedio/](../02_sql/sql-intermedio/)**
+5. **Aprende modelado relacional** en **[02_sql/modelado-relacional.md](../02_sql/modelado-relacional.md)** - Diseño de esquemas, normalización y Data Warehouses
 
 ---
 

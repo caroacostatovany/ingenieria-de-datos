@@ -73,8 +73,11 @@ CROSS JOIN estadisticas est;
 
 Las CTEs recursivas te permiten trabajar con datos jerárquicos.
 
+> 💡 **Nota**: El siguiente ejemplo es teórico y usa una tabla `empleados` que no existe en nuestra base de datos de ejemplo. Se muestra para ilustrar el concepto de CTEs recursivas.
+
 ```sql
--- Ejemplo: Organigrama (estructura jerárquica)
+-- Ejemplo teórico: Organigrama (estructura jerárquica)
+-- Requiere una tabla con estructura jerárquica (ej: empleados con jefe_id)
 WITH RECURSIVE organigrama AS (
     -- Caso base: empleados sin jefe
     SELECT id, nombre, jefe_id, 1 AS nivel
@@ -90,6 +93,11 @@ WITH RECURSIVE organigrama AS (
 )
 SELECT * FROM organigrama;
 ```
+
+**Casos de uso comunes:**
+* Organigramas (empleados → jefes)
+* Categorías jerárquicas (categoría → subcategoría)
+* Rutas en árboles (nodos → padres)
 
 ---
 

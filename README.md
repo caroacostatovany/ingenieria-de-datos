@@ -189,7 +189,7 @@ Aprende haciendo: proyectos prácticos desde el primer día
 * ✔️ [04. Archivos .env](01_fundamentos/04_archivos-env-para-data-engineers.md)
 * ✔️ [05. Docker](01_fundamentos/05_docker-para-data-engineers.md)
 * ✔️ [06. Introducción a SQL](01_fundamentos/06_introduccion-sql.md)
-* ✔️ [07. Buenas Prácticas](01_fundamentos/07_buenas-practicas.md)
+* ✔️ [07. Buenas Prácticas](01_fundamentos/01_que-es-un-pipeline.md#-buen-diseño-de-pipelines) (integrado en "¿Qué es un pipeline?")
 * ✔️ [08. Data Engineering en la Nube](01_fundamentos/08_data-engineering-en-la-nube.md)
 
 ---

@@ -11,10 +11,12 @@ Funciones avanzadas para análisis complejos de datos.
 ```sql
 -- Percentil de cada producto por ventas
 SELECT 
-    nombre,
-    unidades_vendidas,
-    PERCENT_RANK() OVER (ORDER BY unidades_vendidas) AS percentil
-FROM productos_ventas;
+    p.nombre,
+    SUM(v.cantidad) AS unidades_vendidas,
+    PERCENT_RANK() OVER (ORDER BY SUM(v.cantidad)) AS percentil
+FROM productos p
+LEFT JOIN ventas v ON p.id = v.producto_id
+GROUP BY p.id, p.nombre;
 ```
 
 ### CUME_DIST() - Distribución acumulada

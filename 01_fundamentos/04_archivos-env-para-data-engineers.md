@@ -2,7 +2,76 @@
 
 Los archivos `.env` (environment variables) son una forma estándar de **gestionar configuraciones y secretos** en aplicaciones sin hardcodear valores sensibles en el código.
 
-> 💡 **Este proyecto incluye un `.env.example` en la raíz** que puedes copiar y configurar. Los ejemplos y ejercicios del proyecto usan estas variables automáticamente. Ver más abajo cómo configurarlo.
+> 💡 **Este proyecto incluye un `.env.example` en la raíz** que puedes copiar y configurar. Los ejemplos y ejercicios del proyecto usan estas variables automáticamente.
+
+---
+
+## 🚀 Flujo de trabajo recomendado en este proyecto
+
+### Paso 1: Configurar .env en la raíz
+
+1. **Copia el `.env.example`** de la raíz del proyecto:
+   ```bash
+   # Desde la raíz del proyecto
+   cp .env.example .env
+   ```
+
+2. **Edita `.env`** con tus valores reales:
+   ```bash
+   nano .env  # o tu editor preferido
+   ```
+
+3. **Configura las variables que necesites:**
+   - Si trabajas con SQL: `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`
+   - Si procesas archivos: `DATA_SOURCE_PATH`, `DATA_OUTPUT_PATH`
+   - Si usas APIs: `API_KEY`, `API_URL`
+
+### Paso 2: Configurar .env para módulos específicos (opcional)
+
+Para módulos específicos como SQL con Docker, puedes usar el mismo `.env` o crear uno local:
+
+```bash
+# Opción 1: Usar el .env de la raíz (recomendado)
+# Los scripts Python buscan el .env en la raíz automáticamente
+
+# Opción 2: Crear .env específico para SQL
+cd 02_sql
+cp ../.env.example .env
+# O usa el .env.example específico del módulo si existe
+cp .env.example .env
+```
+
+### Paso 3: Verificar que funciona
+
+Los ejemplos y scripts del proyecto cargan automáticamente el `.env` desde la raíz:
+
+```python
+# Los scripts en 03_python/ejemplos/ buscan automáticamente:
+# - .env en la raíz del proyecto (3 niveles arriba)
+# - Usan variables como DB_HOST, DB_NAME, DATA_SOURCE_PATH, etc.
+```
+
+**Ejemplo de uso en scripts:**
+```python
+# 03_python/ejemplos/03-conexion-db.py ya está configurado así:
+from dotenv import load_dotenv
+from pathlib import Path
+
+env_path = Path(__file__).parent.parent.parent / '.env'
+load_dotenv(env_path)
+
+# Ahora puedes usar:
+db_host = os.getenv('DB_HOST', 'localhost')
+```
+
+### Importante
+
+- ✅ **El archivo `.env` ya está en `.gitignore`** - no se commitea automáticamente
+- ✅ **Solo el `.env.example` está versionado** - sin valores reales
+- ✅ **En producción**, usa variables de entorno del sistema o gestores de secretos
+- ✅ **Los ejemplos del proyecto** usan estas variables automáticamente
+
+> 💡 **Nota**: Si quieres entender mejor cómo funcionan los archivos `.env`, continúa leyendo las secciones siguientes. Si ya tienes todo configurado, puedes saltar directamente a los ejemplos.
 
 ---
 
@@ -152,6 +221,8 @@ conn = connect_to_database()
 ---
 
 ## 🐳 Usar .env con Docker
+
+> 💡 **No te preocupes si aún no sabes qué es Docker** - lo veremos en detalle más adelante en **[05_docker-para-data-engineers.md](05_docker-para-data-engineers.md)**. Por ahora, solo necesitas saber que Docker puede leer archivos `.env` automáticamente.
 
 Docker y Docker Compose pueden leer archivos `.env` automáticamente.
 
@@ -467,87 +538,20 @@ services:
 
 ---
 
-## 🚀 Flujo de trabajo recomendado en este proyecto
 
-### Paso 1: Configurar .env en la raíz
-
-1. **Copia el `.env.example`** de la raíz del proyecto:
-   ```bash
-   # Desde la raíz del proyecto
-   cp .env.example .env
-   ```
-
-2. **Edita `.env`** con tus valores reales:
-   ```bash
-   nano .env  # o tu editor preferido
-   ```
-
-3. **Configura las variables que necesites:**
-   - Si trabajas con SQL: `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`
-   - Si procesas archivos: `DATA_SOURCE_PATH`, `DATA_OUTPUT_PATH`
-   - Si usas APIs: `API_KEY`, `API_URL`
-
-### Paso 2: Configurar .env para módulos específicos (opcional)
-
-Para módulos específicos como SQL con Docker, puedes usar el mismo `.env` o crear uno local:
-
-```bash
-# Opción 1: Usar el .env de la raíz (recomendado)
-# Los scripts Python buscan el .env en la raíz automáticamente
-
-# Opción 2: Crear .env específico para SQL
-cd 02_sql
-cp ../.env.example .env
-# O usa el .env.example específico del módulo si existe
-cp .env.example .env
-```
-
-### Paso 3: Verificar que funciona
-
-Los ejemplos y scripts del proyecto cargan automáticamente el `.env` desde la raíz:
-
-```python
-# Los scripts en 03_python/ejemplos/ buscan automáticamente:
-# - .env en la raíz del proyecto (3 niveles arriba)
-# - Usan variables como DB_HOST, DB_NAME, DATA_SOURCE_PATH, etc.
-```
-
-**Ejemplo de uso en scripts:**
-```python
-# 03_python/ejemplos/03-conexion-db.py ya está configurado así:
-from dotenv import load_dotenv
-from pathlib import Path
-
-env_path = Path(__file__).parent.parent.parent / '.env'
-load_dotenv(env_path)
-
-# Ahora puedes usar:
-db_host = os.getenv('DB_HOST', 'localhost')
-```
-
-### Importante
-
-- ✅ **El archivo `.env` ya está en `.gitignore`** - no se commitea automáticamente
-- ✅ **Solo el `.env.example` está versionado** - sin valores reales
-- ✅ **En producción**, usa variables de entorno del sistema o gestores de secretos
-- ✅ **Los ejemplos del proyecto** usan estas variables automáticamente
 
 ---
 
-## 📝 Checklist
+## ➡️ ¿Qué sigue?
 
-- [ ] Archivo `.env.example` creado y commiteado
-- [ ] Archivo `.env` en `.gitignore`
-- [ ] Variables documentadas en `.env.example`
-- [ ] Valores por defecto sensatos en el código
-- [ ] Validación de variables críticas
-- [ ] No hay secretos hardcodeados en el código
+Para continuar:
+1. **Revisa [SETUP.md](../../SETUP.md)** y ejecuta la configuración si aún no lo has hecho
+   - Incluye instrucciones para configurar el archivo `.env`
+   - Configuración de base de datos local con Docker
+   - Todo lo necesario para empezar a practicar
+2. **[Docker para data engineers](05_docker-para-data-engineers.md)** - Herramienta esencial para Data Engineers
 
----
-
-## 🎓 Próximos pasos
-
-* Revisa el ejemplo de Docker en **[02_sql/docker-compose.yml](../02_sql/docker-compose.yml)** que usa `.env`
+Para investigar:
 * Aprende sobre **gestores de secretos** para producción
 * Explora **variables de entorno del sistema** como alternativa
 

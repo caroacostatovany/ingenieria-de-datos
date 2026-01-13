@@ -35,12 +35,16 @@ SELECT RTRIM('Juan Pérez  ') AS nombre;
 ### CONCAT - Concatenar strings
 
 ```sql
--- Concatenar nombre y apellido
-SELECT CONCAT(nombre, ' ', apellido) AS nombre_completo
+-- Concatenar nombre con ciudad
+SELECT CONCAT(nombre, ' - ', ciudad) AS nombre_ciudad
 FROM usuarios;
 
 -- O usando ||
-SELECT nombre || ' ' || apellido AS nombre_completo
+SELECT nombre || ' - ' || ciudad AS nombre_ciudad
+FROM usuarios;
+
+-- Concatenar múltiples valores
+SELECT CONCAT(nombre, ' (', email, ')') AS nombre_email
 FROM usuarios;
 ```
 

@@ -26,8 +26,14 @@ Si necesitas cambiar valores, edita el archivo `.env` en la **raíz del proyecto
 * Nombre de la base de datos (`POSTGRES_DB` o `DB_NAME`)
 * Usuario y contraseña (`POSTGRES_USER`, `POSTGRES_PASSWORD` o `DB_USER`, `DB_PASSWORD`)
 * Puertos (`POSTGRES_PORT` o `DB_PORT`)
+* **Connection String** (`DATABASE_URL`) - Para SQLTools y otras herramientas
 
-> 💡 **Nota**: Este módulo usa las variables `POSTGRES_*` para Docker Compose, pero también puedes usar `DB_*` si prefieres consistencia con el resto del proyecto. Lee más sobre archivos `.env` en [01_fundamentos/04_archivos-env-para-data-engineers.md](../01_fundamentos/04_archivos-env-para-data-engineers.md).
+> 💡 **Nota**: Este módulo usa las variables `POSTGRES_*` para Docker Compose, pero también puedes usar `DB_*` si prefieres consistencia con el resto del proyecto. El `DATABASE_URL` es útil para herramientas como SQLTools que pueden leer connection strings directamente. Lee más sobre archivos `.env` en [01_fundamentos/04_archivos-env-para-data-engineers.md](../01_fundamentos/04_archivos-env-para-data-engineers.md).
+
+**Ejemplo de `DATABASE_URL` en tu `.env`:**
+```bash
+DATABASE_URL=postgresql://de_user:de_password@localhost:5432/data_engineering
+```
 
 ### 3. Iniciar servicios
 
@@ -36,8 +42,10 @@ docker-compose up -d
 ```
 
 Esto iniciará:
-* **PostgreSQL** en el puerto 5432 (por defecto)
-* **pgAdmin** (interfaz web) en el puerto 5050 (por defecto)
+* **PostgreSQL** en el puerto configurado en `POSTGRES_PORT` (por defecto: 5432)
+* **pgAdmin** (interfaz web) en el puerto configurado en `PGADMIN_PORT` (por defecto: 5050)
+
+> ⚠️ **Si tienes otro PostgreSQL local**: Si el puerto 5432 ya está en uso, cambia `POSTGRES_PORT` en tu `.env` a otro puerto (ej: 5433). Ver [Troubleshooting](#-troubleshooting) para más detalles.
 
 ### 4. Verificar que está corriendo
 
@@ -55,7 +63,7 @@ Deberías ver ambos servicios como "Up" y "healthy".
 
 ```bash
 # Conectarse usando docker exec
-docker exec -it sql-practice-db psql -U de_user -d data_engineering
+docker exec -it ing-datos-db psql -U de_user -d data_engineering
 
 # O desde tu máquina (si tienes psql instalado)
 psql -h localhost -p 5432 -U de_user -d data_engineering
@@ -65,27 +73,78 @@ psql -h localhost -p 5432 -U de_user -d data_engineering
 
 DBeaver es nuestra recomendación principal. Es más intuitivo y potente que pgAdmin.
 
-**Instalación:**
-```bash
-# macOS
-brew install --cask dbeaver-community
+#### Instalación de DBeaver
 
-# O descarga desde https://dbeaver.io/download/
+**macOS:**
+```bash
+brew install --cask dbeaver-community
 ```
 
-**Configuración:**
-1. Abre DBeaver
-2. **File → New → Database Connection**
-3. Selecciona **PostgreSQL**
-4. Configura:
-   - Host: `localhost`
-   - Port: `5432`
-   - Database: `data_engineering`
-   - Username: `de_user`
-   - Password: `de_password`
-5. **Test Connection** y luego **Finish**
+**Windows/Linux:**
+Descarga desde: https://dbeaver.io/download/
 
-**Lee la guía completa:** [DBeaver para Data Engineers](herramientas/dbeaver-cliente-sql.md)
+#### Configuración paso a paso
+
+**Paso 1: Abrir DBeaver y crear nueva conexión**
+1. Abre DBeaver
+2. Ve a **File → New → Database Connection** (o presiona `Cmd+N` / `Ctrl+N`)
+3. En la lista de bases de datos, busca y selecciona **PostgreSQL**
+4. Click en **Next**
+
+**Paso 2: Configurar los datos de conexión**
+
+En la ventana de configuración, completa los siguientes campos:
+
+```
+Main (pestaña principal):
+├── Host: localhost
+├── Port: 5432
+├── Database: data_engineering    ⚠️ IMPORTANTE: No uses "de_user" aquí
+├── Username: de_user             ⚠️ Este es el USUARIO, no la base de datos
+└── Password: de_password
+```
+
+> ⚠️ **Error común**: No confundas el **Username** (`de_user`) con el **Database** (`data_engineering`). Son diferentes:
+> - **Database**: `data_engineering` (nombre de la base de datos)
+> - **Username**: `de_user` (usuario para conectarse)
+> - **Password**: `de_password` (contraseña del usuario)
+
+**Opciones importantes:**
+- ✅ **Save password**: Marca esta casilla para guardar la contraseña (no tendrás que escribirla cada vez)
+- ✅ **Show all databases**: Opcional, si quieres ver todas las bases de datos disponibles
+
+**Paso 3: Probar la conexión**
+
+1. Click en el botón **Test Connection** (abajo a la izquierda)
+2. Si es la primera vez, DBeaver te pedirá descargar el driver de PostgreSQL - click **Download**
+3. Deberías ver un mensaje verde: **"Connected"** o **"Connection test successful"**
+
+**Paso 4: Finalizar**
+
+1. Si la prueba fue exitosa, click en **Finish**
+2. La conexión aparecerá en el panel izquierdo bajo "Database Navigator"
+3. Expande la conexión para ver la base de datos `data_engineering`
+
+#### Verificar que funciona
+
+1. **Expande la conexión** en el panel izquierdo:
+   ```
+   PostgreSQL - localhost
+   └── Databases
+       └── data_engineering
+           └── Schemas
+               └── public
+                   └── Tables
+   ```
+
+2. **Ver datos de ejemplo:**
+   - Expande **Tables** para ver las tablas disponibles
+   - Click derecho en una tabla → **View Data**
+   - Deberías ver los datos de ejemplo cargados desde `init-scripts/`
+
+#### Guía completa
+
+Para más detalles sobre cómo usar DBeaver (query builder, visualización, exportar datos, etc.), lee la **[guía completa de DBeaver](herramientas/dbeaver-cliente-sql.md)**.
 
 ### Opción 3: pgAdmin (interfaz web)
 
@@ -121,13 +180,67 @@ conn.close()
 
 ---
 
-## 📝 Crear datos de ejemplo
+## 👤 Usuario y Base de Datos
 
-### Opción 1: Scripts SQL en init-scripts/
+### ✅ Creación automática
 
-Crea archivos `.sql` en la carpeta `init-scripts/` y se ejecutarán automáticamente al iniciar la base de datos por primera vez.
+**PostgreSQL crea automáticamente** el usuario y la base de datos cuando levantas Docker por primera vez:
 
-Ejemplo: `init-scripts/01-create-tables.sql`
+**Usuario creado automáticamente:**
+- **Usuario**: `de_user` (configurado en `POSTGRES_USER` o por defecto)
+- **Contraseña**: `de_password` (configurado en `POSTGRES_PASSWORD` o por defecto)
+- **Privilegios**: Superusuario (puede crear bases de datos, roles, etc.)
+
+**Base de datos creada automáticamente:**
+- **Nombre**: `data_engineering` (configurado en `POSTGRES_DB` o por defecto)
+- **Propietario**: `de_user`
+
+> 💡 **Cómo funciona**: La imagen oficial de PostgreSQL (`postgres:15-alpine`) lee las variables de entorno `POSTGRES_USER`, `POSTGRES_PASSWORD` y `POSTGRES_DB` al inicializar el contenedor por primera vez. Si el volumen de datos está vacío, crea automáticamente el usuario, la base de datos y asigna los permisos.
+
+**Para verificar:**
+```bash
+# Ver el usuario creado
+docker exec ing-datos-db psql -U de_user -d data_engineering -c "\du"
+
+# Verificar conexión
+docker exec ing-datos-db psql -U de_user -d data_engineering -c "SELECT current_user, current_database();"
+```
+
+---
+
+## 📝 Datos de ejemplo
+
+### ✅ Datos ya cargados automáticamente
+
+**¡Buenas noticias!** Los datos de ejemplo **ya están cargados** automáticamente cuando levantas Docker por primera vez.
+
+El archivo `init-scripts/01-create-example-tables.sql` se ejecuta automáticamente al crear la base de datos y contiene:
+
+**Tablas creadas:**
+* `usuarios` - 8 usuarios de ejemplo
+* `productos` - Productos de ejemplo con categorías y precios
+* `ventas` - Ventas relacionadas con usuarios y productos
+
+**Para verificar los datos:**
+```bash
+# Ver todas las tablas
+docker exec ing-datos-db psql -U de_user -d data_engineering -c "\dt"
+
+# Ver usuarios
+docker exec ing-datos-db psql -U de_user -d data_engineering -c "SELECT * FROM usuarios;"
+```
+
+> ⚠️ **Importante**: Los scripts en `init-scripts/` solo se ejecutan **la primera vez** que se crea la base de datos. Si el volumen de datos ya existe, no se vuelven a ejecutar (para evitar duplicar datos).
+
+### Agregar más datos de ejemplo
+
+Si quieres agregar más datos o crear tus propias tablas:
+
+**Opción 1: Scripts SQL en init-scripts/**
+
+Crea archivos `.sql` en la carpeta `init-scripts/` y se ejecutarán automáticamente **solo la primera vez** que se crea la base de datos.
+
+Ejemplo: `init-scripts/02-mis-datos.sql`
 
 ```sql
 -- Crear tabla de ejemplo
@@ -149,10 +262,10 @@ INSERT INTO usuarios (nombre, email) VALUES
 
 ```bash
 # Conectarse y ejecutar
-docker exec -i sql-practice-db psql -U de_user -d data_engineering < mi-script.sql
+docker exec -i ing-datos-db psql -U de_user -d data_engineering < mi-script.sql
 
 # O desde psql interactivo
-docker exec -it sql-practice-db psql -U de_user -d data_engineering
+docker exec -it ing-datos-db psql -U de_user -d data_engineering
 ```
 
 ---
@@ -212,10 +325,47 @@ docker-compose ps
 
 ## 🐛 Troubleshooting
 
-### Puerto ya en uso
-Si el puerto 5432 ya está ocupado:
-1. Edita el archivo `.env` en la **raíz del proyecto** y cambia `POSTGRES_PORT=5433` (o otro puerto)
-2. Reinicia: `docker-compose down && docker-compose up -d`
+### Puerto 5432 ya en uso
+
+**Problema**: Si tienes otra instancia de PostgreSQL corriendo localmente en el puerto 5432, Docker no podrá usar ese puerto.
+
+**Solución: Cambiar el puerto en el `.env`**
+
+1. **Edita tu `.env`** en la raíz del proyecto:
+   ```bash
+   # Cambia el puerto a uno disponible (ej: 5433)
+   POSTGRES_PORT=5433
+   DB_PORT=5433
+   ```
+
+2. **Actualiza también `DATABASE_URL`** si lo estás usando:
+   ```bash
+   DATABASE_URL=postgresql://de_user:de_password@localhost:5433/data_engineering
+   ```
+
+3. **Reinicia Docker** (importante: exporta la variable antes de ejecutar):
+   ```bash
+   cd 02_sql
+   docker-compose down
+   # Exporta la variable para que docker-compose la use
+   export POSTGRES_PORT=5433  # o el puerto que elegiste
+   docker-compose up -d
+   ```
+   
+   > ⚠️ **Nota**: `docker-compose` necesita que `POSTGRES_PORT` esté en el entorno del shell para usarlo en la configuración de `ports:`. El `.env` se usa para variables dentro del contenedor, pero para la configuración de docker-compose necesitas exportarla.
+
+4. **Verifica que funciona**:
+   ```bash
+   docker-compose ps
+   # Deberías ver el puerto 5433 en lugar de 5432
+   ```
+
+5. **Actualiza tus conexiones**:
+   - **DBeaver**: Cambia el puerto a `5433` en la configuración de conexión
+   - **SQLTools**: Actualiza la connection string con el nuevo puerto
+   - **Python**: Si usas variables de entorno, ya se actualizará automáticamente
+
+> 💡 **Puertos comunes alternativos**: 5433, 5434, 5435, 15432
 
 ### No puedo conectarme
 1. Verifica que los servicios estén corriendo: `docker-compose ps`

@@ -171,16 +171,9 @@ Estos errores escalan rápido en datos.
 
 ## ➡️ ¿Qué sigue?
 
-Ahora que entiendes Git como fundamento, es momento de aplicarlo en:
-🚀 `07_proyectos/proyecto_01_pipeline_simple`
-
-Ahí usarás:
-
-* branches
-* commits claros
-* estructura ordenada
+Para continuar:
+* **[Archivos .env para Data Engineers](04_archivos-env-para-data-engineers)** - Ambientes de desarrollo
 
 ---
 
-**La Ingeniería de Datos sin control de versiones
-no escala de forma segura.**
+**La Ingeniería de Datos sin control de versiones no escala de forma segura.**

@@ -193,7 +193,7 @@ Es la **orquestación correcta**.
 * [Pipelines básicos](../05_pipelines/pipelines-basicos/)
 * [Pipelines con Python](../05_pipelines/pipelines-basicos/pipelines-con-python.md)
 * [Introducción a Airflow](../05_pipelines/orquestadores/airflow.md)
-* [Buenas Prácticas](../01_fundamentos/07_buenas-practicas.md)
+* [Buenas Prácticas](../01_fundamentos/01_que-es-un-pipeline.md#-buen-diseño-de-pipelines) (integrado en "¿Qué es un pipeline?")
 
 ---
 

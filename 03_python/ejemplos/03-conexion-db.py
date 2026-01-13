@@ -15,7 +15,18 @@ env_path = Path(__file__).parent.parent.parent / '.env'
 load_dotenv(env_path)
 
 def conectar_db():
-    """Crea conexión a la base de datos."""
+    """Crea conexión a la base de datos.
+    
+    Intenta usar DATABASE_URL si está disponible, 
+    sino construye la connection string desde variables individuales.
+    """
+    # Opción 1: Usar DATABASE_URL si está disponible (más simple)
+    database_url = os.getenv('DATABASE_URL')
+    if database_url:
+        engine = create_engine(database_url)
+        return engine
+    
+    # Opción 2: Construir desde variables individuales (fallback)
     db_host = os.getenv('DB_HOST', 'localhost')
     db_port = os.getenv('DB_PORT', '5432')
     db_name = os.getenv('DB_NAME', 'data_engineering')

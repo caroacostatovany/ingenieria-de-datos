@@ -95,6 +95,8 @@ WHERE ABS((v.total - est.promedio) / est.desviacion_estandar) > 2  -- Más de 2 
 ORDER BY ABS((v.total - est.promedio) / est.desviacion_estandar) DESC;
 ```
 
+> 💡 **Nota**: Si esta query no devuelve resultados, significa que no hay ventas con más de 2 desviaciones estándar del promedio. Esto es normal y puede indicar que los datos están bien distribuidos. Puedes ajustar el umbral (cambiar `> 2` a `> 1.5` o `> 1`) para encontrar más anomalías.
+
 ---
 
 ## 💡 Tips para casos reales

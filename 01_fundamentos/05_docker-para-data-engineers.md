@@ -2,6 +2,8 @@
 
 Docker es una herramienta que permite **empaquetar aplicaciones y sus dependencias en contenedores**, creando entornos consistentes y reproducibles. Para Data Engineers, Docker es esencial para crear pipelines portables y entornos de desarrollo aislados.
 
+> 💡 **No te preocupes**: Este documento es **solo teórico**. No necesitas configurar ni ejecutar nada ahora. Solo lee para entender qué es Docker y cómo se usa en Data Engineering. Cuando llegue el momento de practicar, tendrás guías paso a paso.
+
 ---
 
 ## 🧠 ¿Por qué Docker es importante en Data Engineering?
@@ -374,12 +376,18 @@ jobs:
 
 ---
 
-## 🎓 Próximos pasos
+## ➡️ ¿Qué sigue?
 
-1. **Instala Docker**: [docker.com/get-started](https://www.docker.com/get-started)
-2. **Practica** con un pipeline simple
-3. **Aprende Docker Compose** para orquestar múltiples servicios
-4. **Explora** imágenes oficiales (PostgreSQL, Redis, etc.)
+Para continuar:
+1. **Revisa [SETUP.md](../../SETUP.md)** y ejecuta la configuración si aún no lo has hecho
+   - Incluye instrucciones para instalar Docker
+   - Configuración de base de datos local con Docker Compose
+   - Todo lo necesario para empezar a practicar
+2. **[Introducción a SQL](06_introduccion-sql.md)** - Lenguaje para trabajar con datos estructurados
+
+Para investigar:
+1. **Aprende Docker Compose** para orquestar múltiples servicios
+2. **Explora** imágenes oficiales (PostgreSQL, Redis, etc.)
 
 ---
 

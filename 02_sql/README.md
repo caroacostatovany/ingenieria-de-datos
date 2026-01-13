@@ -4,6 +4,15 @@ Esta carpeta contiene todo lo que necesitas saber sobre SQL aplicado a la Ingeni
 
 > **💡 Nota importante**: Este módulo usa **PostgreSQL** como sistema de base de datos, pero enseña **SQL estándar** que funciona en otros sistemas. Lee [SQL vs PostgreSQL](sql-vs-postgresql.md) para entender las diferencias y por qué elegimos PostgreSQL.
 
+## 🛠️ Herramientas recomendadas
+
+Antes de empezar, necesitas una herramienta para ejecutar SQL. Te recomendamos:
+
+* **[DBeaver](herramientas/dbeaver-cliente-sql.md)** - Cliente SQL universal, gratuito y potente (recomendado)
+* **[Otras opciones](herramientas/otras-herramientas-sql.md)** - pgAdmin, TablePlus, DataGrip, VS Code extensions
+
+> 💡 **¿No sabes cuál elegir?** Lee la [comparación de herramientas](herramientas/otras-herramientas-sql.md) o ve directo con DBeaver, es la opción más completa y gratuita.
+
 ---
 
 ## 📖 Contenido
@@ -16,10 +25,16 @@ Esta carpeta contiene todo lo que necesitas saber sobre SQL aplicado a la Ingeni
   * SQL estándar vs extensiones PostgreSQL
 
 * ✅ **[Herramientas SQL](herramientas/)**
-  * DBeaver (recomendado)
-  * Visualización de datos
-  * Generación de queries
-  * Otras herramientas (pgAdmin, TablePlus, etc.)
+  * **[DBeaver: Cliente Universal](herramientas/dbeaver-cliente-sql.md)** - Recomendado para empezar
+    * Instalación y configuración paso a paso
+    * Conectar a PostgreSQL
+    * Editor SQL con autocompletado
+    * Query Builder visual
+    * Exportar datos
+  * **[Otras Herramientas](herramientas/otras-herramientas-sql.md)**
+    * pgAdmin (incluido en Docker)
+    * TablePlus, DataGrip, VS Code extensions
+    * Comparación y cuándo usar cada una
 
 * ✅ **[SQL básico](sql-basico/)**
   * SELECT, FROM, WHERE
@@ -76,10 +91,21 @@ Al finalizar esta sección, deberías poder:
 
 ## 📚 Flujo de aprendizaje recomendado
 
-1. **Empieza con [Herramientas SQL](herramientas/)** - Configura DBeaver y aprende a visualizar datos
+1. **Configura tu entorno**
+   * **Base de datos local**: Sigue [README-DOCKER.md](README-DOCKER.md) para levantar PostgreSQL con Docker
+   * **Herramienta SQL**: Instala y configura **[DBeaver](herramientas/dbeaver-cliente-sql.md)** (recomendado) o elige otra de [Otras Herramientas](herramientas/otras-herramientas-sql.md)
+   * **Conecta DBeaver** a tu base de datos local siguiendo las instrucciones en [README-DOCKER.md](README-DOCKER.md#opción-2-dbeaver-recomendado---cliente-desktop)
+
 2. **Aprende [SQL básico](sql-basico/)** - Fundamentos con ayuda visual
+   * Usa el editor SQL de DBeaver para practicar
+   * Visualiza resultados directamente en DBeaver
+
 3. **Profundiza en [SQL intermedio](sql-intermedio/)** - Conceptos avanzados
+   * Aprovecha el autocompletado y formateo de DBeaver
+
 4. **Explora [SQL avanzado](sql-avanzado/)** - Optimización y patrones complejos
+   * Usa EXPLAIN en DBeaver para analizar rendimiento
+
 5. **Practica con [Ejercicios](ejercicios/)** - Usa DBeaver para visualizar resultados
 
 ---
@@ -116,12 +142,15 @@ Para practicar SQL, puedes usar una base de datos **PostgreSQL 15** local con Do
    docker-compose up -d
    ```
 
-3. **Lee las instrucciones completas** en [README-DOCKER.md](README-DOCKER.md)
+3. **Conecta tu herramienta SQL:**
+   * **DBeaver (recomendado)**: Sigue las instrucciones en [README-DOCKER.md - Opción 2: DBeaver](README-DOCKER.md#opción-2-dbeaver-recomendado---cliente-desktop)
+   * **pgAdmin (web)**: Accede a http://localhost:5050 (ver [README-DOCKER.md](README-DOCKER.md#opción-1-pgadmin-interfaz-web))
+   * **Otras herramientas**: Consulta [Otras Herramientas SQL](herramientas/otras-herramientas-sql.md) para más opciones
 
 Esto te dará:
 * **PostgreSQL 15** listo para usar
 * Datos de ejemplo (usuarios, productos, ventas)
-* pgAdmin (interfaz web opcional)
+* **Herramientas para trabajar**: DBeaver, pgAdmin, o la que prefieras
 
 > 💡 **¿Por qué PostgreSQL?** Lee [SQL vs PostgreSQL](sql-vs-postgresql.md) para entender por qué usamos PostgreSQL en este repositorio y cómo se relaciona con SQL estándar.
 

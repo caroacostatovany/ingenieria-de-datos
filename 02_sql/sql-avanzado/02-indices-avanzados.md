@@ -82,8 +82,8 @@ WHERE tablename = 'ventas';
 -- Ver índices no usados
 SELECT 
     schemaname,
-    tablename,
-    indexname,
+    relname AS tablename,
+    indexrelname AS indexname,
     idx_scan  -- Número de veces usado
 FROM pg_stat_user_indexes
 WHERE idx_scan = 0;

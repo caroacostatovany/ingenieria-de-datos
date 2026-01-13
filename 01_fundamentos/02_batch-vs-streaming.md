@@ -104,3 +104,10 @@ Ejemplo:
 * Subestimar costos operativos
 * No considerar mantenimiento
 * No tener casos de uso claros
+
+---
+
+## ➡️ ¿Qué sigue?
+
+Para continuar:
+* **[Git y GitHub para Data Engineers](03_git-y-github-para-data-engineers)** - Herramienta para engineers

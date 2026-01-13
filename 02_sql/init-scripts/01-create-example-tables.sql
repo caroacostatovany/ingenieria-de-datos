@@ -38,7 +38,7 @@ INSERT INTO usuarios (nombre, email, edad, ciudad) VALUES
     ('Juan Pérez', 'juan.perez@example.com', 28, 'Madrid'),
     ('María García', 'maria.garcia@example.com', 35, 'Barcelona'),
     ('Carlos López', 'carlos.lopez@example.com', 42, 'Valencia'),
-    ('Ana Martínez', 'ana.martinez@example.com', 29, 'Madrid'),
+    ('Carmen Ruiz', 'carmen.ruiz@example.com', 29, 'Madrid'),
     ('Luis Sánchez', 'luis.sanchez@example.com', 31, 'Sevilla'),
     ('Laura Fernández', 'laura.fernandez@example.com', 26, 'Barcelona'),
     ('Pedro Rodríguez', 'pedro.rodriguez@example.com', 38, 'Madrid'),

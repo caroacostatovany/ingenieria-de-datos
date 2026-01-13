@@ -199,11 +199,7 @@ Pero:
 ## ➡️ ¿Qué sigue?
 
 Para continuar:
-📄 `01_fundamentos/pipelines-basicos.md`
-📄 `01_fundamentos/07_buenas-practicas.md`
-
-O aplicar conceptos en:
-🚀 `07_proyectos/proyecto_01_pipeline_simple`
+📄 [`01_que-es-un-pipeline.md`](01_que-es-un-pipeline.md)
 
 ---
 

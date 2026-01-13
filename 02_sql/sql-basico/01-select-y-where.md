@@ -145,7 +145,7 @@ SELECT * FROM usuarios WHERE ciudad IS NOT NULL;
 SELECT DISTINCT ciudad FROM usuarios;
 
 -- Combinaciones únicas
-SELECT DISTINCT ciudad, categoria 
+SELECT DISTINCT categoria, precio 
 FROM productos;
 ```
 

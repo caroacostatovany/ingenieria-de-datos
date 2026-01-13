@@ -22,11 +22,14 @@ El particionamiento divide tablas grandes en partes más pequeñas para mejorar 
 
 ## 📅 Particionamiento por rango (Range Partitioning)
 
+> 💡 **Nota**: Los siguientes ejemplos requieren crear nuevas tablas particionadas. La tabla `ventas` existente en nuestra base de datos de ejemplo no está particionada. Estos ejemplos son para aprender el concepto.
+
 ### Crear tabla particionada
 
 ```sql
 -- PostgreSQL: Tabla de ventas particionada por mes
-CREATE TABLE ventas (
+-- ⚠️ Esto crea una NUEVA tabla, no modifica la existente
+CREATE TABLE ventas_particionadas (
     id SERIAL,
     usuario_id INTEGER,
     producto_id INTEGER,
@@ -35,10 +38,10 @@ CREATE TABLE ventas (
 ) PARTITION BY RANGE (fecha_venta);
 
 -- Crear particiones
-CREATE TABLE ventas_2024_01 PARTITION OF ventas
+CREATE TABLE ventas_particionadas_2024_01 PARTITION OF ventas_particionadas
     FOR VALUES FROM ('2024-01-01') TO ('2024-02-01');
 
-CREATE TABLE ventas_2024_02 PARTITION OF ventas
+CREATE TABLE ventas_particionadas_2024_02 PARTITION OF ventas_particionadas
     FOR VALUES FROM ('2024-02-01') TO ('2024-03-01');
 ```
 
@@ -46,7 +49,8 @@ CREATE TABLE ventas_2024_02 PARTITION OF ventas
 
 ```sql
 -- El motor selecciona automáticamente la partición correcta
-SELECT * FROM ventas
+-- PostgreSQL optimiza automáticamente para usar solo las particiones relevantes
+SELECT * FROM ventas_particionadas
 WHERE fecha_venta >= '2024-01-15' 
   AND fecha_venta < '2024-01-20';
 ```
@@ -55,19 +59,22 @@ WHERE fecha_venta >= '2024-01-15'
 
 ## 🔢 Particionamiento por lista (List Partitioning)
 
+> 💡 **Nota**: Este ejemplo crea una nueva tabla particionada. La tabla `productos` existente no está particionada.
+
 ```sql
 -- Particionar por categoría
-CREATE TABLE productos (
+-- ⚠️ Esto crea una NUEVA tabla, no modifica la existente
+CREATE TABLE productos_particionados (
     id SERIAL,
     nombre VARCHAR(100),
     categoria VARCHAR(50),
     precio DECIMAL(10,2)
 ) PARTITION BY LIST (categoria);
 
-CREATE TABLE productos_electronica PARTITION OF productos
+CREATE TABLE productos_particionados_electronica PARTITION OF productos_particionados
     FOR VALUES IN ('Electrónica');
 
-CREATE TABLE productos_muebles PARTITION OF productos
+CREATE TABLE productos_particionados_muebles PARTITION OF productos_particionados
     FOR VALUES IN ('Muebles', 'Iluminación');
 ```
 
@@ -89,6 +96,7 @@ PARTITION BY RANGE (fecha_venta);  -- No útil
 
 ```sql
 -- Script para crear particiones mensuales
+-- ⚠️ Asegúrate de que la tabla 'ventas_particionadas' exista antes de ejecutar
 DO $$
 DECLARE
     fecha_inicio DATE;
@@ -99,7 +107,7 @@ BEGIN
         fecha_fin := fecha_inicio + '1 month'::INTERVAL;
         
         EXECUTE format(
-            'CREATE TABLE IF NOT EXISTS ventas_%s PARTITION OF ventas
+            'CREATE TABLE IF NOT EXISTS ventas_particionadas_%s PARTITION OF ventas_particionadas
              FOR VALUES FROM (%L) TO (%L)',
             TO_CHAR(fecha_inicio, 'YYYY_MM'),
             fecha_inicio,

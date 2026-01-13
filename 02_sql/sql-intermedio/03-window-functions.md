@@ -161,17 +161,23 @@ ORDER BY mes;
 
 ```sql
 -- Percentil 50 (mediana) y percentil 90 por categoría
+-- Nota: PERCENTILE_CONT no puede usarse directamente como window function
+-- Se usa con GROUP BY o como subconsulta
 SELECT 
-    categoria,
-    nombre,
-    precio,
-    PERCENTILE_CONT(0.5) WITHIN GROUP (
-        ORDER BY precio
-    ) OVER (PARTITION BY categoria) AS mediana,
-    PERCENTILE_CONT(0.9) WITHIN GROUP (
-        ORDER BY precio
-    ) OVER (PARTITION BY categoria) AS percentil_90
-FROM productos;
+    p.categoria,
+    p.nombre,
+    p.precio,
+    percentiles.mediana,
+    percentiles.percentil_90
+FROM productos p
+JOIN (
+    SELECT 
+        categoria,
+        PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY precio) AS mediana,
+        PERCENTILE_CONT(0.9) WITHIN GROUP (ORDER BY precio) AS percentil_90
+    FROM productos
+    GROUP BY categoria
+) AS percentiles ON p.categoria = percentiles.categoria;
 ```
 
 ---
