@@ -35,6 +35,23 @@ pip install dagster dagit
 pip install dagster[postgres,pandas]
 ```
 
+### Configurar DAGSTER_HOME (Opcional pero recomendado)
+
+Dagster almacena metadatos, logs y configuración en un directorio. Por defecto, crea directorios temporales (`.tmp_dagster_home_*`). Para tener control sobre dónde se almacenan estos archivos:
+
+1. **Agrega `DAGSTER_HOME` a tu `.env`** (ya está en `.env.example`):
+   ```bash
+   DAGSTER_HOME=./05_pipelines/data/.dagster
+   ```
+
+2. **O exporta la variable antes de ejecutar:**
+   ```bash
+   export DAGSTER_HOME=./05_pipelines/data/.dagster
+   dagster dev -f 01-primer-asset.py
+   ```
+
+> 💡 **Nota**: Si no configuras `DAGSTER_HOME`, Dagster funcionará igual, pero creará directorios temporales. Configurarlo ayuda a mantener el proyecto organizado.
+
 ---
 
 ## 📁 Dónde crear tus archivos
@@ -232,27 +249,43 @@ defs = Definitions(assets=[ventas_raw, ventas_procesadas, ventas_por_categoria])
    ```bash
    cd 05_pipelines/ejercicios/dagster
    ```
-4. Ejecuta:
+4. Ejecuta (desde la carpeta `dagster`):
    ```bash
-   dagster dev
+   dagster dev -f 01-primer-asset.py
    ```
+   
+   > 💡 **Nota**: Asegúrate de estar en la carpeta `05_pipelines/ejercicios/dagster/` antes de ejecutar. Si estás en otra ubicación, usa la ruta completa o relativa al archivo.
 
-**O desde terminal externa:**
+**O desde terminal externa (desde la raíz del proyecto):**
 ```bash
 # Activa el entorno virtual primero:
 pyenv activate ingenieria-de-datos
 
-# Desde la raíz del proyecto:
+# Desde la raíz del proyecto, ejecuta con la ruta relativa:
+dagster dev -f 05_pipelines/ejercicios/dagster/01-primer-asset.py
+
+# O navega a la carpeta primero:
 cd 05_pipelines/ejercicios/dagster
-dagster dev
+dagster dev -f 01-primer-asset.py
 ```
 
-### Paso 4: Abrir la UI
+> ⚠️ **Importante**: Si ves el error "No such file or directory", asegúrate de:
+> - Estar en el directorio correcto (`05_pipelines/ejercicios/dagster/`) si usas `-f 01-primer-asset.py`
+> - O usar la ruta completa/relativa desde donde estés ejecutando el comando
 
-Una vez que `dagster dev` esté corriendo:
-1. Abre tu navegador en: **http://localhost:3000**
-2. Verás la UI de Dagster (Dagit)
-3. Podrás ver tus assets, materializarlos y explorar dependencias
+### Paso 4: Verificar que funciona
+
+Una vez que ejecutes `dagster dev -f 01-primer-asset.py` (desde la carpeta `dagster`) o `dagster dev -f 05_pipelines/ejercicios/dagster/01-primer-asset.py` (desde la raíz), deberías ver:
+
+```
+Serving on http://127.0.0.1:3000
+```
+
+**Verificación:**
+1. ✅ **Servidor corriendo**: El mensaje "Serving on http://127.0.0.1:3000" confirma que Dagster está funcionando
+2. ✅ **Abrir en el navegador**: Ve a **http://localhost:3000**
+3. ✅ **Ver tus 3 assets**: Deberías ver `ventas_raw`, `ventas_procesadas`, y `ventas_por_categoria` en la UI
+4. ✅ **Materializar assets**: Puedes hacer click en cada asset para materializarlo (ejecutarlo)
 
 > 💡 **Nota**: Asegúrate de que el archivo `ventas.csv` exista en `03_python/data/` o ajusta la ruta según tus datos.
 
@@ -301,16 +334,29 @@ Dagster incluye una UI excelente llamada Dagit.
 
 ### Paso 1: Iniciar Dagit
 
-En una terminal, desde la carpeta `05_pipelines/ejercicios/dagster/`:
-
+**Opción A: Desde la carpeta `dagster`**
 ```bash
-dagster dev
+cd 05_pipelines/ejercicios/dagster
+dagster dev -f 01-primer-asset.py
+```
+
+**Opción B: Desde la raíz del proyecto**
+```bash
+# Desde la raíz del proyecto
+dagster dev -f 05_pipelines/ejercicios/dagster/01-primer-asset.py
 ```
 
 Verás algo como:
 ```
 Serving on http://127.0.0.1:3000
 ```
+
+> 💡 **Nota**: 
+> - `-f` especifica el archivo Python con tus assets
+> - Si estás en la carpeta `dagster`, usa `-f 01-primer-asset.py`
+> - Si estás en otra ubicación, usa la ruta completa o relativa al archivo
+> - Los nombres de módulos Python no pueden empezar con números, por eso usamos `-f` en lugar de `-m`
+> - Si ves "No such file or directory", verifica que estás en el directorio correcto o usa la ruta completa
 
 ### Paso 2: Abrir la UI
 

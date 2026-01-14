@@ -65,10 +65,17 @@ logs/
 *.out
 
 # Airflow
+.airflow/
 airflow.cfg
 airflow.db
 logs/
 dags/__pycache__/
+simple_auth_manager_passwords.json.generated
+*.json.generated
+
+# Dagster
+.dagster/
+.tmp_dagster_home_*/
 
 # Variables de entorno
 .env
