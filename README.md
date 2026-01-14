@@ -258,12 +258,11 @@ Aprende haciendo: proyectos prácticos desde el primer día
 ### 🤖 Inteligencia Artificial como copiloto ✔️
 
 * 📘 [Inteligencia Artificial como Copiloto (carpeta)](06_inteligencia_artificial/)
+* ✔️ [Cómo usar AI como Data Engineer](06_inteligencia_artificial/como-usar-ai-como-de.md)
+* ✔️ [Ejemplos de Prompts Efectivos](06_inteligencia_artificial/ejemplos-prompts.md)
+* ✔️ [Documentación con AI](06_inteligencia_artificial/documentacion-con-ai.md)
 * ✔️ [Herramientas](06_inteligencia_artificial/herramientas/)
   * Cursor para Data Engineers
-* ✔️ [Uso Práctico](06_inteligencia_artificial/uso-practico/)
-  * Cómo usar AI como DE
-  * Ejemplos de Prompts
-  * Documentación con AI
 * ✔️ [Límites de la AI](06_inteligencia_artificial/limites-de-la-ai.md)
 * ✔️ [Buenas Prácticas de AI](06_inteligencia_artificial/buenas-practicas-ai.md)
 
