@@ -81,6 +81,22 @@ df = pd.read_csv(data_path)
 df.head()
 ```
 
+## 📁 Carpeta `output/`
+
+Esta carpeta contiene los archivos de salida generados por los notebooks de ejemplo:
+
+- **Archivos generados automáticamente** cuando ejecutas los notebooks
+- **Pueden ser eliminados** sin afectar el funcionamiento
+- **Ejemplos de archivos generados**:
+  - `ventas_convertido.parquet` - CSV convertido a Parquet
+  - `ventas.json` - CSV convertido a JSON
+  - `ventas_filtradas.parquet` - Resultado de procesamiento con chunks
+  - `ventas_procesadas.parquet` - Resultado del pipeline ETL
+
+> 💡 **Nota**: Todos los notebooks de ejemplo guardan sus salidas en `output/` para mantener organizados los datos de entrada y salida.
+
+---
+
 ## 💡 Ejercicios sugeridos
 
 ### Con `ventas.csv`:
