@@ -17,7 +17,7 @@ Esta carpeta cubre cómo construir, orquestar y monitorear pipelines de datos en
 
 * ✅ **[Orquestadores](orquestadores/)**
   * Comparación de orquestadores
-  * **Orquestadores locales** (empezar aquí):
+  * **Orquestadores locales** (para desarrollo):
     * Prefect (moderno, Python-first)
     * Dagster (data assets, UI excelente)
   * **Orquestadores enterprise/cloud**:
@@ -42,18 +42,10 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🔗 Relación con otras secciones
-
-* Aplica fundamentos de **[01_fundamentos](../01_fundamentos/)**
-* Usa SQL de **[02_sql](../02_sql/)** para transformaciones
-* Implementa con Python de **[03_python](../03_python/)**
-* Aplica calidad de **[04_modelado_y_calidad](../04_modelado_y_calidad/)**
-
 ## 📚 Flujo de aprendizaje recomendado
 
-1. **Empieza con [Pipelines básicos](pipelines-basicos/)** - Aprende conceptos y Python puro
-2. **Prueba [Orquestadores locales](orquestadores/)** - Prefect o Dagster para desarrollo
-3. **Escala a [Orquestadores enterprise](orquestadores/)** - Airflow u otros cuando necesites producción
+1. **Empieza con [Pipelines básicos](pipelines-basicos/)** - Aprende conceptos y construye pipelines con Python puro
+2. **Explora [Orquestadores](orquestadores/)** - Empieza con orquestadores locales (Prefect, Dagster) para desarrollo, luego escala a enterprise (Airflow) cuando necesites producción
 
 ---
 
@@ -75,12 +67,3 @@ Según el roadmap, después de dominar pipelines:
 ## 💡 Tip
 
 Un pipeline no es solo código. Piensa en orquestación, monitoreo, manejo de errores y mantenibilidad desde el diseño.
-
----
-
-## 📚 Flujo de aprendizaje recomendado
-
-1. **Empieza con [¿Qué es un pipeline?](pipelines-basicos/que-es-un-pipeline.md)** - Conceptos fundamentales
-2. **Aprende [Pipelines con Python](pipelines-basicos/pipelines-con-python.md)** - Implementación práctica
-3. **Prueba [Orquestadores locales](orquestadores/)** - Prefect o Dagster para desarrollo
-4. **Escala a [Orquestadores enterprise](orquestadores/)** - Airflow u otros cuando necesites producción

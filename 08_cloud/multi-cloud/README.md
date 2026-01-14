@@ -170,13 +170,6 @@ Diferentes clouds para diferentes funciones:
 
 ---
 
-## 🔗 Relación con otros módulos
-
-* Aplica conceptos de **[05_pipelines](../05_pipelines/)** en múltiples clouds
-* Usa herramientas de **[01_fundamentos](../01_fundamentos/)** (Docker, Git) para portabilidad
-* Implementa calidad de **[04_modelado_y_calidad](../04_modelado_y_calidad/)** en cada cloud
-
----
 
 ## 🚀 ¿Qué sigue?
 

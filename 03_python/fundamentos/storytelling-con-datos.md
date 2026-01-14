@@ -594,8 +594,24 @@ Aplica estos principios en tus análisis. Practica creando visualizaciones que c
 4. Enfócate en impacto de negocio y acciones
 5. Crea visualizaciones simples y claras
 
-**Siguiente etapa del aprendizaje:**
-Después de dominar Python y comunicación de datos, continúa con **[Modelado y Calidad de Datos](../../04_modelado_y_calidad/)** para aprender a diseñar modelos analíticos y asegurar calidad en tus datos.
+---
+
+## 📚 Siguiente etapa: Modelado y Calidad de Datos
+
+Después de dominar Python, manejo de archivos y comunicación de datos, el siguiente paso en tu ruta de aprendizaje es:
+
+### **[Modelado y Calidad de Datos](../../04_modelado_y_calidad/)**
+
+En este módulo aprenderás:
+
+* **Modelado Analítico**: Diseñar modelos de datos para analytics (Star Schema, Snowflake, tablas de hechos y dimensiones)
+* **Calidad de Datos**: Asegurar que tus datos sean confiables, completos y consistentes
+* **Validaciones**: Implementar tests y validaciones en tus pipelines
+* **Herramientas**: Great Expectations y otras herramientas para garantizar calidad
+
+> 💡 **Flujo de aprendizaje**: Fundamentos Python → Pandas → Storytelling → **Modelado y Calidad** → Pipelines → Proyectos
+
+Continúa con: **[04_modelado_y_calidad/](../../04_modelado_y_calidad/README.md)**
 
 ---
 

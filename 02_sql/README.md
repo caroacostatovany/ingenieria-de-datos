@@ -81,13 +81,6 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🔗 Relación con otras secciones
-
-* SQL se usa extensivamente en **[05_pipelines](../05_pipelines/)** para transformaciones
-* El modelado relacional es base para **[04_modelado_y_calidad](../04_modelado_y_calidad/)**
-* Puedes combinar SQL con Python en **[03_python](../03_python/)**
-
----
 
 ## 📚 Flujo de aprendizaje recomendado
 

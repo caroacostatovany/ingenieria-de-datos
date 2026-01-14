@@ -55,13 +55,6 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🔗 Relación con otras secciones
-
-* Python se usa en **[05_pipelines](../05_pipelines/)** para construir pipelines
-* Puedes combinar Python con SQL para pipelines híbridos
-* Los fundamentos aquí son base para los proyectos en **[07_proyectos](../07_proyectos/)**
-
----
 
 ## 📚 Flujo de aprendizaje recomendado
 

@@ -147,14 +147,6 @@ Al finalizar, deberías poder:
 
 ---
 
-## 🔗 Relación con otros módulos
-
-* Aplica conceptos de **[05_pipelines](../05_pipelines/)** en Azure
-* Usa SQL de **[02_sql](../02_sql/)** con Azure Synapse
-* Implementa calidad de **[04_modelado_y_calidad](../04_modelado_y_calidad/)** en Data Factory
-* Python de **[03_python](../03_python/)** en Databricks y Functions
-
----
 
 ## 🚀 ¿Qué sigue?
 

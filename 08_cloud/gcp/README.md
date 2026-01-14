@@ -157,14 +157,6 @@ LIMIT 10
 
 ---
 
-## 🔗 Relación con otros módulos
-
-* Aplica conceptos de **[05_pipelines](../05_pipelines/)** en GCP
-* Usa SQL de **[02_sql](../02_sql/)** con BigQuery
-* Implementa calidad de **[04_modelado_y_calidad](../04_modelado_y_calidad/)** en Dataflow
-* Python de **[03_python](../03_python/)** en Cloud Functions y Dataflow
-
----
 
 ## 🚀 ¿Qué sigue?
 

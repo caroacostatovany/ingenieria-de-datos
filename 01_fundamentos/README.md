@@ -92,14 +92,6 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🔗 Relación con otras secciones
-
-* Estos fundamentos se aplican en **[05_pipelines](../05_pipelines/)** cuando construyas pipelines reales
-* La introducción a SQL te prepara para profundizar en **[02_sql](../02_sql/)**
-* Los tipos de datos son relevantes para **[02_sql](../02_sql/)** y **[03_python](../03_python/)**
-* Las buenas prácticas se refuerzan en **[04_modelado_y_calidad](../04_modelado_y_calidad/)**
-
----
 
 ## 📚 Flujo de aprendizaje recomendado
 

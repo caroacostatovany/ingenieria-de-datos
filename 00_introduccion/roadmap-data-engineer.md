@@ -126,22 +126,25 @@ Buenas prácticas:
 
 Aprende:
 
-* **Fundamentos Python** para Data Engineering
+* **Fundamentos Python** para Data Engineering (trabajando con Jupyter Notebooks)
 * **Manejo de archivos**: CSV, JSON, Parquet
 * **Pandas** para manipulación de datos
-* **Scripts vs módulos**: Estructura de proyectos
+* **Storytelling con Datos**: Comunicar hallazgos a personas de negocios
+* **Scripts vs módulos**: Estructura de proyectos (para cuando construyas pipelines)
 * **Manejo de errores** y logging
 * **Integración con SQL** y bases de datos
+
+> 💡 **Flujo recomendado dentro de Python**: Fundamentos → Pandas → Storytelling → **Modelado y Calidad** (siguiente etapa)
 
 No se trata de "saber todo Python".
 Se trata de **escribir código mantenible**.
 
 📁 Contenido recomendado:
 
-* [Fundamentos Python](../03_python/fundamentos/)
+* [Fundamentos Python](../03_python/fundamentos/) - Incluye Jupyter Notebooks
 * [Pandas para Datos](../03_python/pandas/)
-* [Storytelling con Datos](../03_python/storytelling/)
-* [Ejemplos](../03_python/ejemplos/)
+* [Storytelling con Datos](../03_python/fundamentos/storytelling-con-datos.md)
+* [Ejemplos (Notebooks)](../03_python/ejemplos/)
 
 ---
 

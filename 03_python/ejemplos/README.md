@@ -129,18 +129,5 @@ Sube los notebooks a Google Colab para ejecutarlos en la nube sin instalación.
 
 ---
 
-## 📚 Relación con documentación
-
-Cada notebook está vinculado a documentación detallada en los módulos correspondientes:
-
-* **Exploración de Datos** → [Jupyter Notebooks para Datos](../pandas/jupyter-notebooks-para-datos.md)
-* **Storytelling** → [Storytelling con Datos](../storytelling/storytelling-con-datos.md)
-* **Pipeline ETL** → [Fundamentos Python](../fundamentos/fundamentos-python.md)
-* **Limpieza** → [Python para Datos - Limpieza](../pandas/python-para-datos/03-limpieza-datos.md)
-* **Agregaciones** → [Python para Datos - Agregaciones](../pandas/python-para-datos/04-agregaciones.md)
-* **Merge y Join** → [Python para Datos - Merge y Join](../pandas/python-para-datos/05-merge-join.md)
-* **Manejo de Archivos** → [Manejo de Archivos](../fundamentos/manejo-de-archivos.md)
-
----
 
 > **Recuerda**: Los notebooks son interactivos. Ejecuta, experimenta y aprende.

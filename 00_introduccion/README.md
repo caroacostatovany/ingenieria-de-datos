@@ -2,15 +2,14 @@
 
 Esta carpeta contiene los conceptos fundamentales para entender qué es la Ingeniería de Datos y cómo empezar tu camino como Data Engineer.
 
+> 💡 **¿Primera vez aquí?** Empieza por [¿Qué es Data Engineering?](que-es-data-engineering.md) y luego revisa el [Roadmap completo](roadmap-data-engineer.md).
+
 ---
 
-## 📖 Contenido
-
-### ✅ Documentos disponibles
+## 📖 Documentos en esta carpeta
 
 * **[¿Qué es Data Engineering?](que-es-data-engineering.md)**
   * Definición y propósito de la Ingeniería de Datos
-  * Por qué existe esta disciplina
   * Qué hace realmente un/a Data Engineer
   * Ciclo de vida del dato
 
@@ -18,19 +17,16 @@ Esta carpeta contiene los conceptos fundamentales para entender qué es la Ingen
   * Ruta de aprendizaje paso a paso
   * Habilidades técnicas necesarias
   * Herramientas y tecnologías
-  * Tiempo estimado y recursos
 
 * **[Roles en datos](roles-en-datos.md)**
   * Diferencia entre Data Engineer, Data Scientist y Data Analyst
   * Responsabilidades de cada rol
   * Cómo elegir tu camino
-  * Habilidades traslapadas
 
 * **[Ruta de Aprendizaje Visual](ruta-aprendizaje-visual.md)**
   * Diagrama visual de la ruta completa
   * Flujo recomendado de aprendizaje
   * Conexiones entre módulos
-  * Tips para navegar el repositorio
 
 ---
 
@@ -45,23 +41,10 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🚀 ¿Qué sigue?
+## 🚀 Próximo paso
 
-Sigue el roadmap en este orden:
+Después de leer esta sección, continúa con:
 
-1. **Herramientas esenciales** - **[01_fundamentos](../01_fundamentos/)** (Etapa 0.6 del roadmap)
-   * Git, .env, Docker, y conceptos fundamentales
+**👉 [01_fundamentos](../01_fundamentos/)** - Herramientas esenciales (Git, Docker, .env) y conceptos base
 
-2. **SQL** - **[02_sql](../02_sql/)** (Etapa 1 del roadmap)
-   * La base de todo en Data Engineering
-
-3. **⭐ Opcional: Configura Cursor** - **[Cursor para Data Engineers](../06_inteligencia_artificial/herramientas/cursor-para-data-engineers.md)** (Etapa 0.5 del roadmap)
-   > 💡 **Opcional**: Cursor puede ayudarte durante el aprendizaje, pero no es un requisito. Puedes usar cualquier editor.
-
-> 💡 **Tip**: Revisa el [Roadmap completo](roadmap-data-engineer.md) para ver la ruta completa de aprendizaje.
-
----
-
-## 📝 Notas
-
-Esta sección es **obligatoria** si estás empezando desde cero. Si ya tienes experiencia, puedes usarla como referencia rápida.
+> 💡 **Para ver la ruta completa**: Revisa el [Roadmap](roadmap-data-engineer.md) o el [README principal del repositorio](../../README.md).

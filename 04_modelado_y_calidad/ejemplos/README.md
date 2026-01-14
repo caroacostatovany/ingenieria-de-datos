@@ -82,16 +82,5 @@ Sube los notebooks a Google Colab para ejecutarlos en la nube.
 
 ---
 
-## 📚 Relación con documentación
-
-Cada notebook está vinculado a documentación detallada:
-
-* **Modelado Star Schema** → [Modelado Analítico](../modelado/modelado-analitico.md)
-* **Calidad de Datos** → [Calidad de Datos](../calidad/calidad-de-datos.md)
-* **Great Expectations** → [Great Expectations](../calidad/herramientas/great-expectations-para-calidad.md)
-* **Pandera** → [Pandera](../calidad/herramientas/pandera-validacion-pandas.md)
-* **Testing** → [Testing de Datos](../calidad/validaciones/testing-de-datos.md)
-
----
 
 > **Recuerda**: Los notebooks son interactivos. Ejecuta, experimenta y aprende. Los conceptos aquí son fundamentales para Data Engineering.

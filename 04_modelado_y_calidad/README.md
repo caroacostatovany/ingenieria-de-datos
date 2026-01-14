@@ -54,13 +54,6 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🔗 Relación con otras secciones
-
-* Aplica conceptos de **[02_sql](../02_sql/)** para implementar modelos
-* Usa **[03_python](../03_python/)** para validaciones y tests
-* Integra en **[05_pipelines](../05_pipelines/)** para pipelines robustos
-
----
 
 ## 🚀 ¿Qué sigue?
 

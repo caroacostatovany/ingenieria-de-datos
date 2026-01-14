@@ -301,9 +301,20 @@ def test_1():
 
 ---
 
-## 🚀 Próximo paso
+## 🚀 Próximos pasos
 
-Aprende a usar **[Great Expectations](../herramientas/great-expectations-para-calidad.md)** para validaciones avanzadas.
+### Herramientas de Calidad
+
+Para validaciones más avanzadas y automatizadas, explora las **[Herramientas de Calidad de Datos](../herramientas/README.md)**:
+
+* **[Great Expectations](../herramientas/great-expectations-para-calidad.md)**: Framework completo para validación, documentación y profiling de datos
+* **[Pandera](../herramientas/pandera-validacion-pandas.md)**: Validación declarativa de esquemas para pandas
+
+Estas herramientas complementan los tests manuales con pytest y ofrecen funcionalidades adicionales como:
+* Generación automática de expectativas
+* Data Docs (documentación automática)
+* Integración en pipelines
+* Validación de esquemas declarativa
 
 ---
 

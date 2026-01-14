@@ -364,7 +364,7 @@ validar_rangos(df_final)
 
 ## 🚀 Próximo paso
 
-Continúa con **[Testing de datos](testing-de-datos.md)** y **[Great Expectations](../herramientas/great-expectations-para-calidad.md)**.
+Continúa con **[Testing de datos](testing-de-datos.md)**
 
 ---
 

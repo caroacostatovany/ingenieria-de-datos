@@ -62,13 +62,6 @@ Al finalizar esta sección, deberías poder:
 
 ---
 
-## 🔗 Relación con otras secciones
-
-* Aplica AI en **[05_pipelines](../05_pipelines/)** para desarrollo más rápido
-* Usa en **[07_proyectos](../07_proyectos/)** para documentación y ejemplos
-* Complementa todo el contenido del repositorio
-
----
 
 ## 🚀 ¿Qué sigue?
 

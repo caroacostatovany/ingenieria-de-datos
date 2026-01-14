@@ -297,10 +297,31 @@ CREATE TABLE fact_ventas (
 
 ## 🎯 Ejercicios
 
-1. Diseña un Star Schema para un sistema de e-commerce
-2. Crea dimensiones con SCD Tipo 2
-3. Identifica la granularidad apropiada para diferentes casos
-4. Diseña un modelo para análisis de ventas por región y tiempo
+> 💡 **Todos los ejercicios están en el [notebook de ejemplo](../ejemplos/01-modelado-star-schema.ipynb)**. Ábrelo y practica ejecutando cada sección.
+
+### Ejercicios en el notebook
+
+1. **Diseña un Star Schema** (Secciones 2-3)
+   * ✅ Crea dimensiones (Tiempo, Producto, Cliente) y tabla de hechos (Ventas)
+   * ✅ Visualiza la estructura del modelo
+   * 📝 **Práctica adicional**: Adapta el notebook para un sistema de e-commerce (agrega dimensiones como Tienda, Método de Pago, etc.)
+
+2. **Crea dimensiones con SCD Tipo 2** (Sección 8)
+   * ✅ Implementa dimensión Cliente con historial de cambios
+   * ✅ Campos `fecha_inicio`, `fecha_fin`, `es_actual`
+   * ✅ Simula cambios y verifica que se crean nuevos registros históricos
+   * 📝 **Práctica adicional**: Implementa SCD Tipo 2 para la dimensión Producto cuando cambie la categoría
+
+3. **Identifica la granularidad apropiada** (Sección 9)
+   * ✅ Ejemplos de diferentes granularidades (transaccional vs agregada)
+   * ✅ Comparación de ventajas y desventajas
+   * ✅ Ejercicios prácticos para diferentes casos de uso (Inventario, IoT, E-commerce)
+   * 📝 **Práctica adicional**: Define la granularidad para un caso de uso real de tu interés
+
+4. **Análisis por región y tiempo** (Sección 6)
+   * ✅ Análisis de ventas por trimestre, región y tipo de cliente
+   * ✅ Visualizaciones usando el modelo
+   * 📝 **Práctica adicional**: Agrega más análisis (ventas por mes, por categoría de producto, etc.)
 
 ---
 

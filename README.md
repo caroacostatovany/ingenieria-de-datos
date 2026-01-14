@@ -9,6 +9,9 @@
 [![GitHub issues](https://img.shields.io/github/issues/caroacostatovany/ingenieria-de-datos.svg)](https://github.com/caroacostatovany/ingenieria-de-datos/issues)
 [![GitHub contributors](https://img.shields.io/github/contributors/caroacostatovany/ingenieria-de-datos.svg)](https://github.com/caroacostatovany/ingenieria-de-datos/graphs/contributors)
 
+> ⭐ **Recuerda darle Star (estrella) o Guardar (Watch) al repositorio para recibir notificaciones y estar al tanto de las últimas actualizaciones y novedades.**  
+> Así puedes seguir el avance y enterarte cuando hay nuevo contenido, recursos o ejercicios.
+
 Este repositorio está diseñado para aprender **Ingeniería de Datos desde cero hasta un nivel profesional**, con **bases sólidas**, ejemplos prácticos y un enfoque moderno donde la **AI se usa como copiloto**, no como reemplazo.
 
 Todo el contenido está en **español** y pensado para personas de **todos los niveles**.
@@ -30,10 +33,11 @@ A lo largo de esta ruta de aprendizaje, dominarás:
 - **PostgreSQL**: Base de datos real para practicar
 
 ### 🐍 Python para Datos
-- **Fundamentos**: Scripts, módulos, manejo de archivos
+- **Fundamentos**: Python esencial trabajando con Jupyter Notebooks
 - **Pandas**: Manipulación y exploración de datos
 - **Jupyter Notebooks**: Análisis interactivo y visualizaciones
-- **Storytelling**: Comunicar insights efectivamente
+- **Storytelling**: Comunicar insights efectivamente a personas de negocios
+- **Scripts y módulos**: Estructura de proyectos (para pipelines)
 
 ### 🏗️ Modelado y Calidad
 - **Modelado analítico**: Star Schema, Snowflake, tablas de hechos
@@ -213,12 +217,14 @@ Aprende haciendo: proyectos prácticos desde el primer día
 
 * 📘 [Python (carpeta)](03_python/)
 * ✔️ [Fundamentos](03_python/fundamentos/)
-  * Sintaxis esencial, scripts vs módulos, manejo de archivos
+  * Sintaxis esencial, Jupyter Notebooks, manejo de archivos
+  * Scripts vs módulos (para cuando construyas pipelines)
 * ✔️ [Pandas](03_python/pandas/)
   * Manipulación de datos, exploración (EDA), Jupyter Notebooks
-* ✔️ [Storytelling con Datos](03_python/storytelling/)
-  * Comunicar insights efectivamente, visualizaciones
-* ✔️ [Ejemplos](03_python/ejemplos/)
+* ✔️ [Storytelling con Datos](03_python/fundamentos/storytelling-con-datos.md)
+  * Comunicar insights efectivamente a personas de negocios, visualizaciones
+* ✔️ [Ejemplos (Notebooks)](03_python/ejemplos/)
+  * Notebooks interactivos para practicar todos los conceptos
 
 ---
 
@@ -296,7 +302,7 @@ Aprende haciendo: proyectos prácticos desde el primer día
 * Lee nuestra [Guía de Contribución](CONTRIBUTING.md) para más detalles
 * Revisa nuestro [Código de Conducta](CODE_OF_CONDUCT.md)
 
-⭐ Si este repo te ayuda, dale **Star** para apoyar el contenido en español.
+⭐ Si este repo te ayuda, dale **Star** (estrella) — así apoyas el contenido en español y podrás recibir notificaciones de actualizaciones importantes.
 
 ---
 
@@ -365,6 +371,15 @@ En este repositorio:
 ## 📬 Contacto
 
 * [LinkedIn](https://www.linkedin.com/in/carolina-acosta-tovany-1a6689275/)
-* [GitHub](https://github.com/caroacostatovany/ingenieria-de-datos)
+
+---
+
+## 💖 ¿Quieres apoyar este proyecto?
+
+Si te resulta útil y quieres contribuir al crecimiento del contenido, puedes apoyar con una donación en **GitHub Sponsor**:
+
+[✨ Donar vía Sponsor](https://github.com/sponsors/caroacostatovany)
+
+¡Gracias por tu apoyo!
 
 ---
