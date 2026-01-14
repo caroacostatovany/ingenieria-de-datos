@@ -182,7 +182,7 @@ Aprende haciendo: proyectos prácticos desde el primer día
 
 ### ☁️ Data Engineering en la Nube 🚧
 
-* 📘 [Cloud](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/08_cloud)
+* 📘 [Orquestadores Cloud](https://github.com/caroacostatovany/ingenieria-de-datos/tree/main/05_pipelines/orquestadores/cloud)
   * ✔️ Conceptos fundamentales disponibles
   * 🚧 AWS, GCP, Azure - Guías introductorias disponibles, contenido en expansión
   * 🚧 Multi-Cloud - Guía introductoria disponible, contenido en expansión

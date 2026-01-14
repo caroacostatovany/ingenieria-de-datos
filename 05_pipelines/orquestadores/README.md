@@ -30,20 +30,10 @@ Los orquestadores gestionan la ejecución, programación y monitoreo de pipeline
   * Simple y directo
   * Bueno para pipelines Python
 
-* **[AWS Step Functions](step-functions.md)**
-  * Nativo de AWS
-  * Serverless
-  * Integración con servicios AWS
-
-* **[Google Cloud Composer](composer.md)**
-  * Airflow gestionado en GCP
-  * Sin infraestructura propia
-  * Integración con GCP
-
-* **[Azure Data Factory](data-factory.md)**
-  * Nativo de Azure
-  * UI visual
-  * Integración con Azure
+* **[Orquestadores Cloud](cloud/README.md)**
+  * Guía completa de orquestadores cloud
+  * AWS Step Functions, Cloud Composer, Data Factory
+  * Comparación y cuándo usar cada uno
 
 ---
 
@@ -122,9 +112,10 @@ Sigue este orden para aprender orquestadores de forma progresiva:
    * **Recuerda**: Activa `pyenv activate ingenieria-de-datos` antes de instalar
 
 5. **Orquestadores cloud** - Cuando necesites escalar
-   * **[AWS Step Functions](step-functions.md)** - Si usas AWS
-   * **[Google Cloud Composer](composer.md)** - Si usas GCP
-   * **[Azure Data Factory](data-factory.md)** - Si usas Azure
+   * **[Orquestadores Cloud](cloud/README.md)** - Guía completa de orquestadores cloud
+     * **[AWS Step Functions](cloud/step-functions.md)** - Si usas AWS
+     * **[Google Cloud Composer](cloud/composer.md)** - Si usas GCP
+     * **[Azure Data Factory](cloud/data-factory.md)** - Si usas Azure
    * **Nota**: Estos son servicios cloud, no requieren instalación local
 
 ---

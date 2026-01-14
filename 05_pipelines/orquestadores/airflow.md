@@ -142,6 +142,10 @@ bash 05_pipelines/ejercicios/airflow/setup-airflow.sh
 # El script te mostrará la ruta exacta, pero generalmente es:
 export AIRFLOW_HOME=$(pwd)/05_pipelines/orquestadores/.airflow
 export AIRFLOW__CORE__LOAD_EXAMPLES=False
+
+# macOS: Necesario para evitar errores de fork
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 airflow standalone
 ```
 
@@ -183,6 +187,10 @@ airflow standalone
 > ```bash
 > export AIRFLOW_HOME=$(pwd)/05_pipelines/orquestadores/.airflow
 > export AIRFLOW__CORE__LOAD_EXAMPLES=False
+> 
+> # macOS: Necesario para evitar errores de fork
+> export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+> 
 > airflow standalone
 > ```
 
@@ -199,7 +207,32 @@ Esto:
 - ✅ Inicia webserver y scheduler en un solo proceso
 - ✅ Abre la UI en http://localhost:8080
 
-> ⚠️ **Problema común: "Invalid credentials" al iniciar sesión**
+> ⚠️ **Problema común en macOS: Error de fork (`objc fork`)**
+> 
+> Si estás en macOS y ves errores como:
+> ```
+> objc[XXX]: +[NSNumber initialize] may have been in progress in another thread when fork() was called.
+> Process terminated by signal. SIGABRT
+> ```
+> 
+> **Solución:**
+> 
+> Agrega esta variable de entorno antes de iniciar Airflow:
+> ```bash
+> export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+> export AIRFLOW_HOME=$(pwd)/05_pipelines/orquestadores/.airflow
+> export AIRFLOW__CORE__LOAD_EXAMPLES=False
+> airflow standalone
+> ```
+> 
+> **Para hacerlo permanente**, agrega al `.env`:
+> ```bash
+> OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+> ```
+> 
+> > 💡 **Nota**: Esta variable desactiva una protección de seguridad de macOS, pero es necesaria para que Airflow funcione correctamente en macOS. Es una solución común y ampliamente usada en la comunidad de Airflow.
+> 
+> > ⚠️ **Problema común: "Invalid credentials" al iniciar sesión**
 > 
 > Si ves el error "401 Unauthorized" al intentar iniciar sesión, la contraseña se generó automáticamente cuando ejecutaste `airflow standalone`.
 > 
@@ -538,10 +571,15 @@ cp 05_pipelines/ejercicios/airflow/*.py $AIRFLOW_HOME/dags/
 export AIRFLOW_HOME=$(pwd)/05_pipelines/orquestadores/.airflow
 export AIRFLOW__CORE__LOAD_EXAMPLES=False  # Deshabilitar DAGs de ejemplo
 
+# macOS: Necesario para evitar errores de fork
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+
 airflow standalone
 ```
 
 > ⚠️ **IMPORTANTE**: Airflow requiere una **ruta absoluta** para `AIRFLOW_HOME`. Usa `$(pwd)/05_pipelines/orquestadores/.airflow` en lugar de `./05_pipelines/orquestadores/.airflow`.
+
+> 💡 **macOS**: Si estás en macOS, agrega `export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES` antes de iniciar Airflow para evitar errores de fork. Ver sección de troubleshooting más abajo.
 
 Esto inicia todo en un solo proceso. La contraseña del usuario admin se mostrará en la terminal.
 

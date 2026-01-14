@@ -2,6 +2,8 @@
 
 Google Cloud Composer es Airflow gestionado en GCP, sin necesidad de gestionar infraestructura.
 
+> 📖 **Parte de**: [Orquestadores Cloud - README](README.md) | **Proveedor**: GCP
+
 ---
 
 ## 🧠 ¿Qué es Cloud Composer?
@@ -71,3 +73,4 @@ Cloud Composer es:
 ---
 
 > **Recuerda**: Cloud Composer es conveniente pero tiene costos. Evalúa si vale la pena para tu caso.
+

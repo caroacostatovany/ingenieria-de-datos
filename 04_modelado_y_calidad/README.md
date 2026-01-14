@@ -64,7 +64,7 @@ Según el roadmap, después de dominar modelado y calidad:
 * Orquestación y automatización
 * Pipelines robustos con validaciones
 
-**Después**: **[06_inteligencia_artificial](../06_inteligencia_artificial/)** (Etapa 5) para usar AI como copiloto, luego **[08_cloud](../08_cloud/)** (Etapa 6) y finalmente **[07_proyectos](../07_proyectos/)** (Etapa 7).
+**Después**: **[06_inteligencia_artificial](../06_inteligencia_artificial/)** (Etapa 5) para usar AI como copiloto, luego **[Orquestadores Cloud](../05_pipelines/orquestadores/cloud/)** (Etapa 6) y finalmente **[07_proyectos](../07_proyectos/)** (Etapa 7).
 
 > 💡 **Tip**: Revisa el [Roadmap completo](../00_introduccion/roadmap-data-engineer.md) para ver la ruta completa.
 

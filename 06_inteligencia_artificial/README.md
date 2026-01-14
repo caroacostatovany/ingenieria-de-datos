@@ -67,7 +67,7 @@ Al finalizar esta sección, deberías poder:
 
 Según el roadmap, después de entender cómo usar AI:
 
-**👉 Siguiente etapa: [08_cloud](../08_cloud/)** (Etapa 6 del roadmap)
+**👉 Siguiente etapa: [Orquestadores Cloud](../05_pipelines/orquestadores/cloud/)** (Etapa 6 del roadmap)
 * Aplicar conocimientos en entornos cloud
 * Servicios cloud para Data Engineering
 * AWS, GCP, Azure

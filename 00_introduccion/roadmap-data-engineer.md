@@ -250,10 +250,7 @@ Aprende:
 📁 Contenido recomendado:
 
 * [Data Engineering en la Nube](../01_fundamentos/08_data-engineering-en-la-nube.md)
-* [AWS](../08_cloud/aws/) *(próximo)*
-* [Google Cloud Platform](../08_cloud/gcp/) *(próximo)*
-* [Microsoft Azure](../08_cloud/azure/) *(próximo)*
-* [Multi-Cloud](../08_cloud/multi-cloud/) *(próximo)*
+* [Orquestadores Cloud](../05_pipelines/orquestadores/cloud/) - Guía completa de orquestadores cloud y servicios principales
 
 ---
 

@@ -79,7 +79,7 @@ Sigue este orden para un aprendizaje progresivo:
 7. **☁️ Cloud** → Escalabilidad y servicios gestionados
    - AWS, GCP, Azure
    - Servicios principales
-   - [Módulo Cloud](../08_cloud/)
+   - [Orquestadores Cloud](../05_pipelines/orquestadores/cloud/)
 
 8. **🚀 Proyectos** → Aplica todo lo aprendido (puedes empezar en cualquier momento)
    - Principiante: Pipeline ETL simple

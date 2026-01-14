@@ -245,7 +245,7 @@ Una vez que entiendas los conceptos básicos:
 3. **Construye un pipeline simple**: De S3 a Redshift, por ejemplo
 4. **Explora servicios avanzados**: Streaming, ML, etc.
 
-📁 **Contenido avanzado**: Revisa **[08_cloud/](../08_cloud/)** para profundizar en cada proveedor.
+📁 **Contenido avanzado**: Revisa **[Orquestadores Cloud](../05_pipelines/orquestadores/cloud/)** para profundizar en orquestadores cloud y servicios principales.
 
 ---
 

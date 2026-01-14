@@ -284,12 +284,11 @@ Aprende haciendo: proyectos prácticos desde el primer día
 
 ### ☁️ Data Engineering en la Nube 🚧
 
-* 📘 [Cloud (carpeta)](08_cloud/)
+* 📘 [Orquestadores Cloud](05_pipelines/orquestadores/cloud/)
+  * Guía completa de orquestadores cloud y servicios principales
+  * AWS Step Functions, Google Cloud Composer, Azure Data Factory
+  * Comparación, ventajas y cuándo usar cada uno
 * ✔️ [Conceptos fundamentales](01_fundamentos/08_data-engineering-en-la-nube.md)
-* 🚧 [AWS](08_cloud/aws/) - Guía introductoria disponible, contenido en expansión
-* 🚧 [Google Cloud Platform](08_cloud/gcp/) - Guía introductoria disponible, contenido en expansión
-* 🚧 [Microsoft Azure](08_cloud/azure/) - Guía introductoria disponible, contenido en expansión
-* 🚧 [Multi-Cloud](08_cloud/multi-cloud/) - Guía introductoria disponible, contenido en expansión
 
 ---
 
