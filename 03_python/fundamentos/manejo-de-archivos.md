@@ -2,6 +2,8 @@
 
 Aprende a leer y escribir diferentes formatos de archivos comunes en Data Engineering.
 
+> 💡 **Trabajaremos con Jupyter Notebooks**: Todos los ejemplos de este documento están diseñados para ejecutarse en Jupyter Notebooks. Crea un nuevo notebook y ejecuta los ejemplos celda por celda.
+
 ---
 
 ## 📄 CSV

@@ -59,10 +59,10 @@ Antes de ejecutar los ejemplos, configura tus variables de entorno:
    ```bash
    # Para conexión a base de datos
    DB_HOST=localhost
-   DB_PORT=5432
+   DB_PORT=15432    ⚠️ Si cambiaste el puerto en .env, usa ese puerto
    DB_NAME=data_engineering
    DB_USER=de_user
-   DB_PASSWORD=tu_password_aqui
+   DB_PASSWORD=de_password    ⚠️ Usa la contraseña configurada en tu .env
    
    # Para rutas de archivos
    DATA_SOURCE_PATH=./data/raw

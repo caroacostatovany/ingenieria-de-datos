@@ -117,4 +117,4 @@ df_merged = df1.join(df2, how='left')
 
 ## 🚀 Próximo paso
 
-Continúa con **[Manejo de archivos](../manejo-de-archivos.md)**.
+Continúa con **[Exploración de Datos](../exploracion-datos-pandas.md)** para análisis exploratorio de datos (EDA).

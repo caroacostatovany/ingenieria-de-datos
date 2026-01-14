@@ -2,6 +2,8 @@
 
 Entender cuándo usar scripts simples y cuándo modularizar código es clave para escribir Python mantenible.
 
+> 💡 **Nota**: Este documento es para referencia futura. Por ahora, trabajaremos solo con **Jupyter Notebooks** para aprender Python. Los scripts Python los veremos más adelante cuando construyamos pipelines automatizados.
+
 ---
 
 ## 📜 Scripts simples

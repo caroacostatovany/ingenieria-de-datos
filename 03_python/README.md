@@ -64,10 +64,11 @@ Al finalizar esta sección, deberías poder:
 
 ## 📚 Flujo de aprendizaje recomendado
 
-1. **Empieza con [Fundamentos](fundamentos/)** - Sintaxis y conceptos básicos
-2. **Aprende [Pandas](pandas/)** - Manipulación y exploración de datos
-3. **Practica [Storytelling](storytelling/)** - Comunica tus hallazgos efectivamente
-4. **Revisa [Ejemplos](ejemplos/)** - Código práctico para referencia
+1. **Instala Jupyter Notebook** - Sigue las instrucciones en [Fundamentos](fundamentos/README.md) para instalar y configurar Jupyter
+2. **Empieza con [Fundamentos](fundamentos/)** - Sintaxis y conceptos básicos (trabajando en notebooks)
+3. **Aprende [Pandas](pandas/)** - Manipulación y exploración de datos (en notebooks)
+4. **Practica [Storytelling](storytelling/)** - Comunica tus hallazgos efectivamente
+5. **Revisa [Ejemplos](ejemplos/)** - Notebooks prácticos para referencia
 
 ---
 

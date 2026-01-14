@@ -2,6 +2,8 @@
 
 Python es el lenguaje más usado en Data Engineering. No necesitas ser experto, pero sí competente en lo esencial.
 
+> 💡 **Trabajaremos con Jupyter Notebooks**: Todos los ejemplos de este documento están diseñados para ejecutarse en Jupyter Notebooks. Si aún no has instalado Jupyter, revisa el [README de Fundamentos](README.md) para las instrucciones de instalación.
+
 ---
 
 ## 🧠 ¿Por qué Python para Data Engineering?
@@ -325,7 +327,7 @@ def procesar_usuarios(usuarios: List[Dict[str, any]]) -> pd.DataFrame:
 
 ## 🚀 Próximo paso
 
-Continúa con **[Python para Datos](python-para-datos/)** para aprender pandas y manipulación de datos.
+Continúa con **[Manejo de archivos](manejo-de-archivos.md)** para aprender a leer y escribir diferentes formatos de datos.
 
 ---
 
