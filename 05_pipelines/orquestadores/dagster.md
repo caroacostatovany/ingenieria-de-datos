@@ -18,6 +18,15 @@ Dagster es un orquestador que:
 
 ## 🚀 Instalación
 
+> ⚠️ **Importante**: Antes de instalar o ejecutar cualquier comando, asegúrate de activar tu entorno virtual de pyenv:
+> ```bash
+> pyenv activate ingenieria-de-datos
+> ```
+> O si usas `pyenv-virtualenv`:
+> ```bash
+> pyenv shell ingenieria-de-datos
+> ```
+
 ```bash
 # Instalación básica
 pip install dagster dagit
@@ -25,6 +34,79 @@ pip install dagster dagit
 # Con dependencias adicionales
 pip install dagster[postgres,pandas]
 ```
+
+---
+
+## 📁 Dónde crear tus archivos
+
+**Crea todos tus ejercicios y assets de Dagster en esta carpeta:**
+
+```
+05_pipelines/ejercicios/dagster/
+```
+
+### Estructura recomendada
+
+```
+05_pipelines/ejercicios/dagster/
+├── 01-primer-asset.py          # Tu primer asset simple
+├── 02-assets-con-dependencias.py  # Assets con dependencias
+├── 03-definitions.py           # Definiciones de jobs y schedules
+└── README.md                   # (opcional) Notas personales
+```
+
+### Cómo crear un archivo
+
+#### Opción A: Usando Cursor (Recomendado)
+
+1. **Abre la carpeta en Cursor:**
+   - En Cursor, navega a `05_pipelines/ejercicios/dagster/`
+   - O usa `Cmd+P` (Mac) / `Ctrl+P` (Windows/Linux) y escribe: `ejercicios/dagster`
+
+2. **Crea un nuevo archivo:**
+   - Click derecho en la carpeta `dagster` → "New File"
+   - O usa `Cmd+N` (Mac) / `Ctrl+N` (Windows/Linux)
+   - Guarda como `01-primer-asset.py` en la carpeta `dagster`
+
+3. **Escribe tu código** (ver ejemplos abajo)
+
+4. **Ejecuta el archivo:**
+   - Abre la terminal integrada en Cursor (`Ctrl+`` ` o `View → Terminal`)
+   - Navega a la carpeta si es necesario:
+     ```bash
+     cd 05_pipelines/ejercicios/dagster
+     ```
+   - Ejecuta:
+     ```bash
+     dagster dev
+     ```
+
+#### Opción B: Desde terminal/Bash
+
+1. **Navega a la carpeta de ejercicios:**
+   ```bash
+   cd 05_pipelines/ejercicios/dagster
+   ```
+
+2. **Crea un nuevo archivo:**
+   ```bash
+   touch 01-primer-asset.py
+   ```
+
+3. **Abre el archivo en Cursor o tu editor:**
+   ```bash
+   # Si estás en la raíz del proyecto:
+   cursor 05_pipelines/ejercicios/dagster/01-primer-asset.py
+   # O simplemente:
+   code 05_pipelines/ejercicios/dagster/01-primer-asset.py
+   ```
+
+4. **Escribe tu código** y guarda
+
+5. **Ejecuta:**
+   ```bash
+   dagster dev
+   ```
 
 ---
 
@@ -60,15 +142,37 @@ def extraer_ventas():
 
 ## 🎯 Primer Asset
 
+### Paso 1: Crear el archivo
+
+**En Cursor:**
+1. Navega a `05_pipelines/ejercicios/dagster/` en el explorador de archivos
+2. Click derecho → "New File"
+3. Nombra el archivo: `01-primer-asset.py`
+
+**O desde terminal:**
+```bash
+cd 05_pipelines/ejercicios/dagster
+touch 01-primer-asset.py
+```
+
+### Paso 2: Escribir el código
+
+Abre `01-primer-asset.py` en Cursor y copia este código:
+
 ```python
-from dagster import asset, AssetExecutionContext
+from dagster import asset, AssetExecutionContext, Definitions
 import pandas as pd
+from pathlib import Path
+
+# Obtener la ruta base del proyecto (3 niveles arriba desde este archivo)
+BASE_DIR = Path(__file__).parent.parent.parent.parent
 
 @asset
 def ventas_raw(context: AssetExecutionContext):
     """Asset: datos de ventas sin procesar."""
     context.log.info("Extrayendo ventas...")
-    df = pd.read_csv('data/raw/ventas.csv')
+    ruta = BASE_DIR / '03_python' / 'data' / 'ventas.csv'
+    df = pd.read_csv(ruta)
     context.log.info(f"Extraídas {len(df)} ventas")
     return df
 
@@ -79,14 +183,89 @@ def ventas_procesadas(context: AssetExecutionContext, ventas_raw):
     df = ventas_raw.copy()
     df = df.dropna()
     df['total'] = df['precio'] * df['cantidad']
+    
+    # Guardar output en 05_pipelines/data/output
+    ruta_salida = BASE_DIR / '05_pipelines' / 'data' / 'output' / 'ventas_procesadas.parquet'
+    ruta_salida.parent.mkdir(parents=True, exist_ok=True)
+    df.to_parquet(ruta_salida, index=False)
+    context.log.info(f"Guardado en {ruta_salida}")
+    
     return df
 
 @asset
 def ventas_por_categoria(context: AssetExecutionContext, ventas_procesadas):
     """Asset: ventas agregadas por categoría."""
     context.log.info("Agregando por categoría...")
-    return ventas_procesadas.groupby('categoria')['total'].sum()
+    resultado = ventas_procesadas.groupby('categoria')['total'].sum()
+    
+    # Guardar output
+    ruta_salida = BASE_DIR / '05_pipelines' / 'data' / 'output' / 'ventas_por_categoria.parquet'
+    resultado.to_frame().to_parquet(ruta_salida)
+    context.log.info(f"Guardado en {ruta_salida}")
+    
+    return resultado
+
+# Definiciones necesarias para que Dagster reconozca los assets
+defs = Definitions(assets=[ventas_raw, ventas_procesadas, ventas_por_categoria])
 ```
+
+> 💡 **Nota**: 
+> - Usamos `pathlib.Path` para construir rutas de forma robusta, independientemente del sistema operativo.
+> - Los archivos de salida se guardan en `05_pipelines/data/output/` para mantener una organización clara.
+> - El código crea automáticamente el directorio si no existe.
+
+### Paso 3: Ejecutar
+
+> ⚠️ **Recuerda**: Activa tu entorno virtual antes de ejecutar:
+> ```bash
+> pyenv activate ingenieria-de-datos
+> # O: pyenv shell ingenieria-de-datos
+> ```
+
+**En Cursor:**
+1. Abre la terminal integrada (`Ctrl+`` ` o `View → Terminal`)
+2. Activa el entorno virtual:
+   ```bash
+   pyenv activate ingenieria-de-datos
+   ```
+3. Si no estás en la carpeta correcta, navega:
+   ```bash
+   cd 05_pipelines/ejercicios/dagster
+   ```
+4. Ejecuta:
+   ```bash
+   dagster dev
+   ```
+
+**O desde terminal externa:**
+```bash
+# Activa el entorno virtual primero:
+pyenv activate ingenieria-de-datos
+
+# Desde la raíz del proyecto:
+cd 05_pipelines/ejercicios/dagster
+dagster dev
+```
+
+### Paso 4: Abrir la UI
+
+Una vez que `dagster dev` esté corriendo:
+1. Abre tu navegador en: **http://localhost:3000**
+2. Verás la UI de Dagster (Dagit)
+3. Podrás ver tus assets, materializarlos y explorar dependencias
+
+> 💡 **Nota**: Asegúrate de que el archivo `ventas.csv` exista en `03_python/data/` o ajusta la ruta según tus datos.
+
+> 💬 **¿Tienes errores?** Si encuentras algún error al ejecutar tu script, usa el chat de Cursor (`Cmd+L` en Mac o `Ctrl+L` en Windows/Linux) para pedir ayuda. Puedes:
+> - Copiar y pegar el mensaje de error completo
+> - Mencionar qué estabas intentando hacer
+> - Preguntar sobre el error específico
+> 
+> El chat de Cursor puede ayudarte a:
+> - Entender qué significa el error
+> - Corregir problemas de sintaxis
+> - Resolver problemas de importaciones
+> - Ajustar rutas o configuraciones
 
 ---
 
@@ -115,19 +294,44 @@ def ventas_completas(usuarios, ventas):
 
 Dagster incluye una UI excelente llamada Dagit.
 
-```bash
-# Iniciar Dagit
-dagster dev
+> ⚠️ **Recuerda**: Activa tu entorno virtual antes de ejecutar:
+> ```bash
+> pyenv activate ingenieria-de-datos
+> ```
 
-# Abrir en navegador
-# http://localhost:3000
+### Paso 1: Iniciar Dagit
+
+En una terminal, desde la carpeta `05_pipelines/ejercicios/dagster/`:
+
+```bash
+dagster dev
 ```
+
+Verás algo como:
+```
+Serving on http://127.0.0.1:3000
+```
+
+### Paso 2: Abrir la UI
+
+Abre tu navegador y ve a: **http://localhost:3000**
+
+### Paso 3: Explorar
+
+En la UI podrás:
+- **Ver tus assets**: Lista de todos los assets definidos
+- **Materializar assets**: Ejecutar y crear los datos
+- **Ver dependencias**: Gráfico visual de cómo se relacionan los assets
+- **Revisar logs**: Logs de cada ejecución
+- **Explorar historial**: Ver ejecuciones anteriores
 
 **Características de la UI:**
 * Visualización de assets y dependencias
 * Materialización de assets
 * Logs y monitoreo
 * Búsqueda y filtrado
+
+> 💡 **Tip**: Deja `dagster dev` corriendo mientras trabajas. Puedes detenerlo con `Ctrl+C`.
 
 ---
 
@@ -188,12 +392,34 @@ dagster dev
 
 ---
 
-## 🎯 Ejercicios
+## 🎯 Ejercicios prácticos
 
-1. Instala Dagster y crea tu primer asset
-2. Define dependencias entre assets
-3. Explora la UI de Dagster
-4. Programa un job para ejecutarse regularmente
+Crea estos archivos en `05_pipelines/ejercicios/dagster/`:
+
+### Ejercicio 1: Primer Asset
+**Archivo:** `01-primer-asset.py`
+- Crea assets simples que lean y procesen datos
+- Usa el ejemplo de arriba como base
+- Ejecuta `dagster dev` y materializa los assets en la UI
+
+### Ejercicio 2: Assets con Dependencias
+**Archivo:** `02-assets-con-dependencias.py`
+- Crea múltiples assets que dependan unos de otros
+- Algunos assets deben ejecutarse en paralelo
+- Otros deben esperar a que terminen los anteriores
+- Observa cómo Dagster detecta las dependencias automáticamente
+
+### Ejercicio 3: Jobs y Schedules
+**Archivo:** `03-definitions.py`
+- Define jobs que agrupen assets
+- Crea schedules para ejecutar jobs automáticamente
+- Experimenta con diferentes frecuencias (diario, horario, etc.)
+
+### Ejercicio 4: UI
+- Inicia Dagit (`dagster dev`)
+- Materializa tus assets desde la UI
+- Explora el gráfico de dependencias
+- Revisa logs y historial de ejecuciones
 
 ---
 
@@ -206,4 +432,30 @@ dagster dev
 
 ---
 
-> **Recuerda**: Dagster es excelente si piensas en términos de "qué datos produzco" en lugar de "qué código ejecuto".
+## 💬 ¿Necesitas ayuda?
+
+Si encuentras errores al ejecutar tus scripts de Dagster:
+
+1. **Usa el chat de Cursor** (`Cmd+L` en Mac o `Ctrl+L` en Windows/Linux):
+   - Copia y pega el mensaje de error completo
+   - Explica qué estabas intentando hacer
+   - Pregunta específicamente sobre el error
+
+2. **El chat puede ayudarte con:**
+   - Entender mensajes de error
+   - Corregir problemas de sintaxis
+   - Resolver importaciones faltantes
+   - Ajustar rutas o configuraciones
+   - Debugging de assets y dependencias
+
+3. **Ejemplo de pregunta útil:**
+   ```
+   Tengo este error al ejecutar dagster dev:
+   [pega el error completo aquí]
+   
+   ¿Qué significa y cómo lo soluciono?
+   ```
+
+---
+
+> **Recuerda**: Dagster es excelente si piensas en términos de "qué datos produzco" en lugar de "qué código ejecuto". Si tienes dudas, usa el chat de Cursor para obtener ayuda rápida.

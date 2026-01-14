@@ -82,12 +82,50 @@ Los orquestadores gestionan la ejecución, programación y monitoreo de pipeline
 
 ---
 
-## 🚀 Recomendación de aprendizaje
+## 🚀 Ruta de aprendizaje recomendada
 
-1. **Empieza con Prefect** para entender conceptos
-2. **Prueba Dagster** para ver alternativas
-3. **Aprende Airflow** si necesitas estándar de industria
-4. **Explora cloud** cuando necesites escalar
+> ⚠️ **Importante**: Antes de instalar o ejecutar cualquier orquestador, asegúrate de activar tu entorno virtual:
+> ```bash
+> pyenv activate ingenieria-de-datos
+> ```
+> O si usas `pyenv-virtualenv`:
+> ```bash
+> pyenv shell ingenieria-de-datos
+> ```
+
+Sigue este orden para aprender orquestadores de forma progresiva:
+
+1. **[Prefect](prefect.md)** - Empieza aquí
+   * Orquestador moderno y Python-first
+   * Fácil de instalar y usar localmente
+   * Excelente para entender conceptos básicos
+   * Crea tus primeros flows y entiende tareas, dependencias y scheduling
+   * **Recuerda**: Activa `pyenv activate ingenieria-de-datos` antes de instalar
+
+2. **[Dagster](dagster.md)** - Siguiente paso
+   * Enfoque en data assets y lineage
+   * UI moderna y visual
+   * Conceptos avanzados de orquestación
+   * Compara con Prefect para entender diferentes enfoques
+   * **Recuerda**: Activa `pyenv activate ingenieria-de-datos` antes de instalar
+
+3. **[Apache Airflow](airflow.md)** - Estándar de industria
+   * El orquestador más popular
+   * Maduro y con gran comunidad
+   * DAGs, operadores y conceptos enterprise
+   * Necesario para muchos trabajos en Data Engineering
+   * **Recuerda**: Activa `pyenv activate ingenieria-de-datos` antes de instalar
+
+4. **[Luigi](luigi.md)** - Alternativa simple (opcional)
+   * Para entender enfoques más simples
+   * Bueno para pipelines Python puro
+   * **Recuerda**: Activa `pyenv activate ingenieria-de-datos` antes de instalar
+
+5. **Orquestadores cloud** - Cuando necesites escalar
+   * **[AWS Step Functions](step-functions.md)** - Si usas AWS
+   * **[Google Cloud Composer](composer.md)** - Si usas GCP
+   * **[Azure Data Factory](data-factory.md)** - Si usas Azure
+   * **Nota**: Estos son servicios cloud, no requieren instalación local
 
 ---
 
@@ -97,12 +135,15 @@ Los orquestadores gestionan la ejecución, programación y monitoreo de pipeline
 * **Empieza local** antes de ir a cloud
 * **Elige según tu stack**: Python-first vs. multi-lenguaje
 * **Considera costos**: Local vs. Cloud gestionado
+* **Siempre activa pyenv**: `pyenv activate ingenieria-de-datos` antes de instalar o ejecutar
 
 ---
 
 ## 🎯 Próximo paso
 
-Empieza con **[Prefect](prefect.md)** para un orquestador moderno y fácil de usar.
+**👉 Empieza con [Prefect](prefect.md)** - El primer orquestador que debes aprender.
+
+Después de dominar Prefect, continúa con **[Dagster](dagster.md)** para ver un enfoque diferente.
 
 ---
 
