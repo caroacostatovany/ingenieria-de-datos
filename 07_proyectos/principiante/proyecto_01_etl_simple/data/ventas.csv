@@ -1,0 +1,17 @@
+fecha,producto,cantidad,precio,cliente,ciudad
+2024-01-15,Producto A,5,10.50,Cliente 1,Madrid
+2024-01-16,Producto B,3,25.00,Cliente 2,Barcelona
+2024-01-17,Producto A,2,10.50,Cliente 1,Madrid
+2024-01-18,Producto C,1,50.00,Cliente 3,Valencia
+2024-01-19,Producto B,4,25.00,Cliente 4,Sevilla
+2024-01-20,Producto A,1,10.50,Cliente 5,Madrid
+2024-01-21,Producto C,2,50.00,Cliente 2,Barcelona
+2024-01-22,Producto B,6,25.00,Cliente 6,Bilbao
+2024-01-23,Producto A,3,10.50,Cliente 1,Madrid
+2024-01-24,Producto C,1,50.00,Cliente 7,Valencia
+2024-01-25,Producto B,2,25.00,Cliente 3,Valencia
+2024-01-26,Producto A,4,10.50,Cliente 8,Madrid
+2024-01-27,Producto C,3,50.00,Cliente 4,Sevilla
+2024-01-28,Producto B,1,25.00,Cliente 9,Barcelona
+2024-01-29,Producto A,5,10.50,Cliente 2,Barcelona
+2024-01-30,Producto C,2,50.00,Cliente 1,Madrid

@@ -46,7 +46,11 @@ df = pd.DataFrame(usuarios)
 ### Desde CSV
 
 ```python
-df = pd.read_csv('datos.csv')
+# Cargar CSV de ejemplo del proyecto
+df = pd.read_csv('../data/ventas.csv')
+
+# O desde cualquier ruta
+df = pd.read_csv('ruta/a/tu/archivo.csv')
 ```
 
 ---
@@ -231,10 +235,111 @@ df['edad_doble'] = df['edad'].apply(lambda x: x * 2)
 
 ## 🎯 Ejercicios
 
-1. Crea un DataFrame con datos de usuarios
-2. Filtra usuarios mayores de 30 años
-3. Calcula la edad promedio por ciudad
-4. Agrega una columna que indique si el usuario es "Mayor" o "Joven"
+> 💡 **Usa el CSV de ejemplo**: `../data/ventas.csv` para practicar estos ejercicios.
+
+### Ejercicio 1: Cargar y explorar datos
+
+```python
+# 1. Carga el CSV de ventas
+df = pd.read_csv('../data/ventas.csv')
+
+# 2. Muestra las primeras 10 filas
+# Tu código aquí
+
+# 3. Muestra información del DataFrame (tipos, memoria, nulos)
+# Tu código aquí
+
+# 4. Muestra estadísticas descriptivas
+# Tu código aquí
+```
+
+### Ejercicio 2: Seleccionar y filtrar
+
+```python
+# 1. Selecciona solo las columnas: 'categoria', 'producto', 'precio'
+# Tu código aquí
+
+# 2. Filtra productos de la categoría 'Electrónica'
+# Tu código aquí
+
+# 3. Filtra ventas con precio mayor a 100 euros
+# Tu código aquí
+
+# 4. Filtra ventas de 'Electrónica' con precio mayor a 100 (ambas condiciones)
+# Tu código aquí
+```
+
+### Ejercicio 3: Modificar datos
+
+```python
+# 1. Agrega una columna 'precio_con_iva' que sea precio * 1.21
+# Tu código aquí
+
+# 2. Agrega una columna 'categoria_precio' que indique:
+#    - 'Alto' si precio > 200
+#    - 'Medio' si precio entre 50 y 200
+#    - 'Bajo' si precio < 50
+# Tu código aquí
+
+# 3. Muestra las primeras filas para verificar tus cambios
+# Tu código aquí
+```
+
+### Ejercicio 4: Estadísticas y agrupaciones
+
+```python
+# 1. Calcula el precio promedio por categoría
+# Tu código aquí
+
+# 2. Calcula el total de ventas (suma de 'total') por ciudad
+# Tu código aquí
+
+# 3. Encuentra el producto más caro y el más barato
+# Tu código aquí
+
+# 4. Cuenta cuántos productos hay por categoría
+# Tu código aquí
+```
+
+### Ejercicio 5: Ordenar y valores únicos
+
+```python
+# 1. Ordena el DataFrame por precio descendente
+# Tu código aquí
+
+# 2. Muestra los 5 productos más caros
+# Tu código aquí
+
+# 3. Lista todas las ciudades únicas donde hay ventas
+# Tu código aquí
+
+# 4. Cuenta cuántas ventas hay por ciudad (value_counts)
+# Tu código aquí
+```
+
+### Ejercicio 6: Análisis completo
+
+```python
+# 1. Carga los datos
+df = pd.read_csv('../data/ventas.csv')
+
+# 2. Crea un resumen que muestre:
+#    - Total de registros
+#    - Precio promedio
+#    - Precio máximo y mínimo
+#    - Total de ventas (suma de columna 'total')
+#    - Número de categorías únicas
+#    - Número de ciudades únicas
+# Tu código aquí
+
+# 3. Filtra las ventas de Madrid y calcula el total de ingresos
+# Tu código aquí
+
+# 4. Encuentra la categoría con mayor número de ventas
+# Tu código aquí
+```
+
+> 💡 **¿Quieres ver ejemplos de cómo resolver estos ejercicios?** Revisa el notebook de ejemplo: **[01-exploracion-datos.ipynb](../../ejemplos/01-exploracion-datos.ipynb)** que muestra técnicas similares aplicadas al CSV de ventas.
 
 ---
 

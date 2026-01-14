@@ -27,4 +27,4 @@ Al finalizar esta sección, deberías poder:
 
 ## 🚀 Próximo paso
 
-Continúa con **[Exploración de Datos](../exploracion-datos-pandas.md)** para análisis exploratorio.
+Continúa con **[Jupyter Notebooks para Datos](../jupyter-notebooks-para-datos.md)** para aprender exploración de datos (EDA) y análisis interactivo.

@@ -25,11 +25,12 @@ Esta carpeta cubre Python desde la perspectiva de un Data Engineer: manejo de da
   * Merge y Join
   * Jupyter Notebooks para análisis
 
-* ✅ **[Storytelling con Datos](storytelling/)**
-  * Comunicar insights efectivamente
+* ✅ **[Storytelling con Datos](fundamentos/storytelling-con-datos.md)**
+  * Comunicar insights efectivamente a personas de negocios
   * Visualizaciones efectivas
   * Estructura narrativa
   * Principios de diseño
+  * Lenguaje de negocio vs técnico
 
 * ✅ **[Ejemplos](ejemplos/)**
   * Pipeline ETL simple
@@ -66,9 +67,17 @@ Al finalizar esta sección, deberías poder:
 
 1. **Instala Jupyter Notebook** - Sigue las instrucciones en [Fundamentos](fundamentos/README.md) para instalar y configurar Jupyter
 2. **Empieza con [Fundamentos](fundamentos/)** - Sintaxis y conceptos básicos (trabajando en notebooks)
+   - Fundamentos Python
+   - Manejo de archivos (CSV, Parquet, JSON)
+   - Scripts vs Módulos
+   - **Storytelling con Datos** (comunicar a personas de negocios)
 3. **Aprende [Pandas](pandas/)** - Manipulación y exploración de datos (en notebooks)
-4. **Practica [Storytelling](storytelling/)** - Comunica tus hallazgos efectivamente
-5. **Revisa [Ejemplos](ejemplos/)** - Notebooks prácticos para referencia
+   - Introducción a Pandas
+   - Operaciones con DataFrames
+   - Limpieza de datos
+   - Agregaciones y agrupaciones
+   - Merge y Join
+4. **Revisa [Ejemplos](ejemplos/)** - Notebooks prácticos para referencia
 
 ---
 

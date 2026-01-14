@@ -13,7 +13,7 @@ Esta carpeta contiene ejemplos prácticos en formato Jupyter Notebook para Data 
   * Estadísticas descriptivas
   * Visualizaciones básicas
   * Detección de problemas
-  * **Referencia:** [Exploración de Datos con Pandas](../pandas/exploracion-datos-pandas.md)
+  * **Referencia:** [Jupyter Notebooks para Datos](../pandas/jupyter-notebooks-para-datos.md)
 
 * ✅ **[02. Storytelling con Datos](02-storytelling-datos.ipynb)**
   * Principios de visualización efectiva
@@ -34,14 +34,30 @@ Esta carpeta contiene ejemplos prácticos en formato Jupyter Notebook para Data 
   * Corrección de tipos
   * **Referencia:** [Python para Datos - Limpieza](../pandas/python-para-datos/03-limpieza-datos.md)
 
-### 📄 Scripts Python (Legacy)
+* ✅ **[05. Agregaciones y Agrupaciones](05-agregaciones.ipynb)**
+  * Agregaciones básicas (sum, mean, min, max)
+  * Groupby y múltiples funciones
+  * Named aggregations
+  * Pivot tables
+  * Top N por categoría
+  * **Referencia:** [Python para Datos - Agregaciones](../pandas/python-para-datos/04-agregaciones.md)
 
-Los siguientes scripts Python están disponibles pero se recomienda usar los notebooks arriba:
+* ✅ **[06. Merge y Join](06-merge-join.ipynb)**
+  * Tipos de merge (inner, left, right, outer)
+  * Combinar DataFrames
+  * Verificación de integridad
+  * Análisis con datos enriquecidos
+  * **Referencia:** [Python para Datos - Merge y Join](../pandas/python-para-datos/05-merge-join.md)
 
-* ⚠️ [Pipeline ETL Simple](01-pipeline-etl-simple.py) - Ver [notebook equivalente](03-pipeline-etl.ipynb)
-* ⚠️ [Limpieza de Datos](02-limpieza-datos.py) - Ver [notebook equivalente](04-limpieza-datos.ipynb)
-* ✅ [Conexión a Base de Datos](03-conexion-db.py)
-* ✅ [Procesar Archivos Grandes](04-archivos-grandes.py)
+* ✅ **[07. Manejo de Archivos](07-manejo-archivos.ipynb)**
+  * Leer y escribir CSV
+  * Trabajar con Parquet
+  * Convertir entre formatos
+  * Comparar rendimiento y tamaños
+  * Procesar archivos grandes con chunks
+  * **Referencia:** [Manejo de Archivos](../fundamentos/manejo-de-archivos.md)
+
+> 💡 **Nota**: Todos los ejemplos están en formato Jupyter Notebook para facilitar el aprendizaje interactivo. Los notebooks te permiten ejecutar código paso a paso, ver resultados inmediatamente y experimentar fácilmente.
 
 ---
 
@@ -117,10 +133,13 @@ Sube los notebooks a Google Colab para ejecutarlos en la nube sin instalación.
 
 Cada notebook está vinculado a documentación detallada en los módulos correspondientes:
 
-* **Exploración de Datos** → [Pandas - Exploración](../pandas/exploracion-datos-pandas.md)
+* **Exploración de Datos** → [Jupyter Notebooks para Datos](../pandas/jupyter-notebooks-para-datos.md)
 * **Storytelling** → [Storytelling con Datos](../storytelling/storytelling-con-datos.md)
 * **Pipeline ETL** → [Fundamentos Python](../fundamentos/fundamentos-python.md)
-* **Limpieza** → [Python para Datos](../pandas/python-para-datos/)
+* **Limpieza** → [Python para Datos - Limpieza](../pandas/python-para-datos/03-limpieza-datos.md)
+* **Agregaciones** → [Python para Datos - Agregaciones](../pandas/python-para-datos/04-agregaciones.md)
+* **Merge y Join** → [Python para Datos - Merge y Join](../pandas/python-para-datos/05-merge-join.md)
+* **Manejo de Archivos** → [Manejo de Archivos](../fundamentos/manejo-de-archivos.md)
 
 ---
 

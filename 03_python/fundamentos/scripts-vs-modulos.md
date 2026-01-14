@@ -1,8 +1,8 @@
 # Scripts vs Módulos
 
-Entender cuándo usar scripts simples y cuándo modularizar código es clave para escribir Python mantenible.
+Entender cuándo usar scripts simples y cuándo modularizar código es clave para escribir Python mantenible y escalable en Data Engineering.
 
-> 💡 **Nota**: Este documento es para referencia futura. Por ahora, trabajaremos solo con **Jupyter Notebooks** para aprender Python. Los scripts Python los veremos más adelante cuando construyamos pipelines automatizados.
+> 💡 **Nota**: Este documento es para referencia futura. Por ahora, trabajaremos principalmente con **Jupyter Notebooks** para aprender Python. Los scripts Python los veremos más adelante cuando construyamos pipelines automatizados. Sin embargo, entender estos conceptos te ayudará a organizar mejor tu código incluso en notebooks.
 
 ---
 
@@ -25,21 +25,27 @@ Un **script** es un archivo Python que se ejecuta directamente.
 import pandas as pd
 
 # Leer datos
-df = pd.read_csv('datos.csv')
+df = pd.read_csv('../data/ventas.csv')
 
 # Procesar
-df['total'] = df['precio'] * df['cantidad']
+df['total_calculado'] = df['precio'] * df['cantidad']
+
+# Verificar que coincida con el total existente
+df['diferencia'] = df['total'] - df['total_calculado']
 
 # Guardar
-df.to_csv('resultado.csv', index=False)
+df.to_csv('../data/ventas_verificadas.csv', index=False)
 
 print("Procesamiento completado")
+print(f"Registros procesados: {len(df)}")
 ```
 
 **Ejecución:**
 ```bash
 python script_simple.py
 ```
+
+> 💡 **En Data Engineering**: Los scripts simples son útiles para tareas puntuales como limpieza de datos, conversión de formatos, o validaciones rápidas.
 
 ---
 
@@ -64,29 +70,62 @@ Un **módulo** es código organizado en funciones/clases reutilizables.
 import pandas as pd
 
 def limpiar_datos(df):
-    """Limpia un DataFrame."""
+    """
+    Limpia un DataFrame eliminando nulos y duplicados.
+    
+    Args:
+        df (pd.DataFrame): DataFrame a limpiar
+    
+    Returns:
+        pd.DataFrame: DataFrame limpio
+    """
     df = df.dropna()
     df = df.drop_duplicates()
     return df
 
 def calcular_totales(df):
-    """Calcula totales por categoría."""
-    return df.groupby('categoria')['precio'].sum()
+    """
+    Calcula totales por categoría.
+    
+    Args:
+        df (pd.DataFrame): DataFrame con columnas 'categoria' y 'total'
+    
+    Returns:
+        pd.Series: Totales agrupados por categoría
+    """
+    return df.groupby('categoria')['total'].sum()
 
-def guardar_resultado(df, ruta):
-    """Guarda DataFrame en Parquet."""
-    df.to_parquet(ruta, index=False)
+def guardar_resultado(df, ruta, formato='parquet'):
+    """
+    Guarda DataFrame en el formato especificado.
+    
+    Args:
+        df (pd.DataFrame): DataFrame a guardar
+        ruta (str): Ruta del archivo
+        formato (str): 'parquet' o 'csv'
+    """
+    if formato == 'parquet':
+        df.to_parquet(ruta, index=False)
+    elif formato == 'csv':
+        df.to_csv(ruta, index=False)
+    else:
+        raise ValueError(f"Formato no soportado: {formato}")
 ```
 
 **Uso:**
 ```python
 # main.py
-from utils.data_processing import limpiar_datos, calcular_totales
+import pandas as pd
+from utils.data_processing import limpiar_datos, calcular_totales, guardar_resultado
 
-df = pd.read_csv('datos.csv')
+# Pipeline usando módulos
+df = pd.read_csv('../data/ventas.csv')
 df_limpio = limpiar_datos(df)
 totales = calcular_totales(df_limpio)
+guardar_resultado(totales.to_frame(), '../data/totales_por_categoria.parquet')
 ```
+
+> 💡 **Ventajas de modularizar**: Código reutilizable, testeable, y más fácil de mantener cuando el proyecto crece.
 
 ---
 
@@ -269,16 +308,53 @@ def procesar_ventas(df, fecha_inicio, fecha_fin):
 
 ## 🎯 Ejercicios
 
-1. Convierte un script simple en módulos reutilizables
-2. Crea una estructura de proyecto para un pipeline ETL
-3. Escribe funciones que puedan ser testeadas
-4. Organiza código en clases cuando sea apropiado
+### Ejercicio 1: Convertir script a módulos
+
+```python
+# Toma este script simple:
+# script_simple.py
+import pandas as pd
+df = pd.read_csv('../data/ventas.csv')
+df['precio_con_iva'] = df['precio'] * 1.21
+df.to_csv('../data/ventas_con_iva.csv', index=False)
+
+# Conviértelo en módulos reutilizables:
+# 1. Crea una función calcular_iva()
+# 2. Crea una función procesar_ventas()
+# 3. Usa if __name__ == '__main__' para ejecutar
+```
+
+### Ejercicio 2: Estructura de proyecto
+
+```python
+# Crea una estructura de proyecto para un pipeline ETL:
+# proyecto/
+# ├── src/
+# │   ├── extract.py
+# │   ├── transform.py
+# │   └── load.py
+# ├── utils/
+# │   └── helpers.py
+# └── main.py
+
+# Implementa funciones básicas en cada módulo
+```
+
+### Ejercicio 3: Funciones testeables
+
+```python
+# Escribe funciones que puedan ser testeadas:
+# - Funciones puras (sin efectos secundarios)
+# - Parámetros claros
+# - Valores de retorno definidos
+# - Documentación con docstrings
+```
 
 ---
 
 ## 🚀 Próximo paso
 
-Revisa los **[Ejemplos](ejemplos/)** para ver patrones comunes.
+Continúa con **[Storytelling con Datos](storytelling-con-datos.md)** para aprender a comunicar tus hallazgos efectivamente a personas de negocios y stakeholders.
 
 ---
 

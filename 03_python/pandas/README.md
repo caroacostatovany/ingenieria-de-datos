@@ -13,19 +13,12 @@ Esta sección cubre pandas para manipulación, análisis y exploración de datos
   * Agregaciones y agrupaciones
   * Merge y Join
 
-* ✅ **[Exploración de Datos con Pandas](exploracion-datos-pandas.md)**
-  * Análisis exploratorio de datos (EDA)
-  * Estadísticas descriptivas
-  * Visualización básica
-  * Detección de patrones
-  * Identificación de problemas
-
 * ✅ **[Jupyter Notebooks para Datos](jupyter-notebooks-para-datos.md)**
-  * ¿Qué es Jupyter?
-  * Instalación y configuración
-  * Flujo de trabajo para análisis
+  * Trabajo con notebooks
+  * Exploración de datos (EDA)
   * Visualizaciones
   * Integración con SQL
+  * Flujo de trabajo completo
 
 ---
 
@@ -42,7 +35,7 @@ Al finalizar esta sección, deberías poder:
 
 ## 🚀 Próximo paso
 
-Después de explorar datos, aprende a **[contar la historia con datos](../storytelling/)**.
+Después de explorar datos, aprende a **[contar la historia con datos](../fundamentos/storytelling-con-datos.md)** para comunicar tus hallazgos efectivamente a personas de negocios.
 
 ---
 

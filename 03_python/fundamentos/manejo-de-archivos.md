@@ -1,8 +1,8 @@
 # Manejo de archivos en Python
 
-Aprende a leer y escribir diferentes formatos de archivos comunes en Data Engineering.
+Aprende a leer y escribir diferentes formatos de archivos comunes en Data Engineering: CSV, Parquet, JSON, Excel y más.
 
-> 💡 **Trabajaremos con Jupyter Notebooks**: Todos los ejemplos de este documento están diseñados para ejecutarse en Jupyter Notebooks. Crea un nuevo notebook y ejecuta los ejemplos celda por celda.
+> 💡 **Usa los archivos de ejemplo**: `../data/ventas.csv` y `../data/ventas.parquet` para practicar estos conceptos.
 
 ---
 
@@ -13,114 +13,170 @@ Aprende a leer y escribir diferentes formatos de archivos comunes en Data Engine
 ```python
 import pandas as pd
 
-# Básico
-df = pd.read_csv('datos.csv')
+# Cargar datos de ejemplo
+df = pd.read_csv('../data/ventas.csv')
+print(f"✅ Datos cargados: {len(df)} registros")
+df.head()
 
-# Con opciones
+# Con opciones avanzadas
 df = pd.read_csv(
-    'datos.csv',
+    '../data/ventas.csv',
     sep=',',                    # Separador
     encoding='utf-8',          # Codificación
     header=0,                   # Fila de encabezados
-    skiprows=1,                 # Saltar filas
-    nrows=1000,                 # Leer solo N filas
-    usecols=['col1', 'col2'],   # Solo estas columnas
-    dtype={'col1': str},        # Tipos específicos
+    # skiprows=1,               # Saltar filas (si fuera necesario)
+    # nrows=1000,               # Leer solo N filas
+    usecols=['producto', 'precio', 'total'],  # Solo estas columnas
+    dtype={'precio': 'float32'},  # Tipos específicos
     na_values=['NULL', 'N/A']   # Valores a tratar como nulos
 )
+print(f"Columnas seleccionadas: {df.columns.tolist()}")
 ```
 
 ### Escribir CSV
 
 ```python
 # Básico
-df.to_csv('salida.csv', index=False)
+df.to_csv('../data/ventas_copia.csv', index=False)
 
 # Con opciones
 df.to_csv(
-    'salida.csv',
+    '../data/ventas_formateado.csv',
     index=False,                # No incluir índice
     sep=',',                    # Separador
     encoding='utf-8',           # Codificación
-    float_format='%.2f',        # Formato de números
-    columns=['col1', 'col2']    # Solo estas columnas
+    float_format='%.2f',        # Formato de números (2 decimales)
+    columns=['producto', 'precio', 'total']  # Solo estas columnas
 )
+
+print("✅ CSV guardado exitosamente")
 ```
 
 ---
 
 ## 📋 JSON
 
+JSON es común para APIs y intercambio de datos web.
+
 ### Leer JSON
 
 ```python
-# Desde archivo
-df = pd.read_json('datos.json')
+# Cargar CSV y convertir a JSON primero (para el ejemplo)
+df = pd.read_csv('../data/ventas.csv')
+df.to_json('../data/ventas.json', orient='records', index=False)
 
-# Desde string
+# Leer JSON desde archivo
+df_json = pd.read_json('../data/ventas.json')
+print(f"✅ JSON cargado: {len(df_json)} registros")
+df_json.head()
+
+# Desde string (si tienes JSON como string)
 import json
-with open('datos.json', 'r') as f:
+with open('../data/ventas.json', 'r') as f:
     data = json.load(f)
-df = pd.DataFrame(data)
+df_from_string = pd.DataFrame(data)
 
-# JSON anidado
-df = pd.json_normalize(data)  # Aplana estructuras anidadas
+# JSON anidado (si fuera necesario)
+# df = pd.json_normalize(data)  # Aplana estructuras anidadas
 ```
 
 ### Escribir JSON
 
 ```python
-# Básico
-df.to_json('salida.json', orient='records')
+# Cargar datos
+df = pd.read_csv('../data/ventas.csv')
 
-# Orientaciones comunes
-df.to_json('salida.json', orient='records')      # Lista de objetos
-df.to_json('salida.json', orient='index')        # Índice como clave
-df.to_json('salida.json', orient='values')       # Solo valores
+# Escribir JSON con diferentes orientaciones
+df.to_json('../data/ventas_records.json', orient='records', index=False)  # Lista de objetos
+df.to_json('../data/ventas_index.json', orient='index', index=True)      # Índice como clave
+df.to_json('../data/ventas_values.json', orient='values', index=False)    # Solo valores
+
+print("✅ JSONs guardados con diferentes orientaciones")
+
+# Comparar tamaños
+import os
+size_records = os.path.getsize('../data/ventas_records.json')
+print(f"Tamaño (records): {size_records:,} bytes ({size_records/1024:.2f} KB)")
 ```
 
 ---
 
 ## 🗄️ Parquet
 
-Parquet es un formato columnar optimizado para analytics.
+Parquet es un formato columnar optimizado para analytics. Es el formato preferido para datos procesados en Data Engineering.
+
+> 💡 **Instalación**: Necesitas `pyarrow` o `fastparquet`: `pip install pyarrow`
 
 ### Leer Parquet
 
 ```python
-# Básico
-df = pd.read_parquet('datos.parquet')
+import pandas as pd
+import time
 
-# Con opciones
+# Cargar datos de ejemplo en Parquet
+start = time.time()
+df_parquet = pd.read_parquet('../data/ventas.parquet')
+time_parquet = time.time() - start
+
+print(f"✅ Parquet cargado: {len(df_parquet)} registros en {time_parquet:.4f}s")
+df_parquet.head()
+
+# Comparar velocidad con CSV
+start = time.time()
+df_csv = pd.read_csv('../data/ventas.csv')
+time_csv = time.time() - start
+
+print(f"\n📊 Comparación de velocidad:")
+print(f"CSV: {time_csv:.4f}s")
+print(f"Parquet: {time_parquet:.4f}s")
+print(f"Parquet es {time_csv/time_parquet:.2f}x más rápido")
+
+# Con opciones avanzadas
 df = pd.read_parquet(
-    'datos.parquet',
+    '../data/ventas.parquet',
     engine='pyarrow',           # o 'fastparquet'
-    columns=['col1', 'col2'],   # Solo estas columnas
-    filters=[('fecha', '>=', '2024-01-01')]  # Filtros (pushdown)
+    columns=['producto', 'precio', 'total'],  # Solo estas columnas
+    # filters=[('fecha', '>=', '2024-01-01')]  # Filtros pushdown (si fecha fuera columna)
 )
 ```
 
 ### Escribir Parquet
 
 ```python
-# Básico
-df.to_parquet('salida.parquet', index=False)
+# Leer CSV primero
+df = pd.read_csv('../data/ventas.csv')
 
-# Con opciones
+# Convertir a Parquet (básico)
+df.to_parquet('../data/ventas_convertido.parquet', index=False)
+
+# Con opciones avanzadas
 df.to_parquet(
-    'salida.parquet',
+    '../data/ventas_optimizado.parquet',
     engine='pyarrow',
-    compression='snappy',       # Compresión
+    compression='snappy',       # Compresión (snappy, gzip, brotli)
     index=False,
-    partition_cols=['fecha']    # Particionar por columna
+    # partition_cols=['categoria']  # Particionar por columna (para datasets grandes)
 )
+
+print("✅ Parquet guardado exitosamente")
+
+# Comparar tamaños
+import os
+size_csv = os.path.getsize('../data/ventas.csv')
+size_parquet = os.path.getsize('../data/ventas_optimizado.parquet')
+
+print(f"\n📊 Comparación de tamaños:")
+print(f"CSV: {size_csv:,} bytes ({size_csv/1024:.2f} KB)")
+print(f"Parquet: {size_parquet:,} bytes ({size_parquet/1024:.2f} KB)")
+print(f"Parquet es {size_csv/size_parquet:.2f}x más pequeño")
 ```
 
 **Ventajas de Parquet:**
-* ✅ Más rápido que CSV
-* ✅ Menor tamaño (compresión)
-* ✅ Preserva tipos de datos
-* ✅ Soporta particionamiento
+* ✅ **Más rápido** que CSV (formato columnar)
+* ✅ **Menor tamaño** (compresión eficiente)
+* ✅ **Preserva tipos de datos** automáticamente
+* ✅ **Soporta particionamiento** (ideal para datasets grandes)
+* ✅ **Filtros pushdown** (lee solo lo necesario)
 
 ---
 
@@ -311,13 +367,92 @@ def leer_archivo_seguro(ruta):
 
 ## 🎯 Ejercicios
 
-1. Lee un CSV grande en chunks y procesa
-2. Convierte datos de JSON a DataFrame
-3. Lee datos de una API y guarda en Parquet
-4. Escribe datos a múltiples formatos y compara tamaños
+> 💡 **Usa los archivos de ejemplo**: `../data/ventas.csv` y `../data/ventas.parquet` para practicar estos ejercicios.
+
+### Ejercicio 1: Leer y comparar CSV vs Parquet
+
+```python
+# 1. Lee el CSV de ventas
+# Tu código aquí
+
+# 2. Lee el Parquet de ventas
+# Tu código aquí
+
+# 3. Compara el tiempo de lectura de ambos
+# Tu código aquí
+
+# 4. Compara el tamaño en disco de ambos archivos
+# Tu código aquí
+```
+
+### Ejercicio 2: Convertir entre formatos
+
+```python
+# 1. Lee el CSV de ventas
+# Tu código aquí
+
+# 2. Conviértelo a Parquet con compresión 'snappy'
+# Tu código aquí
+
+# 3. Conviértelo a JSON (orient='records')
+# Tu código aquí
+
+# 4. Compara los tamaños de los tres archivos
+# Tu código aquí
+```
+
+### Ejercicio 3: Leer con opciones
+
+```python
+# 1. Lee solo las columnas 'producto', 'precio', 'total' del CSV
+# Tu código aquí
+
+# 2. Lee el Parquet especificando solo las columnas 'categoria' y 'ciudad'
+# Tu código aquí
+
+# 3. Lee el CSV especificando tipos de datos (precio como float32)
+# Tu código aquí
+```
+
+### Ejercicio 4: Procesar archivos grandes (simulado)
+
+```python
+# 1. Lee el CSV en chunks de 10 filas (simulando archivo grande)
+# Tu código aquí
+
+# 2. Procesa cada chunk: filtra ventas con total > 500
+# Tu código aquí
+
+# 3. Combina todos los chunks procesados
+# Tu código aquí
+
+# 4. Guarda el resultado en Parquet
+# Tu código aquí
+```
+
+### Ejercicio 5: Análisis completo
+
+```python
+# 1. Lee el CSV de ventas
+# Tu código aquí
+
+# 2. Realiza un análisis (ej: ventas por categoría)
+# Tu código aquí
+
+# 3. Guarda el resultado en múltiples formatos:
+#    - CSV (para intercambio)
+#    - Parquet (para uso interno)
+#    - JSON (para APIs)
+# Tu código aquí
+
+# 4. Compara tamaños y tiempos de lectura de los tres formatos
+# Tu código aquí
+```
+
+> 💡 **¿Quieres ver ejemplos de cómo resolver estos ejercicios?** Revisa el notebook de ejemplo: **[07-manejo-archivos.ipynb](../../ejemplos/07-manejo-archivos.ipynb)** que muestra estas técnicas aplicadas a los archivos de ejemplo.
 
 ---
 
 ## 🚀 Próximo paso
 
-Continúa con **[Scripts vs módulos](scripts-vs-modulos.md)**.
+Continúa con **[Scripts vs Módulos](scripts-vs-modulos.md)** para aprender cuándo usar scripts simples y cuándo modularizar código para proyectos más grandes.

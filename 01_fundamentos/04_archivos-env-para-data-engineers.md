@@ -51,13 +51,14 @@ Los ejemplos y scripts del proyecto cargan automáticamente el `.env` desde la r
 # - Usan variables como DB_HOST, DB_NAME, DATA_SOURCE_PATH, etc.
 ```
 
-**Ejemplo de uso en scripts:**
+**Ejemplo de uso en notebooks:**
 ```python
-# 03_python/ejemplos/03-conexion-db.py ya está configurado así:
+# Los notebooks en 03_python/ejemplos/ y la documentación ya están configurados así:
+# Ver: 03_python/pandas/jupyter-notebooks-para-datos.md (sección "Integración con SQL")
 from dotenv import load_dotenv
 from pathlib import Path
 
-env_path = Path(__file__).parent.parent.parent / '.env'
+env_path = Path().resolve().parent.parent / '.env'
 load_dotenv(env_path)
 
 # Ahora puedes usar:

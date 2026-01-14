@@ -98,7 +98,7 @@ Una vez abierto el proyecto, verás:
 3. **Para preguntas sobre código específico**, puedes:
    
    **Opción A: Arrastrar archivos al chat**
-   - Abre el archivo en Cursor (ej: `03_python/ejemplos/01-pipeline-etl-simple.py`)
+   - Abre el archivo en Cursor (ej: `03_python/ejemplos/03-pipeline-etl.ipynb`)
    - Arrastra el archivo desde el explorador al panel de chat
    - O haz click derecho en el archivo → "Add to Chat"
    
@@ -108,19 +108,22 @@ Una vez abierto el proyecto, verás:
    
    **Ejemplos de preguntas con archivos específicos:**
    ```
-   Explica cómo funciona el pipeline en 03_python/ejemplos/01-pipeline-etl-simple.py
+   Explica cómo funciona el pipeline en @03_python/ejemplos/03-pipeline-etl.ipynb
    ```
    ```
-   ¿Qué hace la función transform() en 03_python/ejemplos/01-pipeline-etl-simple.py?
+   ¿Qué hace la función transform() en @03_python/ejemplos/03-pipeline-etl.ipynb?
    ```
    ```
-   Explica las queries SQL en 02_sql/ejercicios/01-ejercicios-basicos.md
+   Explica las queries SQL en @02_sql/ejercicios/01-ejercicios-basicos.md
    ```
    ```
-   ¿Cómo se crean las tablas en 02_sql/init-scripts/01-create-example-tables.sql?
+   ¿Cómo se crean las tablas en @02_sql/init-scripts/01-create-example-tables.sql?
    ```
    ```
-   Analiza el código de 03_python/ejemplos/03-conexion-db.py y explícame cómo se conecta a PostgreSQL
+   Analiza cómo se conecta a PostgreSQL en @03_python/pandas/jupyter-notebooks-para-datos.md (sección Integración con SQL)
+   ```
+   ```
+   Explica el procesamiento de archivos grandes en @03_python/ejemplos/07-manejo-archivos.ipynb
    ```
 
 ### Composer (Editar múltiples archivos)
@@ -552,7 +555,7 @@ El chat de Cursor puede ayudarte a navegar y aprender de este repositorio. Aquí
 ```
 
 ```
-"Genera un ejemplo similar al que está en 03_python/ejemplos/01-pipeline-etl-simple.py"
+"Genera un ejemplo similar al que está en 03_python/ejemplos/03-pipeline-etl.ipynb"
 ```
 
 **Qué esperar:** Análisis y mejora de código basado en los ejemplos del repositorio.
@@ -629,7 +632,7 @@ Este repositorio tiene configurado un archivo `.cursorrules` que contiene reglas
 2. **Pedir código sin revisar ejemplos existentes:**
    ```
    ❌ "Crea un pipeline ETL"
-   ✅ "Crea un pipeline ETL similar al ejemplo en 03_python/ejemplos/01-pipeline-etl-simple.py"
+   ✅ "Crea un pipeline ETL similar al ejemplo en 03_python/ejemplos/03-pipeline-etl.ipynb"
    ```
 
 3. **Preguntas sin mencionar el repositorio:**
