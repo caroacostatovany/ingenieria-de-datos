@@ -1,0 +1,47 @@
+# Archivos generados por los proyectos (NO incluir en Git)
+
+# Outputs de pipelines
+output/
+*.parquet
+*.xlsx
+*.json
+
+# Gráficos generados
+*.png
+*.jpg
+*.jpeg
+*.pdf
+
+# Archivos con timestamps (resultados de ejecución)
+*_transformadas_*.csv
+resumen_*.csv
+datos_procesados.csv
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Entornos virtuales
+venv/
+env/
+.venv/
+.env
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.dockerignore
+
+# Logs
+*.log
