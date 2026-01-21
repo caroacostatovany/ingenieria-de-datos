@@ -251,7 +251,9 @@ Aprende haciendo: proyectos prácticos desde el primer día
 * ✔️ [Orquestadores](05_pipelines/orquestadores/)
   * Prefect, Dagster (local - empezar aquí)
   * Airflow, Luigi (enterprise)
-  * Step Functions, Composer, Data Factory (cloud)
+  * [Orquestadores Cloud](05_pipelines/orquestadores/cloud/) (Step Functions, Composer, Data Factory)
+* ✔️ [Ejercicios y Soluciones](05_pipelines/soluciones_ejercicios/)
+  * Soluciones de referencia para todos los ejercicios de orquestadores
 
 ---
 
@@ -268,25 +270,31 @@ Aprende haciendo: proyectos prácticos desde el primer día
 
 ---
 
-### 🚀 Proyectos End-to-End 🚧
+### 🚀 Proyectos End-to-End ✔️
 
 * 📘 [Proyectos (carpeta)](07_proyectos/)
-* 🚧 [Nivel Principiante](07_proyectos/principiante/)
+* ✔️ [Nivel Principiante](07_proyectos/principiante/)
   * ✅ **Proyecto 1 (ETL Simple)**: Dataset y código funcional completos
-  * 🚧 Otros proyectos: Estructura y READMEs completos, código en desarrollo
-* 🚧 [Nivel Intermedio](07_proyectos/intermedio/)
-  * Estructura y READMEs completos, código en desarrollo
+  * ✅ **Proyecto 2 (Análisis Pandas)**: Estructura completa con notebooks
+  * ✅ **Proyecto 3 (Docker Pipeline)**: Estructura completa
+  * 📋 Guías de Git incluidas para gestión de archivos
+* ✔️ [Nivel Intermedio](07_proyectos/intermedio/)
+  * ✅ **Proyecto 1 (SQL + Python)**: Estructura completa con templates
+  * ✅ **Proyecto 2 (Validaciones)**: Estructura completa con Great Expectations
+  * ✅ **Proyecto 3 (Airflow Local)**: Estructura completa con DAGs
+  * ✅ **Proyecto 4 (IA como Copiloto)**: Estructura completa con prompts y ejemplos
+  * 📋 Guías de Git incluidas para gestión de archivos
 * 🚧 [Nivel Avanzado](07_proyectos/avanzado/)
   * Estructura y READMEs completos, código en desarrollo
 
 ---
 
-### ☁️ Data Engineering en la Nube 🚧
+### ☁️ Data Engineering en la Nube ✔️
 
 * 📘 [Orquestadores Cloud](05_pipelines/orquestadores/cloud/)
-  * Guía completa de orquestadores cloud y servicios principales
-  * AWS Step Functions, Google Cloud Composer, Azure Data Factory
-  * Comparación, ventajas y cuándo usar cada uno
+  * ✔️ Guía completa de orquestadores cloud y servicios principales
+  * ✔️ AWS Step Functions, Google Cloud Composer, Azure Data Factory
+  * ✔️ Comparación, ventajas y cuándo usar cada uno
 * ✔️ [Conceptos fundamentales](01_fundamentos/08_data-engineering-en-la-nube.md)
 
 ---
